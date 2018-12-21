@@ -12,12 +12,6 @@ import _ from 'lodash';
     if (document.getElementById('indexWrp')) {
         console.log('首页');
         // 热替换
-        // if (module.hot) {
-        //     module.hot.accept('./init.js', function () {
-        //         // 首页游标回到0
-        //         init.headerAniLink(0)
-        //     })
-        // }
         import( /* webpackChunkName: "init" */ './init').then(module => {
             var init = module.default;
             // 首页游标回到0
@@ -31,13 +25,29 @@ import _ from 'lodash';
             });
         })
 
-        // 首页游标回到0
-        // init.headerAniLink(0)
-        var swiper = module.default;
-        // 实例轮播图
+        // 实例轮播图1
         var mySwiper = new Swiper('#Swiper1', {
-            pagination: '.swiper-pagination',
+            // autoplay:true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
         })
+        // 实例轮播2
+        var swiper = new Swiper('#swiper2', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            // autoplay:true,
+            loop: true,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 250,
+                modifier: 1,
+                slideShadows: true,
+            },
+        });
     } else if (0) {
 
     }

@@ -11,8 +11,10 @@
     top: 0;
     left: 0;
     right: 0;
+    z-index: 99999;
     height: 80px;
     line-height: 80px;
+    user-select: none;
     background-color: #3784fa;
     .header-b {
         max-width: 1400px;
@@ -66,7 +68,7 @@
                         color: #fff;
                     }
                 }
-                .link-b-bar { 
+                .link-b-bar {
                     position: absolute;
                     bottom: 0;
                     left: 0;
@@ -184,10 +186,10 @@
     }
 }
 
-/**********首页轮播*****************/
+/**********首页轮播1*****************/
 
 .index-swiper-b {
-    .swiper-container {
+    #swiper1 {
         position: relative;
         height: 408px;
     }
@@ -207,5 +209,219 @@
         background-position: 50%;
         background-repeat: no-repeat;
         background-color: #e4e4e6;
+    }
+    .swiper-pagination-bullet-active {
+        opacity: 1;
+        background-color: #fff;
+    }
+}
+
+/**********首页视频列表标题*****************/
+
+.main-title {
+    .tit-bot,
+    .tit-top {
+        text-align: center;
+    }
+    .top-text {
+        position: relative;
+        display: inline-block;
+        line-height: 34px;
+        font-size: 30px;
+        font-family: ' MicrosoftYaHei-Bold';
+    }
+    .top-text::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -70px;
+        z-index: 99;
+        width: 60px;
+        height: 2px;
+        margin-top: -1px;
+        background-color: #808080;
+    }
+    .top-text::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -70px;
+        z-index: 99;
+        width: 60px;
+        height: 2px;
+        margin-top: -1px;
+        background-color: #808080;
+    }
+    .bot-text {
+        line-height: 32px;
+        font-size: 16px;
+        color: #808080;
+    }
+}
+
+/**********首页视频列表一*****************/
+
+.main-video-b {
+    padding-top: 20px;
+    .video-list-b {
+        .video-list {
+            overflow: hidden;
+            .video-item {
+                float: left;
+                position: relative;
+                padding: 0 10px;
+                width: 25%;
+            }
+            .video-sec {
+                .video-link {
+                    background-color: #fff;
+                }
+            }
+            .video-isFree {
+                position: absolute;
+                top: 10px;
+                right: 16px;
+                z-index: 99;
+                display: inline-block;
+                padding: 0 6px;
+                margin-top: 0;
+                line-height: 30px;
+                border-radius: 15px;
+                box-sizing: content-box;
+                color: #fff;
+                background-color: #3784fa;
+            }
+            .video-link {
+                overflow: hidden;
+                display: inline-block;
+                width: 100%;
+                border-radius: 8px;
+                background-color: #f3f4f8;
+            }
+            .les-img {
+                height: 200px;
+                border-top-right-radius: 8px;
+                border-top-left-radius: 8px;
+                .img-det {
+                    height: 100%;
+                    width: 100%;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: 50%;
+                    background-color: rgb(105, 105, 105);
+                }
+            }
+            .item-bot {
+                padding-bottom: 10px;
+                .les-title {
+                    padding: 0 5px;
+                    line-height: 2;
+                }
+                .text-det {
+                    width: 100%;
+                }
+            }
+            .les-text-one {
+                padding: 0 5px;
+                .icon-list {
+                    height: 30px;
+                    line-height: 30px;
+                }
+                .teacher-det {
+                    float: left;
+                    line-height: 30px;
+                    margin-right: 10px;
+                }
+                .teacher-ava {
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    vertical-align: middle;
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .teacher-text {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                .icon-item {
+                    float: left;
+                    width: 24px;
+                    height: 24px;
+                    margin-top: 4px;
+                    margin-right: 8px;
+                    vertical-align: middle;
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        vertical-align: middle;
+                    }
+                }
+                .text-item {
+                    float: left;
+                    margin-right: 4px;
+                    color: #feca52;
+                }
+                .icon-tag {
+                    float: left;
+                    display: block;
+                    width: auto;
+                    padding: 4px 6px;
+                    height: auto;
+                    margin-top: 0;
+                    line-height: 20px;
+                    border-radius: 15px;
+                    color: #fff;
+                    background-color: #3784fa;
+                }
+            }
+        }
+    }
+}
+
+/**********首页产看更多*****************/
+
+.see-more {
+    margin-top: 30px;
+    height: 30px;
+    text-align: center;
+    .more-link {
+        display: inline-block;
+        padding: 6px 10px;
+        line-height: 30px;
+        border-radius: 6px;
+        background-color: #3784fa;
+        .text {
+            display: inline-block;
+            font: 18px;
+            vertical-align: middle;
+            color: #fff;
+        }
+    }
+    .more-icon {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+/**********首页footer*****************/
+
+.pub-footer {
+    background-color: #282828;
+    .footer-b {
+        width: 1200px;
+        margin: 0 auto;
+        background-color: #282828;
     }
 }
