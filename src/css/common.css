@@ -1,0 +1,199 @@
+@import 'StyleDepend/mReset.css';
+.index-wrap {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+/**********导航*****************/
+.header-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  line-height: 80px;
+  background-color: #3784fa;
+}
+.header-nav .header-b {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 80px;
+  background-color: #3784fa;
+}
+.header-nav .header-b .hd-left {
+  float: left;
+}
+.header-nav .header-b .hd-right {
+  float: right;
+  line-height: 80px;
+}
+.header-nav .header-b .logo-b {
+  display: inline-block;
+  width: 110px;
+  height: 50px;
+  padding: 4px 10px;
+  border-radius: 30px;
+  line-height: 80px;
+  margin-right: 120px;
+  box-sizing: content-box;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #fff;
+}
+.header-nav .header-b .logo-b .log-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.header-nav .header-b .nav-list {
+  float: right;
+  position: relative;
+  line-height: 80px;
+}
+.header-nav .header-b .nav-list .list-b {
+  position: relative;
+  overflow: hidden;
+  font-size: 0;
+}
+.header-nav .header-b .nav-list .list-b .list-item {
+  float: left;
+  padding: 0 26px;
+  height: 80px;
+  font-size: 0;
+  cursor: pointer;
+}
+.header-nav .header-b .nav-list .list-b .list-item .nav-link {
+  display: inline-block;
+}
+.header-nav .header-b .nav-list .list-b .list-item .text {
+  font-size: 25px;
+  color: #fff;
+}
+.header-nav .header-b .nav-list .list-b .link-b-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 102px;
+  height: 3px;
+  background-color: #fff;
+}
+.header-nav .header-b .search-b {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 70px;
+}
+.header-nav .header-b .search-b .search-wrp {
+  width: 400px;
+  height: 48px;
+  padding: 0 5px 0 15px;
+  line-height: 48px;
+  border-radius: 24px;
+  background-color: #2869db;
+}
+.header-nav .header-b .search-b .search-item {
+  display: inline-block;
+  width: 86%;
+  line-height: 48px;
+}
+.header-nav .header-b .search-b .search-item .sear-ipt {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  color: #fff;
+}
+.header-nav .header-b .search-b .search-item .sear-ipt::placeholder {
+  font-size: 25px;
+  color: #fff;
+}
+.header-nav .header-b .search-b .search-icon {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.header-nav .header-b .search-b .search-icon .search-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.header-nav .header-b .msg-icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 70px;
+  cursor: pointer;
+}
+.header-nav .header-b .msg-icon .msg-num {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: inline-block;
+  padding: 4px;
+  line-height: 20px;
+  background-color: #feca52;
+  border-radius: 4px;
+}
+.header-nav .header-b .msg-icon .num-text {
+  display: inline-block;
+  color: #fff;
+}
+.header-nav .header-b .msg-icon .msg-img {
+  width: 60px;
+  height: 60px;
+}
+.header-nav .header-b .msg-icon .msg-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.header-nav .header-b .login-reg {
+  float: right;
+}
+.header-nav .header-b .login-reg .btn-b .btn-text {
+  float: right;
+  margin-right: 30px;
+  cursor: pointer;
+}
+.header-nav .header-b .login-reg .btn-b .btn-text a .text {
+  font-size: 25px;
+  color: #fff;
+}
+.header-nav .header-b .login-reg .btn-b .user-avatar {
+  display: inline-block;
+  overflow: hidden;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.header-nav .header-b .login-reg .btn-b img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/**********首页轮播*****************/
+.index-swiper-b .swiper-container {
+  position: relative;
+  height: 408px;
+}
+.index-swiper-b .slide-img {
+  position: relative;
+  width: 100vw;
+  height: 0;
+  padding-bottom: 22%;
+}
+.index-swiper-b .img-show {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-color: #e4e4e6;
+}

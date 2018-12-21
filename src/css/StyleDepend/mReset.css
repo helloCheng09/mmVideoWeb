@@ -1,0 +1,265 @@
+body {
+	margin: 0;
+	line-height: 1;
+	color: #333333;
+	height: 100%;
+	font-family: 'MicrosoftYaHei';
+	-webkit-overflow-scrolling: touch;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 16px;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	-webkit-appearance: none;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.one-ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-break: break-all;
+}
+
+.two-ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	word-break: break-all;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.three-ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	word-break: break-all;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+.four-ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	word-break: break-all;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+}
+
+
+/* 伪元素 解决移动端1px线问题 */
+
+.mob_1px,
+.mob_1px_b,
+.mob_1px_t,
+.mob_1px_l,
+.mob_1px_r {
+	position: relative;
+}
+
+.mob_1px::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200%;
+	height: 200%;
+	border: 1px solid red;
+	transform-origin: 0 0;
+	transform: scale(.5);
+}
+
+.mob_1px_r::after,
+.mob_1px_l::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 1px;
+	color: red;
+}
+
+.mob_1px_r::after {
+	right: -2px;
+	border-right: 1px solid red;
+	transform-origin: 0 0;
+	transform: scaleX(.5);
+}
+
+.mob_1px_l::before {
+	left: -1px;
+	border-left: 1px solid red;
+	transform-origin: 0 0;
+	transform: scaleX(.5);
+}
+
+.mob_1px_b::after,
+.mob_1px_t::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 1px;
+	color: red;
+}
+
+.mob_1px_t::before {
+	top: -1px;
+	border-top: 1px solid red;
+	transform-origin: 0 0;
+	transform: scaleY(.5);
+}
+
+.mob_1px_b::after {
+	bottom: -2px;
+	border-bottom: 1px solid red;
+	transform-origin: 0 0;
+	transform: scaleY(.5);
+}

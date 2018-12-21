@@ -1,0 +1,211 @@
+@import './StyleDepend/mReset.css';
+.index-wrap {
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+/**********导航*****************/
+
+.header-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    line-height: 80px;
+    background-color: #3784fa;
+    .header-b {
+        max-width: 1400px;
+        margin: 0 auto;
+        height: 80px;
+        background-color: #3784fa;
+        .hd-left {
+            float: left;
+        }
+        .hd-right {
+            float: right;
+            line-height: 80px;
+        }
+        .logo-b {
+            display: inline-block;
+            width: 110px;
+            height: 50px;
+            padding: 4px 10px;
+            border-radius: 30px;
+            line-height: 80px;
+            margin-right: 120px;
+            box-sizing: content-box;
+            vertical-align: middle;
+            cursor: pointer;
+            background-color: #fff;
+            .log-img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .nav-list {
+            float: right;
+            position: relative;
+            line-height: 80px;
+            .list-b {
+                position: relative;
+                overflow: hidden;
+                font-size: 0;
+                .list-item {
+                    float: left;
+                    padding: 0 26px;
+                    height: 80px;
+                    font-size: 0;
+                    cursor: pointer;
+                    .nav-link {
+                        display: inline-block;
+                    }
+                    .text {
+                        font-size: 25px;
+                        color: #fff;
+                    }
+                }
+                .link-b-bar { 
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 102px;
+                    height: 3px;
+                    background-color: #fff;
+                }
+            }
+        }
+        .search-b {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 70px;
+            .search-wrp {
+                width: 400px;
+                height: 48px;
+                padding: 0 5px 0 15px;
+                line-height: 48px;
+                border-radius: 24px;
+                background-color: #2869db;
+            }
+            .search-item {
+                display: inline-block;
+                width: 86%;
+                line-height: 48px;
+                .sear-ipt {
+                    display: inline-block;
+                    width: 100%;
+                    height: 40px;
+                    line-height: 40px;
+                    vertical-align: middle;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    font-size: 25px;
+                    color: #fff;
+                }
+                .sear-ipt::placeholder {
+                    font-size: 25px;
+                    color: #fff;
+                }
+            }
+            .search-icon {
+                display: inline-block;
+                width: 48px;
+                height: 48px;
+                vertical-align: middle;
+                cursor: pointer;
+                .search-img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .msg-icon {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 70px;
+            cursor: pointer;
+            .msg-num {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                display: inline-block;
+                padding: 4px;
+                line-height: 20px;
+                background-color: #feca52;
+                border-radius: 4px;
+            }
+            .num-text {
+                display: inline-block;
+                color: #fff;
+            }
+            .msg-img {
+                width: 60px;
+                height: 60px;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .login-reg {
+            float: right;
+            .btn-b {
+                .btn-text {
+                    float: right;
+                    margin-right: 30px;
+                    cursor: pointer;
+                    a {
+                        .text {
+                            font-size: 25px;
+                            color: #fff;
+                        }
+                    }
+                }
+                .user-avatar {
+                    display: inline-block;
+                    overflow: hidden;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    vertical-align: middle;
+                }
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+/**********首页轮播*****************/
+
+.index-swiper-b {
+    .swiper-container {
+        position: relative;
+        height: 408px;
+    }
+    .swiper-wrapper {}
+    .swiper-slide {}
+    .slide-img {
+        position: relative;
+        width: 100vw;
+        height: 0;
+        padding-bottom: 22%;
+    }
+    .img-show {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-color: #e4e4e6;
+    }
+}
