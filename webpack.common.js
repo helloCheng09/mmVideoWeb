@@ -1,6 +1,5 @@
 const path = require('path')
 //引入插件
-// const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -14,7 +13,8 @@ module.exports = {
     },
     output: {
         filename: './js/[name].js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        // publicPath: '/public/yz/videos/web/'
     },
     optimization: {
         // minimizer: [

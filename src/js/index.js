@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import '../index.html'
 import '../center_lesson.html'
 import '../center_tec.html'
@@ -5,7 +7,8 @@ import '../center_tec.html'
 import '../css/common.css'
 import '../css/index.css';
 import 'expose-loader?$!jquery'
-import _ from 'lodash';
+// import init from './init.js'
+
 // import init from './init.js'
 
 (function () {
@@ -20,6 +23,9 @@ import _ from 'lodash';
                 init.headerAniLink(0)
             });
         })
+
+        // 首页游标回到0
+        // init.headerAniLink(0)
 
         $('.login-reg').on('click', () => {
             import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
