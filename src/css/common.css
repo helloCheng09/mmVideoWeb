@@ -16,7 +16,7 @@
   background-color: #3784fa;
 }
 .header-nav .header-b {
-  max-width: 1400px;
+  width: 1400px;
   margin: 0 auto;
   height: 80px;
   background-color: #3784fa;
@@ -348,6 +348,12 @@
   margin-right: 4px;
   color: #feca52;
 }
+.main-video-b .video-list-b .video-list .les-text-one .video-time {
+  float: right;
+}
+.main-video-b .video-list-b .video-list .les-text-one .video-time .time-text {
+  color: #888;
+}
 .main-video-b .video-list-b .video-list .les-text-one .icon-tag {
   float: left;
   display: block;
@@ -381,8 +387,8 @@
 }
 .see-more .more-icon {
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 13px;
+  height: 13px;
   vertical-align: middle;
 }
 .see-more .more-icon img {
@@ -398,4 +404,58 @@
   width: 1200px;
   margin: 0 auto;
   background-color: #282828;
+}
+.pub-footer .footer-b .top {
+  overflow: hidden;
+  height: 130px;
+}
+.pub-footer .footer-b .top .top-l {
+  float: left;
+}
+.pub-footer .footer-b .top .top-l .left-list {
+  line-height: 130px;
+  overflow: hidden;
+}
+.pub-footer .footer-b .top .top-l .list-item {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 50px;
+}
+.pub-footer .footer-b .top .top-l .link-item .link-icon {
+  display: inline-block;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.pub-footer .footer-b .top .top-l .link-item img {
+  display: inline-block;
+}
+.pub-footer .footer-b .top .top-l .link-item .link-text {
+  display: inline-block;
+  color: #8a8a8a;
+}
+.pub-footer .footer-b .top .bot-right {
+  float: right;
+  line-height: 130px;
+}
+.pub-footer .footer-b .top .bot-right .link-blog {
+  float: right;
+}
+.pub-footer .footer-b .top .bot-right .link-blog a {
+  display: inline-block;
+}
+.pub-footer .footer-b .top .bot-right .link-blog .blog-img {
+  padding: 0 20px;
+}
+.pub-footer .footer-b .top .bot-right .link-blog .blog-img img {
+  display: inline-block;
+  width: 100%;
+}
+.pub-footer .footer-b .bot {
+  line-height: 94px;
+  height: 95px;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+.pub-footer .footer-b .bot .bot-text {
+  color: #8a8a8a;
 }

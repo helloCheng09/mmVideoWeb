@@ -1,4 +1,4 @@
-/**********首页*****************/
+/**********首页 index.html*****************/
 #indexWrp .main-screen {
   /**********首页轮播2*****************/
 }
@@ -56,4 +56,121 @@
   padding: 0 10px;
   line-height: 1.2;
   margin-top: 4px;
+}
+/**********课程中心 center_lesson.html*****************/
+#lesWrp .link-b-bar {
+  left: 102px;
+}
+#lesWrp .screen-b {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+#lesWrp .fenlei-list-b {
+  user-select: none;
+}
+#lesWrp .fenlei-list {
+  display: inline-block;
+}
+#lesWrp .fenlei-list .fenlei-item {
+  float: left;
+  min-width: 92px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+#lesWrp .fenlei-list .fenlei-text {
+  font-size: 18px;
+  padding: 16px 10px;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 200ms ease-in;
+}
+#lesWrp .fenlei-list .select {
+  position: relative;
+}
+#lesWrp .fenlei-list .select::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  width: 40%;
+  height: 2px;
+  background-color: #feca52;
+}
+#lesWrp .fenlei-list-b:first-child {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+#lesWrp .fenlei-list-b:first-child .fenlei-list {
+  overflow: hidden;
+}
+#lesWrp .fenlei-list-b:first-child .fenlei-item .fenlei-text {
+  color: #808080;
+}
+#lesWrp .fenlei-list-b:first-child .fenlei-item .select {
+  color: #fff;
+  background-color: #77adff;
+}
+#lesWrp .fenlei-list-b:first-child .fenlei-item .select::after {
+  content: none;
+}
+#lesWrp .main-screen-b:nth-of-type(1) .screen-b {
+  padding-bottom: 20px;
+}
+#lesWrp .main-screen-b:nth-of-type(2) {
+  background-color: #f3f4f8;
+}
+/**********名师中心 center_tec.html*****************/
+#tecWrp .link-b-bar {
+  left: 204px;
+}
+#tecWrp .main-screen-b:nth-of-type(2) {
+  background-color: #f3f4f8;
+}
+#tecWrp .main-screen-b:nth-of-type(2) .screen-b {
+  padding-top: 0px;
+}
+#tecWrp .screen-b {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+#tecWrp .fenlei-list-b {
+  user-select: none;
+  text-align: center;
+}
+#tecWrp .main-screen-b:nth-of-type(1) .screen-b {
+  padding: 20px 0;
+}
+#tecWrp .fenlei-list {
+  display: inline-block;
+}
+#tecWrp .fenlei-list .fenlei-item {
+  float: left;
+  min-width: 92px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+#tecWrp .fenlei-list .fenlei-text {
+  font-size: 18px;
+  padding: 16px 10px;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 200ms ease-in;
+}
+#tecWrp .fenlei-list .select {
+  position: relative;
+}
+#tecWrp .fenlei-list .select::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  width: 40%;
+  height: 2px;
+  background-color: #feca52;
 }

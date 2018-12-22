@@ -2,6 +2,7 @@
 .index-wrap {
     min-height: 100vh;
     padding-top: 80px;
+    // padding-bottom: 225px;
 }
 
 /**********导航*****************/
@@ -17,7 +18,7 @@
     user-select: none;
     background-color: #3784fa;
     .header-b {
-        max-width: 1400px;
+        width: 1400px;
         margin: 0 auto;
         height: 80px;
         background-color: #3784fa;
@@ -366,6 +367,12 @@
                     margin-right: 4px;
                     color: #feca52;
                 }
+                .video-time{
+                    float: right;
+                    .time-text{
+                        color: #888;
+                    }
+                }
                 .icon-tag {
                     float: left;
                     display: block;
@@ -404,8 +411,8 @@
     }
     .more-icon {
         display: inline-block;
-        width: 30px;
-        height: 30px;
+        width: 13px;
+        height: 13px;
         vertical-align: middle;
         img {
             display: block;
@@ -418,10 +425,71 @@
 /**********首页footer*****************/
 
 .pub-footer {
+    // margin-top: -225px;
+    // font-size: 0;
     background-color: #282828;
     .footer-b {
         width: 1200px;
         margin: 0 auto;
         background-color: #282828;
+        .top {
+            overflow: hidden;
+            height: 130px;
+            .top-l {
+                float: left;
+                .left-list{
+                    line-height: 130px;
+                    overflow: hidden;
+                }
+                .list-item{
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 50px;
+                }
+                .link-item{
+                    .link-b{
+
+                    }
+                    .link-icon{
+                        display: inline-block;
+                        margin-right:4px;
+                        vertical-align: middle;
+                    }
+                    img {
+                        display: inline-block;
+                    }
+                    .link-text{
+                        display: inline-block;
+                        color: #8a8a8a;
+                    }
+                }
+            }
+            .bot-right {
+                float: right;
+                line-height: 130px;
+                .link-blog{
+                    float: right;
+                    a{
+                        display: inline-block;
+                    }
+                    .blog-img{
+                        padding: 0 20px;
+                        img {
+                            display: inline-block;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .bot {
+            line-height: 94px;
+            height: 95px;
+            text-align: center;
+            border-top: 1px solid #333; 
+            .bot-text{
+               color: #8a8a8a;
+            }
+        }
     }
 }

@@ -1,7 +1,7 @@
 module.exports = {
     // 固定导航游标
     headerAniLink: function (leftValue) {
-        var oLiArray = Array.prototype.slice.call(document.getElementsByClassName("list-item"), 0)
+        var oLiArray = Array.prototype.slice.call(document.getElementsByClassName("header_nav_tag"), 0)
         var oBg = document.getElementsByClassName("link-b-bar")[0]
         oLiArray.forEach(item => {
             item.onmouseenter = function () {

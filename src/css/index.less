@@ -1,4 +1,4 @@
-/**********首页*****************/
+/**********首页 index.html*****************/
 
 #indexWrp {
     .main-screen {
@@ -16,7 +16,7 @@
         }
         /**********首页轮播2*****************/
         .index-swiper-b {
-            #swiper2{
+            #swiper2 {
                 position: relative;
             }
             .swiper-wrapper {}
@@ -41,20 +41,19 @@
                 background-repeat: no-repeat;
                 background-color: #e4e4e6;
             }
-            .des-b{
-                position:fixed;
+            .des-b {
+                position: fixed;
                 bottom: 0;
                 left: 0;
                 right: 0;
                 z-index: 999;
                 height: 120px;
-                background-color: rgba(0,0,0,0.4);
+                background-color: rgba(0, 0, 0, 0.4);
                 color: #fff;
-                .des-name{
+                .des-name {
                     padding: 0 10px;
                     font-size: 20px;
-                    line-height:1.5;
-
+                    line-height: 1.5;
                 }
                 .des-text {
                     padding: 0 10px;
@@ -62,6 +61,141 @@
                     margin-top: 4px;
                 }
             }
+        }
+    }
+}
+
+/**********课程中心 center_lesson.html*****************/
+
+#lesWrp {
+    .link-b-bar {
+        left: 102px;
+    }
+    .main-screen-b {}
+    .screen-b {
+        width: 1200px;
+        margin: 0 auto;
+        padding: 60px 0;
+    }
+    .fenlei-list-b {
+        user-select: none;
+    }
+    .fenlei-list {
+        display: inline-block;
+        .fenlei-item {
+            float: left;
+            min-width: 92px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .fenlei-text {
+            font-size: 18px;
+            padding: 16px 10px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 200ms ease-in;
+        }
+        .select {
+            position: relative;
+        }
+        .select::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 99;
+            width: 40%;
+            height: 2px;
+            background-color: #feca52;
+        }
+    }
+    .fenlei-list-b:first-child {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+        .fenlei-list {
+            overflow: hidden;
+        }
+        .fenlei-item {
+            .fenlei-text {
+                color: #808080;
+            }
+            .select {
+                color: #fff;
+                background-color: #77adff;
+            }
+            .select::after {
+                content: none;
+            }
+        }
+    }
+    .main-screen-b:nth-of-type(1) {
+        .screen-b {
+            padding-bottom: 20px;
+        }
+    }
+    .main-screen-b:nth-of-type(2) {
+        background-color: #f3f4f8;
+    }
+}
+
+/**********名师中心 center_tec.html*****************/
+
+#tecWrp {
+    .link-b-bar {
+        left: 204px;
+    }
+    .main-screen-b:nth-of-type(2) {
+        background-color: #f3f4f8;
+    }
+    .main-screen-b:nth-of-type(2) {
+        .screen-b {
+            padding-top: 0px;
+        }
+    }
+    .main-screen-b {}
+    .screen-b {
+        width: 1200px;
+        margin: 0 auto;
+        padding: 60px 0;
+    }
+    .fenlei-list-b {
+        user-select: none;
+        text-align: center;
+    }
+    .main-screen-b:nth-of-type(1) {
+        .screen-b {
+            padding: 20px 0;
+        }
+    }
+    .fenlei-list {
+        display: inline-block;
+        .fenlei-item {
+            float: left;
+            min-width: 92px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .fenlei-text {
+            font-size: 18px;
+            padding: 16px 10px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 200ms ease-in;
+        }
+        .select {
+            position: relative;
+        }
+        .select::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 99;
+            width: 40%;
+            height: 2px;
+            background-color: #feca52;
         }
     }
 }
