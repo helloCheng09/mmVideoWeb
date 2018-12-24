@@ -4,6 +4,7 @@ import '../index.html'
 import '../center_lesson.html'
 import '../center_tec.html'
 import '../lesson_det.html'
+import '../charge.html'
 
 import '../css/common.css'
 import '../css/index.css';
@@ -136,17 +137,60 @@ import 'expose-loader?$!jquery'
                 })
             });
         })
-        import( /* webpackChunkName: "init" */ './init.js').then(module => {
-            var init = module.default;
-            // //实例化播放器
-            init.detPlayer(root.videoSrc[0])
-        });
 
-        import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
-            var delegate = module.default;
-            // 打开登陆
-            delegate.init()
-        });
+        $('#myPlayBtn').on('click', function (e) {
+            var eventTarget = e.currentTarget 
+            import( /* webpackChunkName: "init" */ './init.js').then(module => {
+                var init = module.default;
+                // //实例化播放器
+                init.detPlayer(root.videoSrc[0])
+            });
+            setTimeout(() => {
+                import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
+                    var delegate = module.default;
+                    // 打开登陆
+                    delegate.init(eventTarget)
+                });
+            }, 0);
+        })
+        
+        $('#myPlayBtn2').on('click', function (e) {
+            var eventTarget = e.currentTarget 
+            import( /* webpackChunkName: "init" */ './init.js').then(module => {
+                var init = module.default;
+                // //实例化播放器
+                init.detPlayer(root.videoSrc[0])
+            });
+            setTimeout(() => {
+                import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
+                    var delegate = module.default;
+                    // 打开登陆
+                    delegate.init(eventTarget)
+                });
+            }, 0);
+        })
+
+        $('.join_btn').on('click', function () {
+            import( /* webpackChunkName: "init" */ './init.js').then(module => {
+                var init = module.default;
+                // //实例化播放器
+                init.detPlayer(root.videoSrc[0])
+            });
+        })
+
+        $('.pf_btn').on('click', function (e) {
+            var eventTarget = e.currentTarget 
+            import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
+                var delegate = module.default;
+                // 打开登陆
+                delegate.init(eventTarget)
+            });
+        })
+
+
+
+
+
     }
 
     console.log(root);

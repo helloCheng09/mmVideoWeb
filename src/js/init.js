@@ -1,4 +1,6 @@
 module.exports = {
+    // 定义全局
+    root: window.wangjiao,
     // 固定导航游标
     headerAniLink: function (leftValue) {
         var oLiArray = Array.prototype.slice.call(document.getElementsByClassName("header_nav_tag"), 0)
@@ -9,7 +11,7 @@ module.exports = {
                 return false
             }
         });
-        var oList =  document.getElementsByClassName("list-b")[0]
+        var oList = document.getElementsByClassName("list-b")[0]
         document.getElementsByClassName("list-b")[0].onmouseout = function () {
             clearTimeout(oList.backTimer)
             this.backTimer = setTimeout(() => {
@@ -41,8 +43,12 @@ module.exports = {
             }, 20)
         }
     },
+    // 实例化播放器
     detPlayer: function (videoSrc) {
-        var player = new Aliplayer({
+        if (!root.is_buy_lesson) {
+            return false;
+        } else {}
+        this.root.player = new Aliplayer({
             "id": "player-con",
             "source": videoSrc,
             "width": "100%",
@@ -161,5 +167,7 @@ module.exports = {
         }, function (player) {
             console.log("播放器创建了。");
         });
-    }
+    },
+
+
 }

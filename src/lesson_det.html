@@ -116,10 +116,27 @@
             <div class="main-screen-b">
                 <div class="screen-b">
                     <div class="main-show-lf">
+                        <div class="prevent-play pre_play_b">
+                            <div class="btn-bx">
+                                <div class="ts-b">
+                                    <div class="ts-text">
+                                        立刻加入学习观看！~
+                                    </div>
+                                </div>
+                                <div class="btn-b">
+                                    <div class="join-btn join_btn">
+                                        <div>加入学习</div>
+                                    </div>
+                                    <div class="charge-btn">
+                                        <a href="./charge.html" class="charge_link">充流量币</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="player-bx" style="background-image:url(./img/homepagenews3.png)">
                             <!-- 视频占位 -->
                         </div>
-                        <div class="play-btn " id="myPlayBtn">
+                        <div class="play-btn main_play_btn" id="myPlayBtn">
                             <img src="./img/bigplay.png" alt="">
                         </div>
                     </div>
@@ -146,11 +163,11 @@
                                 </div>
                             </div>
                             <div class="btn-bx">
-                                <div class="btn-item see">
-                                    <div class="btn-text">立即观看</div>
+                                <div class="btn-item see main_play_btn" id="myPlayBtn2">
+                                    <div class="btn-text" id="myPlayBtn2">立即观看</div>
                                 </div>
-                                <div class="btn-item ping">
-                                    <div class="btn-text">立即评分</div>
+                                <div class="btn-item ping pf_btn">
+                                    <div class="btn-text ">评分</div>
                                 </div>
                             </div>
                         </div>
@@ -282,7 +299,7 @@
         </section>
     </div>
     <div class="video-show-bx" id="videoWrap" style="display:none;">
-        <div class="close-btn">
+        <div class="close-btn" id="exitBtn">
             <div class="text">退出</div>
         </div>
         <div class="palyer-wrap">
@@ -377,9 +394,25 @@
     window.wangjiao = {}
     window.wangjiao.videoSrc = []
     var root = window.wangjiao
-    var videoSrc = 'http://w2.mamawozaizhe.com:9001/video/158/1545059112.m3u8'
+
+    // 充值页面
+    var chargeSrc = 'http://www.mamawozaizhe.com/videos/videos/charge.html'
+    var lessonGet = 'http://www.mamawozaizhe.com/videos/videos/videos_join.html'
+    var lessonData = {
+        fansid: "40861",
+        froms: "2",
+        lesson_id: "2",
+        traffic_coin: "100",
+        videos_id: "2"
+    }
+    // 视频封面
+    root.coverSrc =
+        'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542865269846&di=fe5d04330cf7321367c32b89d0bff476&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Ffd039245d688d43f4ed85fdf761ed21b0ef43bae.jpg';
+
+    // 用户是否购买课程 
+    root.is_buy_lesson = 0;
     //实例化播放器
-    root.videoSrc[0] = videoSrc
+    root.videoSrc[0] = 'http://w2.mamawozaizhe.com:9001/video/158/1545059112.m3u8'
 </script>
 <!-- js -->
 <script type='text/javascript' src="./js/JsDepend/layui/layui.all.js"></script>
