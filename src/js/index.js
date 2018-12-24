@@ -96,7 +96,7 @@ import 'expose-loader?$!jquery'
             import( /* webpackChunkName: "init" */ './init.js').then(module => {
                 var init = module.default;
                 // 游标回到 204
-                init.headerAniLink(102)
+                init.headerAniLink(204)
             });
         })
         $('.screen-b').hover(() => {

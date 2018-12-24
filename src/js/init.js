@@ -9,13 +9,12 @@ module.exports = {
                 return false
             }
         });
-        // var leftValue = 0
-        var backTimer = ''
+        var oList =  document.getElementsByClassName("list-b")[0]
         document.getElementsByClassName("list-b")[0].onmouseout = function () {
-            clearTimeout(backTimer)
-            backTimer = setTimeout(() => {
+            clearTimeout(oList.backTimer)
+            this.backTimer = setTimeout(() => {
                 goBack(leftValue)
-            }, 800);
+            }, 1000);
             return false
         }
 
