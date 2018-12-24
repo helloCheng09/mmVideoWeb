@@ -459,3 +459,20 @@
 .pub-footer .footer-b .bot .bot-text {
   color: #8a8a8a;
 }
+/**********视频详情路径*****************/
+.page-link-pn {
+  margin: 20px 0;
+}
+.page-link-pn .page-link {
+  width: 1200px;
+  margin: 0 auto;
+}
+.page-link-pn .page-link span {
+  display: inline-block;
+  padding: 0 4px;
+  font-size: 14px;
+  color: #808080;
+}
+.page-link-pn .page-link span:last-child {
+  color: #3784fa;
+}

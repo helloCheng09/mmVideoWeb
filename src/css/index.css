@@ -174,3 +174,299 @@
   height: 2px;
   background-color: #feca52;
 }
+#tecWrp .teacher-list-bx {
+  overflow: hidden;
+}
+#tecWrp .teacher-list-bx .teacher-list {
+  float: left;
+  font-size: 0;
+  overflow: hidden;
+  text-align: left;
+}
+#tecWrp .teacher-list-bx .teacher-item {
+  float: left;
+  width: 25%;
+  margin: 0 auto;
+  padding: 5px;
+}
+#tecWrp .teacher-list-bx .teacher-item .con-bx {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+}
+#tecWrp .teacher-list-bx .teacher-item .con-bx .tc-des-b {
+  padding: 10px 5px;
+}
+#tecWrp .teacher-list-bx .teacher-item .con-bx .tc-name {
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+#tecWrp .teacher-list-bx .teacher-item .con-bx .tc-des {
+  display: inline-block;
+  height: 38px;
+}
+#tecWrp .teacher-list-bx .teacher-item .con-bx .tc-des .des-text {
+  height: 38px;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #808080;
+}
+#tecWrp .teacher-list-bx .teacher-item .tc-pic {
+  height: 270px;
+}
+#tecWrp .teacher-list-bx .teacher-item .tc-pic .pic-show {
+  height: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+/**********课程详情 lesson_det.html*****************/
+#detLesWrap {
+  padding-bottom: 20px;
+  background-color: #f3f4f8;
+}
+#detLesWrap .link-b-bar {
+  left: 102px;
+}
+#detLesWrap .main-screen-b {
+  overflow: hidden;
+  border-radius: 5px;
+}
+#detLesWrap .screen-b {
+  overflow: hidden;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+}
+#detLesWrap .main-show-lf {
+  position: relative;
+  float: left;
+  cursor: pointer;
+}
+#detLesWrap .main-show-lf .play-btn {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  z-index: 99;
+  width: 100px;
+}
+#detLesWrap .main-show-lf .play-btn img {
+  display: block;
+  width: 100%;
+}
+#detLesWrap .main-show-lf .player-bx {
+  width: 530px;
+  height: 300px;
+  margin-right: 20px;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: 50%;
+  background-color: #949496;
+}
+#detLesWrap .main-show-rt {
+  float: left;
+  width: 610px;
+}
+#detLesWrap .main-show-rt h3 {
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 50px;
+}
+#detLesWrap .main-show-rt .des-info {
+  margin-bottom: 20px;
+}
+#detLesWrap .main-show-rt .des-info .info-text {
+  height: 70px;
+  line-height: 1.5;
+  color: #808080;
+}
+#detLesWrap .main-show-rt .pay-text {
+  margin-bottom: 40px;
+}
+#detLesWrap .main-show-rt .pay-text span {
+  font-size: 24px;
+  color: #d7243c;
+}
+#detLesWrap .main-show-rt .btn-bx {
+  overflow: hidden;
+}
+#detLesWrap .main-show-rt .btn-bx .btn-item {
+  width: 165px;
+  height: 60px;
+  margin-right: 10px;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 60px;
+  float: left;
+  color: #fff;
+  cursor: pointer;
+}
+#detLesWrap .main-show-rt .btn-bx .see {
+  background-color: #feca52;
+}
+#detLesWrap .main-show-rt .btn-bx .ping {
+  background-color: #3784fa;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) {
+  margin-top: 20px;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .top-tt {
+  user-select: none;
+  border-bottom: 1px solid #ddd;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .top-tt .tt-list-bx {
+  line-height: 70px;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .top-tt .tt-list {
+  overflow: hidden;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .top-tt .tt-item {
+  position: relative;
+  float: left;
+  margin-right: 50px;
+  cursor: pointer;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .top-tt .select::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  height: 2px;
+  background-color: #feca52;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .top-tt .item-text {
+  font-size: 20px;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn {
+  padding: 20px 0;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .con-bx .text-item p {
+  margin-top: 6px;
+  text-indent: 2em;
+  line-height: 1.5;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .con-bx .text-item p:first-child {
+  margin-top: 0;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .lesson-item {
+  line-height: 40px;
+  cursor: pointer;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .lesson-item .text {
+  color: #808080;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .lesson-item .select {
+  font-size: 18px;
+  font-weight: bold;
+  color: #3784fa;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx {
+  padding: 0 20px;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-top {
+  line-height: 60px;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-top .avatar-img {
+  width: 40px;
+  height: 40px;
+  vertical-align: text-bottom;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-top .avatar-img img {
+  display: inline-block;
+  vertical-align: inherit;
+  width: 100%;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-top .avatar-img,
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-top .user-name,
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-top .school-name,
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-top .com-time {
+  display: inline-block;
+  margin-right: 10px;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-top .user-name {
+  font-size: 18px;
+  color: #feca52;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-top .avatar-img,
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-top .school-name,
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-top .com-time {
+  color: #808080;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-det {
+  overflow: hidden;
+  padding: 0 70px;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-det .stars-b {
+  float: left;
+  position: relative;
+  height: 20px;
+  width: 110px;
+  margin-right: 40px;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-det .stars-b .stars-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 100%;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-det .stars-b .stars-top .stars {
+  width: 100%;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-det .stars-b .stars-bot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 100%;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-det .stars-b .img-star {
+  display: inline-block;
+  width: 110px;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-det .stars-b .stars {
+  height: 100%;
+  background-size: 110px 20px;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-det .stars-text {
+  float: left;
+}
+#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-det .stars-text .text-con {
+  color: #5b5858;
+}
+.video-show-bx {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 999999;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.video-show-bx .close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 9999;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 4px;
+  background-color: #808080;
+  cursor: pointer;
+}
+.video-show-bx .close-btn .text {
+  padding: 0 15px;
+  font-size: 18px;
+  color: #fff;
+}
+.video-show-bx .palyer-wrap {
+  width: 100%;
+  height: 100%;
+}

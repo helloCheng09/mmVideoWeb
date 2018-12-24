@@ -3,6 +3,7 @@ import _ from 'lodash';
 import '../index.html'
 import '../center_lesson.html'
 import '../center_tec.html'
+import '../lesson_det.html'
 
 import '../css/common.css'
 import '../css/index.css';
@@ -10,8 +11,11 @@ import 'expose-loader?$!jquery'
 // import init from './init.js'
 
 // import init from './init.js'
+// 定义变量
+// const root = window.wangjiao;
 
-(function () {
+(function (root) {
+
     // 入口
     if (document.getElementById('indexWrp')) {
         console.log('首页');
@@ -24,13 +28,10 @@ import 'expose-loader?$!jquery'
             });
         })
 
-        // 首页游标回到0
-        // init.headerAniLink(0)
-
         $('.login-reg').on('click', () => {
             import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
                 var delegate = module.default;
-                // 首页游标回到0
+                // 打开登陆
                 delegate.showLogPage()
             });
         })
@@ -106,6 +107,47 @@ import 'expose-loader?$!jquery'
             });
         })
 
+    } else if (document.getElementById('detLesWrap')) {
+        console.log('课程详情')
+        $('.header_list').hover(function () {
+            import( /* webpackChunkName: "init" */ './init.js').then(module => {
+                var init = module.default;
+                // 首页游标回到 102
+                init.headerAniLink(102)
+            });
+        })
+
+        $('.login-reg').on('click', () => {
+            import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
+                var delegate = module.default;
+                // 打开登陆
+                delegate.showLogPage()
+            });
+        })
+
+        $('.det_tag_bx .tt-item').on('click', function () {
+            var _this = $(this)
+            import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
+                var delegate = module.default;
+                // 切换标签
+                var pnIndex = _this.index()
+                delegate.init({
+                    pnIndex: pnIndex
+                })
+            });
+        })
+        import( /* webpackChunkName: "init" */ './init.js').then(module => {
+            var init = module.default;
+            // //实例化播放器
+            init.detPlayer(root.videoSrc[0])
+        });
+
+        import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
+            var delegate = module.default;
+            // 打开登陆
+            delegate.init()
+        });
     }
 
-}());
+    console.log(root);
+}(window.wangjiao || (window.wangjiao = {})));

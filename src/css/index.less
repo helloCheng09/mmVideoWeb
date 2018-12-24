@@ -198,4 +198,309 @@
             background-color: #feca52;
         }
     }
+    .teacher-item {}
+    .teacher-list-bx {
+        overflow: hidden;
+        .teacher-list {
+            float: left;
+            font-size: 0;
+            overflow: hidden;
+            text-align: left;
+        }
+        .teacher-item {
+            float: left;
+            width: 25%;
+            margin: 0 auto;
+            padding: 5px;
+            .con-bx {
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                overflow: hidden;
+                background-color: #fff;
+                .tc-des-b {
+                    padding: 10px 5px;
+                }
+                .tc-name {
+                    margin-bottom: 6px;
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+                .tc-des {
+                    display: inline-block;
+                    height: 38px;
+                    .des-text {
+                        height: 38px;
+                        font-size: 16px;
+                        line-height: 1.2;
+                        color: #808080;
+                    }
+                }
+            }
+            .tc-pic {
+                height: 270px;
+                .pic-show {
+                    height: 100%;
+                    background-size: cover;
+                    background-position: 50%;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+}
+
+/**********课程详情 lesson_det.html*****************/
+
+#detLesWrap {
+    padding-bottom: 20px;
+    background-color: #f3f4f8;
+    .link-b-bar {
+        left: 102px;
+    }
+    .main-screen-b {
+        overflow: hidden;
+        border-radius: 5px;
+    }
+    .screen-b {
+        overflow: hidden;
+        width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff; // padding: 60px 0;
+    }
+    .main-show-lf {
+        position: relative;
+        float: left;
+        cursor: pointer;
+        .play-btn{
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            z-index: 99;
+            width: 100px;
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+        .player-bx {
+            width: 530px;
+            height: 300px;
+            margin-right: 20px;
+            border-radius: 5px;
+            background-size: cover;
+            background-position: 50%;
+            background-color: #949496;
+        }
+    }
+    .main-show-rt {
+        float: left;
+        width: 610px;
+        h3 {
+            font-weight: normal;
+            font-size: 30px;
+            line-height: 50px;
+        }
+        .des-info {
+            margin-bottom: 20px;
+            .info-text {
+                height: 70px;
+                line-height: 1.5;
+                color: #808080;
+            }
+        }
+        .pay-text {
+            margin-bottom: 40px;
+            span {
+                font-size: 24px;
+                color: #d7243c;
+            }
+        }
+        .btn-bx {
+            overflow: hidden;
+            .btn-item {
+                width: 165px;
+                height: 60px;
+                margin-right: 10px;
+                border-radius: 8px;
+                text-align: center;
+                line-height: 60px;
+                float: left;
+                color: #fff;
+                cursor: pointer;
+            }
+            .see {
+                background-color: #feca52;
+            }
+            .ping {
+                background-color: #3784fa;
+            }
+        }
+    }
+    .main-screen-b:nth-of-type(2) {
+        margin-top: 20px;
+        .top-tt {
+            user-select: none;
+            border-bottom: 1px solid #ddd;
+            .tt-list-bx {
+                line-height: 70px;
+            }
+            .tt-list {
+                overflow: hidden;
+            }
+            .tt-item {
+                position: relative;
+                float: left;
+                margin-right: 50px;
+                cursor: pointer;
+            }
+            .select::after {
+                content: '';
+                position: absolute;
+                bottom: 8px;
+                left: 0;
+                width: 100%;
+                z-index: 99;
+                height: 2px;
+                background-color: #feca52;
+            }
+            .item-text {
+                font-size: 20px;
+            }
+        }
+        .bot-pn {
+            padding: 20px 0;
+            .con-bx {
+                .text-item {
+                    p {
+                        margin-top: 6px;
+                        text-indent: 2em;
+                        line-height: 1.5;
+                    }
+                    p:first-child {
+                        margin-top: 0;
+                    }
+                }
+            }
+            .lesson-item {
+                line-height: 40px;
+                cursor: pointer;
+                .text {
+                    color: #808080;
+                }
+                .select {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #3784fa;
+                }
+            }
+            .ping-bx {
+                padding: 0 20px;
+                .ping-top {
+                    line-height: 60px;
+                    .avatar-img {
+                        width: 40px;
+                        height: 40px;
+                        vertical-align: text-bottom;
+                        img {
+                            display: inline-block;
+                            vertical-align: inherit;
+                            width: 100%;
+                        }
+                    }
+                    .avatar-img,
+                    .user-name,
+                    .school-name,
+                    .com-time {
+                        display: inline-block; // padding-bottom: 4px;
+                        margin-right: 10px;
+                        .text {}
+                    }
+                    .user-name {
+                        font-size: 18px;
+                        color: #feca52;
+                    }
+                    .avatar-img,
+                    .school-name,
+                    .com-time {
+                        color: #808080;
+                    }
+                }
+                .ping-det {
+                    overflow: hidden;
+                    padding: 0 70px;
+                    .stars-b {
+                        float: left;
+                        position: relative;
+                        height: 20px;
+                        width: 110px;
+                        margin-right: 40px;
+                        .stars-top {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 110px;
+                            height: 100%;
+                            .stars {
+                                width: 100%;
+                            }
+                        }
+                        .stars-bot {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 110px;
+                            height: 100%;
+                        }
+                        .img-star {
+                            display: inline-block;
+                            width: 110px;
+                        }
+                        .stars {
+                            height: 100%;
+                            background-size: 110px 20px;
+                            background-position: left;
+                            background-repeat: no-repeat;
+                        }
+                    }
+                    .stars-text {
+                        float: left;
+                        .text-con {
+                            color: #5b5858;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.video-show-bx {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 999999;
+    background-color: rgba(0, 0, 0, .6);
+    .close-btn{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        z-index: 9999;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 4px;
+        background-color: #808080;
+        cursor: pointer;
+        .text{
+            padding: 0 15px;
+            font-size: 18px;
+            color: #fff;
+        }
+    }
+    .palyer-wrap {
+        width: 100%;
+        height: 100%;
+    }
 }
