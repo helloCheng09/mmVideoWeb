@@ -5,6 +5,7 @@ import '../center_lesson.html'
 import '../center_tec.html'
 import '../lesson_det.html'
 import '../center_user.html'
+import '../det_msg.html'
 
 import '../css/common.css'
 import '../css/index.css';

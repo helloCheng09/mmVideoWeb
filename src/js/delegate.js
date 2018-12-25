@@ -109,19 +109,23 @@ Delegate.prototype = {
         console.log('登陆二维码')
     },
     chargeItemChoice: function (indexId) {
+        $('.charge_item_list').find('.select input').removeAttr('checked')
         $('.charge_item_list').find('.select').removeClass('select')
         this.addClass('select')
-
+        this.find('input').attr('checked', 'checked')
     },
     chargeSwith: function (indexId) {
         $('.charge_tag_list').find('.select').removeClass('select')
         this.addClass('select')
         $('.llb-toggle .rt_bt').hide()
         $('.llb-toggle .rt_bt').eq(indexId).show()
+
     },
     childSwitch: function (indexId) {
+        $('.s_child_tags').find('.select input').removeAttr('checked')
         $('.s_child_tags').find('.select').removeClass('select')
         this.addClass('select')
+        this.find("input[name='child']").attr('checked', 'checked')
     },
     userCenterComponent: function (indexId) {
         $('.uc_com_tag').find('.select').removeClass('select')
