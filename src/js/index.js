@@ -30,14 +30,14 @@ import 'expose-loader?$!jquery'
             });
         })
 
-        $('.login-reg').on('click', () => {
+        $('.btn_lr').on('click', (e) => {
+            var eventTarget = e.currentTarget
             import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
                 var delegate = module.default;
                 // 打开登陆
-                delegate.showLogPage()
+                delegate.showLogPage(eventTarget)
             });
         })
-
         // 实例轮播图1
         var mySwiper = new Swiper('#Swiper1', {
             // autoplay:true,
@@ -130,11 +130,13 @@ import 'expose-loader?$!jquery'
         import( /* webpackChunkName: "sendAjax" */ './sendAjax.js').then(module => {
             var sendAjax = module.default;
         });
+
         import( /* webpackChunkName: "init" */ './init.js').then(module => {
             var init = module.default;
             // //实例化播放器
             init.detPlayer()
         });
+
         $('.header_list').hover(function () {
             import( /* webpackChunkName: "init" */ './init.js').then(module => {
                 var init = module.default;
@@ -143,11 +145,12 @@ import 'expose-loader?$!jquery'
             });
         })
 
-        $('.login-reg').on('click', () => {
+        $('.btn_lr').on('click', (e) => {
+            var eventTarget = e.currentTarget
             import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
                 var delegate = module.default;
                 // 打开登陆
-                delegate.showLogPage()
+                delegate.showLogPage(eventTarget)
             });
         })
 
@@ -169,11 +172,6 @@ import 'expose-loader?$!jquery'
 
         $('#myPlayBtn').on('click', function (e) {
             var eventTarget = e.currentTarget
-            // import( /* webpackChunkName: "init" */ './init.js').then(module => {
-            //     var init = module.default;
-            //     // //实例化播放器
-            //     init.detPlayer(root.videoSrc[0])
-            // });
             setTimeout(() => {
                 import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
                     var delegate = module.default;
@@ -212,6 +210,46 @@ import 'expose-loader?$!jquery'
                 delegate.init(eventTarget)
             });
         })
+    } else if (document.getElementById('userWrap')) {
+        console.log('个人中心')
+        // 页面初始化
+        spaInit()
+
+        function spaInit() {}
+
+        $('.header_list').hover(function () {
+            import( /* webpackChunkName: "init" */ './init.js').then(module => {
+                var init = module.default;
+                // 首页游标回到 229
+                init.headerAniLink(204)
+            });
+        })
+
+        $('.btn_lr').on('click', (e) => {
+            var eventTarget = e.currentTarget
+            import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
+                var delegate = module.default;
+                // 打开登陆
+                delegate.showLogPage(eventTarget)
+            });
+        })
+
+        $('.uc_com_tag').on('click', function (e) {
+            var eventTarget = e.currentTarget
+            var _this = $(this)
+            import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
+                var delegate = module.default;
+                // 切换个人中心模块
+                var pnIndex = _this.index()
+                console.log(pnIndex)
+                delegate.init(eventTarget, {
+                    userCenterIndex: pnIndex
+                })
+            });
+        })
+
+
+
     }
     console.log(root);
 

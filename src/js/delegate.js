@@ -20,21 +20,55 @@ Delegate.prototype = {
 
             } else if (obj) {
                 if (obj.pnIndex) {
-                    console.log(898797979)
                     _this.switchLesDetTag(obj.pnIndex)
+                } else if (obj.userCenterIndex) {
+                    _this.userCenterComponent(obj.userCenterIndex)
                 }
+            } else if (eventTarget == $('.btn_lr')[0]) {
+                _this.showLogPage()
             }
             _this.isFirst = false
         }
         _this.clickEvent()
     },
-    /***展示登陆二维码 */
+
+    // 点击事件
     clickEvent: function () {
         var _this = this
+
+        // 个人中心 模块切换
+        $('.uc_com_tag').off()
+        $('.uc_com_tag').on('click', function () {
+            var pnIndex = $(this).index()
+            _this.userCenterComponent(pnIndex)
+        })
+        // 个人中心 切换学生
+        $('.centre_child').off()
+        $('.centre_child').on('click', function () {
+            var pnIndex = $(this).index()
+            var _arg = [pnIndex]
+            _this.childSwitch.apply($(this), _arg)
+        })
+
+        // 个人中心 流量币模块
+        $('.charge_com').off()
+        $('.charge_com').on('click', function () {
+            var pnIndex = $(this).index()
+            var _arg = [pnIndex]
+            _this.chargeSwith.apply($(this), _arg)
+        })
+
+        // 个人中心 选择充值数量
+        $('.charge_item').off()
+        $('.charge_item').on('click', function () {
+            var pnIndex = $(this).index()
+            var _arg = [pnIndex]
+            _this.chargeItemChoice.apply($(this), _arg)
+        })
         // 展示注册登录二维码弹窗
-        $('.btn-b .btn_lr').off()
-        $('.btn-b .btn_lr').on('click', function () {
-            _this.showFn()
+        $('.btn_lr').off()
+        $('.btn_lr').on('click', function () {
+            _this.showLogPage()
         })
         // 切换header tag
         $('.det_tag_bx .tt-item').off()
@@ -69,6 +103,31 @@ Delegate.prototype = {
             _this.showStars()
             return false
         })
+
+    },
+    showLogPage: function () {
+        console.log('登陆二维码')
+    },
+    chargeItemChoice: function (indexId) {
+        $('.charge_item_list').find('.select').removeClass('select')
+        this.addClass('select')
+
+    },
+    chargeSwith: function (indexId) {
+        $('.charge_tag_list').find('.select').removeClass('select')
+        this.addClass('select')
+        $('.llb-toggle .rt_bt').hide()
+        $('.llb-toggle .rt_bt').eq(indexId).show()
+    },
+    childSwitch: function (indexId) {
+        $('.s_child_tags').find('.select').removeClass('select')
+        this.addClass('select')
+    },
+    userCenterComponent: function (indexId) {
+        $('.uc_com_tag').find('.select').removeClass('select')
+        $('.uc_com_tag').eq(indexId).find('.text').addClass('select')
+        $('.rt_con').hide()
+        $('.rt_con').eq(indexId).show()
     },
     showStars: function () {
         var _this = this
@@ -81,7 +140,7 @@ Delegate.prototype = {
         } else {
             var url = window.mylib.url
             var pingfenHtml =
-            "\n                        <div class=\"star-tc\">\n                        <div class=\"stars-b stars_btn\">\n                            <div class=\"stars-top \">\n                                <div class=\"stars\" style=\"background-image:url(" + url +"img/starsShi.png)\"></div>\n                            </div>\n                            <div class=\"stars-bot\">\n                                <div class=\"stars\" style=\"background-image:url(" + url +"img/starsKong.png)\"></div>\n                            </div>\n                        </div>\n                        <div class=\"stars-text\">\n                            <div class=\"text-con\">\u8D85\u8D5E</div>\n                        </div>\n                    </div>\n                    <div class='pj-btn-b pj_btn_b'>\n                        <input class='pj-btn' type='button' value = '\u63D0\u4EA4'>\n                    </div>\n                    \n                        ";
+                "\n                        <div class=\"star-tc\">\n                        <div class=\"stars-b stars_btn\">\n                            <div class=\"stars-top \">\n                                <div class=\"stars\" style=\"background-image:url(" + url + "img/starsShi.png)\"></div>\n                            </div>\n                            <div class=\"stars-bot\">\n                                <div class=\"stars\" style=\"background-image:url(" + url + "img/starsKong.png)\"></div>\n                            </div>\n                        </div>\n                        <div class=\"stars-text\">\n                            <div class=\"text-con\">\u8D85\u8D5E</div>\n                        </div>\n                    </div>\n                    <div class='pj-btn-b pj_btn_b'>\n                        <input class='pj-btn' type='button' value = '\u63D0\u4EA4'>\n                    </div>\n                    \n                        ";
             layui.use('layer', function () {
                 var layer = layui.layer;
                 var index = layer.open({
@@ -230,9 +289,7 @@ Delegate.prototype = {
         $('.bot-wrap .bot-pn').eq(pnIndex).slideDown('fast')
 
     },
-    showFn: function () {
-        console.log('展示登陆二维码')
-    },
+
     // 选择分类
     choiceFl: function () {
         var __this = this

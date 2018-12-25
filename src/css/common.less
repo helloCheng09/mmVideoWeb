@@ -1,8 +1,7 @@
 @import './StyleDepend/mReset.css';
 .index-wrap {
     min-height: 100vh;
-    padding-top: 80px;
-    // padding-bottom: 225px;
+    padding-top: 80px; // padding-bottom: 225px;
 }
 
 /**********导航*****************/
@@ -367,9 +366,9 @@
                     margin-right: 4px;
                     color: #feca52;
                 }
-                .video-time{
+                .video-time {
                     float: right;
-                    .time-text{
+                    .time-text {
                         color: #888;
                     }
                 }
@@ -437,28 +436,26 @@
             height: 130px;
             .top-l {
                 float: left;
-                .left-list{
+                .left-list {
                     line-height: 130px;
                     overflow: hidden;
                 }
-                .list-item{
+                .list-item {
                     display: inline-block;
                     vertical-align: middle;
                     margin-right: 50px;
                 }
-                .link-item{
-                    .link-b{
-
-                    }
-                    .link-icon{
+                .link-item {
+                    .link-b {}
+                    .link-icon {
                         display: inline-block;
-                        margin-right:4px;
+                        margin-right: 4px;
                         vertical-align: middle;
                     }
                     img {
                         display: inline-block;
                     }
-                    .link-text{
+                    .link-text {
                         display: inline-block;
                         color: #8a8a8a;
                     }
@@ -467,12 +464,12 @@
             .bot-right {
                 float: right;
                 line-height: 130px;
-                .link-blog{
+                .link-blog {
                     float: right;
-                    a{
+                    a {
                         display: inline-block;
                     }
-                    .blog-img{
+                    .blog-img {
                         padding: 0 20px;
                         img {
                             display: inline-block;
@@ -486,9 +483,9 @@
             line-height: 94px;
             height: 95px;
             text-align: center;
-            border-top: 1px solid #333; 
-            .bot-text{
-               color: #8a8a8a;
+            border-top: 1px solid #333;
+            .bot-text {
+                color: #8a8a8a;
             }
         }
     }
@@ -496,40 +493,153 @@
 
 /**********视频详情路径*****************/
 
-.page-link-pn{
+.page-link-pn {
     margin: 20px 0;
-    .page-link{
+    .page-link {
         width: 1200px;
         margin: 0 auto;
-        span{
+        span {
             display: inline-block;
             padding: 0 4px;
             font-size: 14px;
             color: #808080;
         }
-        span:last-child{
+        span:last-child {
             color: #3784fa;
         }
     }
 }
 
+/*******视频详情 评分弹窗***********/
 
+.star-p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.star-tc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 80px 30px;
+}
 
+.pj-btn-b {
+    padding: 0 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    img {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+    }
+}
 
+.pj-btn {
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background-color: #feca52;
+    color: #ffff;
+}
 
+.stars-b {
+    position: relative;
+    height: 20px;
+    width: 110px;
+    margin-right: 40px;
+    .stars-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 110px;
+        height: 100%;
+        .stars {
+            width: 100%;
+        }
+    }
+    .stars-bot {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 110px;
+        height: 100%;
+    }
+    .img-star {
+        display: inline-block;
+        width: 110px;
+    }
+    .stars {
+        height: 100%;
+        background-size: 110px 20px;
+        background-position: left;
+        background-repeat: no-repeat;
+    }
+}
 
+.stars-text {
+    .text-con {
+        color: #5b5858;
+    }
+}
 
+/*******充值卡片 ***********/
 
-
-
-
-
-
-
-
-
-
-
-
-
+.charge-list-bx {
+    margin-top: 20px;
+    padding: 0 120px;
+    .card-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .card-item {
+            width: 33%;
+            margin-bottom: 10px;
+            text-align: center;
+            border-radius: 5px;
+            border: solid 2px #3783fa;
+            cursor: pointer;
+            .card-det {
+                dd {
+                    line-height: 1.5;
+                    color: #3783fa;
+                }
+                .money-num {
+                    line-height: 1.5;
+                    color: #666666;
+                }
+            }
+            .zs-text {
+                font-size: 14px;
+                line-height: 2;
+                color: rgb(255, 109, 109);
+            }
+        }
+        .card-item-b {
+            padding: 5px 0;
+        }
+        .select {
+            background-color: #3783fa;
+            .card-det {
+                dd {
+                    line-height: 1.5;
+                    color: #fff;
+                }
+                .money-num {
+                    line-height: 1.5;
+                    color: #fff;
+                }
+            }
+            .zs-text {
+                font-size: 14px;
+                line-height: 2;
+                color: #fff;
+            }
+        }
+    }
+}

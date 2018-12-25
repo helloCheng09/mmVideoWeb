@@ -476,3 +476,122 @@
 .page-link-pn .page-link span:last-child {
   color: #3784fa;
 }
+/*******视频详情 评分弹窗***********/
+.star-p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.star-tc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 80px 30px;
+}
+.pj-btn-b {
+  padding: 0 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.pj-btn-b img {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+.pj-btn {
+  width: 100%;
+  height: 42px;
+  line-height: 42px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background-color: #feca52;
+  color: #ffff;
+}
+.stars-b {
+  position: relative;
+  height: 20px;
+  width: 110px;
+  margin-right: 40px;
+}
+.stars-b .stars-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 100%;
+}
+.stars-b .stars-top .stars {
+  width: 100%;
+}
+.stars-b .stars-bot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 100%;
+}
+.stars-b .img-star {
+  display: inline-block;
+  width: 110px;
+}
+.stars-b .stars {
+  height: 100%;
+  background-size: 110px 20px;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.stars-text .text-con {
+  color: #5b5858;
+}
+/*******充值卡片 ***********/
+.charge-list-bx {
+  margin-top: 20px;
+  padding: 0 120px;
+}
+.charge-list-bx .card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.charge-list-bx .card-list .card-item {
+  width: 33%;
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 5px;
+  border: solid 2px #3783fa;
+  cursor: pointer;
+}
+.charge-list-bx .card-list .card-item .card-det dd {
+  line-height: 1.5;
+  color: #3783fa;
+}
+.charge-list-bx .card-list .card-item .card-det .money-num {
+  line-height: 1.5;
+  color: #666666;
+}
+.charge-list-bx .card-list .card-item .zs-text {
+  font-size: 14px;
+  line-height: 2;
+  color: #ff6d6d;
+}
+.charge-list-bx .card-list .card-item-b {
+  padding: 5px 0;
+}
+.charge-list-bx .card-list .select {
+  background-color: #3783fa;
+}
+.charge-list-bx .card-list .select .card-det dd {
+  line-height: 1.5;
+  color: #fff;
+}
+.charge-list-bx .card-list .select .card-det .money-num {
+  line-height: 1.5;
+  color: #fff;
+}
+.charge-list-bx .card-list .select .zs-text {
+  font-size: 14px;
+  line-height: 2;
+  color: #fff;
+}

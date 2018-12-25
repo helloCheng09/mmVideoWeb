@@ -44,9 +44,9 @@
                                 </a>
                             </li>
                             <li class="list-item header_nav_tag">
-                                <a href="./center_tec.html" class="nav-link">
+                                <a href="./center_user.html" class="nav-link">
                                     <div class="text">
-                                        名师
+                                        个人
                                     </div>
                                 </a>
                             </li>
@@ -128,7 +128,7 @@
                                         <div>加入学习</div>
                                     </div>
                                     <div class="charge-btn">
-                                        <a href="./charge.html" class="charge_link">充流量币</a>
+                                        <a href="./center_user.html?method=charge" class="charge_link">充流量币</a>
                                     </div>
                                 </div>
                             </div>
@@ -180,12 +180,12 @@
                         <div class="tt-list-bx">
                             <ul class="tt-list det_tag_bx">
                                 <li class="tt-item">
-                                    <div class="item-text select">
+                                    <div class="item-text ">
                                         介 绍
                                     </div>
                                 </li>
                                 <li class="tt-item">
-                                    <div class="item-text">
+                                    <div class="item-text select">
                                         目 录
                                     </div>
                                 </li>
@@ -198,8 +198,8 @@
                         </div>
                     </div>
                     <div class="bot-wrap">
-                        <div class="bot-pn" style="display:block">
-                            <div class="con-bx">
+                        <div class="bot-pn" style="display:none">
+                            <div class="con-bx" >
                                 <div class="text-item">
                                     <p>
                                         《大学英语》以话题为内容，以口语技能为牵引，从纵深两个维度上提高学员对英语口语的实际应用能力。本视频课程共20单元，分20课时讲授，内容广泛涵盖了出国学习和生活中所涉及的主要话题。课程引入雅思考试对口语能力的界定标准和培养方法，在基本日常对话、独立长段输出、多人讨论辩论三个层次上逐步进阶性培养英语口语能力，既为今后有留学计划的学员做应试准备，又全面提高学员日常英语口语输出能力。
@@ -223,7 +223,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bot-pn" style="display:none">
+                        <div class="bot-pn">
                             <div class="lesson-list-bx">
                                 <ul class="lesson-list">
                                     <li class="lesson-item">
@@ -391,10 +391,9 @@
 
 </html>
 <script>
-    window.wangjiao = {}
-    window.wangjiao.videoSrc = []
-    var root = window.wangjiao
-
+    window.mylib = {}
+    window.mylib.videoSrc = []
+    var root = window.mylib
     // 充值页面
     var chargeSrc = 'http://www.mamawozaizhe.com/videos/videos/charge.html'
     var lessonGet = 'http://www.mamawozaizhe.com/videos/videos/videos_join.html'

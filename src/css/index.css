@@ -254,6 +254,7 @@
   width: 100px;
   overflow: hidden;
   border-radius: 8px;
+  display: none;
   cursor: pointer;
 }
 #detLesWrap .main-show-lf .play-btn img {
@@ -279,6 +280,7 @@
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
+  display: none;
 }
 #detLesWrap .main-show-lf .prevent-play .btn-bx {
   position: absolute;
@@ -453,6 +455,7 @@
 #detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-det {
   overflow: hidden;
   padding: 0 70px;
+  width: 30%;
 }
 #detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-det .stars-b {
   float: left;
@@ -524,6 +527,236 @@
   height: 100%;
 }
 .layui-layer-btn .layui-layer-btn0 {
-  border-color: #3784fa!important;
-  background-color: #3784fa!important;
+  border-color: #3784fa !important;
+  background-color: #3784fa !important;
+}
+/**********充值 charge.html*****************/
+#userWrap {
+  padding-bottom: 20px;
+  background-color: #f3f4f8;
+}
+#userWrap .link-b-bar {
+  left: 204px;
+}
+#userWrap .main-screen-b {
+  overflow: hidden;
+  border-radius: 5px;
+}
+#userWrap .screen-b {
+  overflow: hidden;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+#userWrap .cg-lf {
+  float: left;
+  width: 230px;
+}
+#userWrap .cg-lf .lf-ls-tp {
+  padding: 40px;
+  text-align: center;
+  background-color: #fff;
+}
+#userWrap .cg-lf .lf-ls-tp .avatar-bx {
+  width: 86px;
+  height: 86px;
+  margin: 0 auto;
+  border-radius: 100%;
+  overflow: hidden;
+}
+#userWrap .cg-lf .lf-ls-tp .avatar-bx img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#userWrap .cg-lf .lf-ls-tp .usrename-bx .name-text {
+  font-size: 18px;
+  line-height: 2;
+}
+#userWrap .cg-lf .rt-ls-bt {
+  margin-top: 20px;
+  background-color: #fff;
+}
+#userWrap .cg-lf .rt-ls-bt .list-item {
+  padding: 0 20px;
+  line-height: 50px;
+  border-bottom: 1px solid #e9e9e9;
+  cursor: pointer;
+}
+#userWrap .cg-lf .rt-ls-bt .list-item .text {
+  position: relative;
+}
+#userWrap .cg-lf .rt-ls-bt .list-item .select::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 70%;
+  background-color: #feca52;
+}
+#userWrap .cg-rt {
+  width: 910px;
+  float: right;
+}
+#userWrap .cg-rt .rt-con .rt-tp {
+  height: 70px;
+  line-height: 70px;
+  padding: 0 20px;
+  background-color: #fff;
+}
+#userWrap .cg-rt .rt-con .rt-tp .tp-text {
+  font-size: 18px;
+}
+#userWrap .cg-rt .rt-con .rt-bt {
+  margin-top: 20px;
+  padding: 0 20px 20px;
+  background-color: #fff;
+}
+#userWrap .cg-rt .rt-con .rt-bt .tt-bx {
+  line-height: 40px;
+}
+#userWrap .cg-rt .rt-con .rt-bt .num-show {
+  text-align: center;
+  position: relative;
+}
+#userWrap .cg-rt .rt-con .rt-bt .num-show .num-bx {
+  position: relative;
+  display: inline-block;
+}
+#userWrap .cg-rt .rt-con .rt-bt .num-show .num-text {
+  height: 0;
+  padding: 0 40px;
+  padding-bottom: calc(100% - 16px);
+  border-radius: 50%;
+  border: 8px solid rgba(240, 212, 89, 0.685);
+  font-size: 32px;
+  color: transparent;
+}
+#userWrap .cg-rt .rt-con .rt-bt .num-show .show-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+  color: #3783fa;
+}
+#userWrap .cg-rt .rt-con .rt-bt .pm-show {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 30px;
+}
+#userWrap .cg-rt .rt-con .rt-bt .pm-show em {
+  margin: 0 4px;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: bold;
+  color: gold;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(2) .rt-tp,
+#userWrap .cg-rt .rt-con:nth-of-type(3) .rt-tp {
+  padding: 0 10px;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(2) .rt-tp .tp-text,
+#userWrap .cg-rt .rt-con:nth-of-type(3) .rt-tp .tp-text {
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+  cursor: pointer;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(2) .rt-tp .select:after,
+#userWrap .cg-rt .rt-con:nth-of-type(3) .rt-tp .select:after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 3px;
+  background-color: gold;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(2) .num-show .num-text,
+#userWrap .cg-rt .rt-con:nth-of-type(3) .num-show .num-text {
+  border-color: #94bfff !important;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(2) .num-show .show-text,
+#userWrap .cg-rt .rt-con:nth-of-type(3) .num-show .show-text {
+  color: #feca52 !important;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(2) .red-warning,
+#userWrap .cg-rt .rt-con:nth-of-type(3) .red-warning {
+  padding: 0 20px;
+  color: red;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(4) .main-video-b .video-list-b {
+  padding-top: 10px;
+  background-color: #fff;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(4) .main-video-b .video-item {
+  width: 33.33% !important;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(4) .main-video-b .video-link {
+  margin-bottom: 10px;
+  background-color: #f3f4f8;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(2) .rt-bx {
+  margin-top: 20px;
+  min-height: 385px;
+  background-color: #fff;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(2) .rt-bx .list-child {
+  padding: 50px 80px;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(2) .rt-bx .list-child .child-item {
+  padding-left: 20px;
+  line-height: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(2) .rt-bx .list-child .select .item-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: gold;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(2) .rt-bx .list-child .child-item:hover {
+  background-color: #e3e6e9;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(2) .rt-bx .list-child .item-btn {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 1px solid gold;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(2) .rt-bx .list-child .name-text {
+  margin-right: 40px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(2) .rt-bx .list-child .class-text {
+  font-size: 18px;
+  vertical-align: middle;
+  color: #808080;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(2) .rt-bx .btn-bx {
+  margin-left: 300px;
+  cursor: pointer;
+}
+#userWrap .cg-rt .rt-con:nth-of-type(2) .rt-bx .btn-bx input {
+  padding: 0 20px;
+  line-height: 2;
+  border: none;
+  outline: none;
+  background-color: #3783fa;
+  color: #fff;
 }
