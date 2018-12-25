@@ -62,6 +62,8 @@
     var sendAjax = new SendAjax()
     // 挂载全局
     root.sendAjax = sendAjax
+
     // 输出
     module.exports = sendAjax
+    console.log(root.sendAjax);
 }(window.mylib || (window.mylib = {})));

@@ -14,8 +14,15 @@ Delegate.prototype = {
             } else if (eventTarget == $('#myPlayBtn2')[0] || eventTarget == $('#myPlayBtn')[0]) {
                 console.log(2134)
                 _this.showVideo()
+
             } else if (eventTarget == $('.join_btn')[0]) {
                 _this.jionStudy()
+
+            } else if (obj) {
+                if (obj.pnIndex) {
+                    console.log(898797979)
+                    _this.switchLesDetTag(obj.pnIndex)
+                }
             }
             _this.isFirst = false
         }
@@ -62,9 +69,6 @@ Delegate.prototype = {
             _this.showStars()
             return false
         })
-
-
-
     },
     showStars: function () {
         var _this = this
@@ -75,6 +79,9 @@ Delegate.prototype = {
             })
             return false
         } else {
+            var url = window.mylib.url
+            var pingfenHtml =
+            "\n                        <div class=\"star-tc\">\n                        <div class=\"stars-b stars_btn\">\n                            <div class=\"stars-top \">\n                                <div class=\"stars\" style=\"background-image:url(" + url +"img/starsShi.png)\"></div>\n                            </div>\n                            <div class=\"stars-bot\">\n                                <div class=\"stars\" style=\"background-image:url(" + url +"img/starsKong.png)\"></div>\n                            </div>\n                        </div>\n                        <div class=\"stars-text\">\n                            <div class=\"text-con\">\u8D85\u8D5E</div>\n                        </div>\n                    </div>\n                    <div class='pj-btn-b pj_btn_b'>\n                        <input class='pj-btn' type='button' value = '\u63D0\u4EA4'>\n                    </div>\n                    \n                        ";
             layui.use('layer', function () {
                 var layer = layui.layer;
                 var index = layer.open({
@@ -199,7 +206,7 @@ Delegate.prototype = {
     closeVideo: function () {
         console.log(root)
         root.player.pause()
-        $('#videoWrap').slideUp('fast')
+        $('#videoWrap').slideUp('250')
     },
     // 播放视频
     showVideo: function () {
@@ -211,7 +218,7 @@ Delegate.prototype = {
             })
             return false
         } else {
-            $('#videoWrap').slideDown('fast')
+            $('#videoWrap').slideDown('250')
         }
     },
     // 课程详情菜单切换
@@ -220,7 +227,7 @@ Delegate.prototype = {
         $('.det_tag_bx .tt-item').find('.select').removeClass('select')
         $('.det_tag_bx .tt-item').eq(pnIndex).find('.item-text').addClass('select')
         $('.bot-wrap .bot-pn').hide()
-        $('.bot-wrap .bot-pn').eq(pnIndex).slideDown()
+        $('.bot-wrap .bot-pn').eq(pnIndex).slideDown('fast')
 
     },
     showFn: function () {

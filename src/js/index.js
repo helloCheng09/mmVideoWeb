@@ -4,7 +4,7 @@ import '../index.html'
 import '../center_lesson.html'
 import '../center_tec.html'
 import '../lesson_det.html'
-import '../charge.html'
+import '../center_user.html'
 
 import '../css/common.css'
 import '../css/index.css';
@@ -16,7 +16,8 @@ import 'expose-loader?$!jquery'
 // const root = window.mylib;
 
 (function (root) {
-
+    // 配置
+    root.url = './' //根目录
     // 入口
     if (document.getElementById('indexWrp')) {
         console.log('首页');
@@ -129,6 +130,11 @@ import 'expose-loader?$!jquery'
         import( /* webpackChunkName: "sendAjax" */ './sendAjax.js').then(module => {
             var sendAjax = module.default;
         });
+        import( /* webpackChunkName: "init" */ './init.js').then(module => {
+            var init = module.default;
+            // //实例化播放器
+            init.detPlayer()
+        });
         $('.header_list').hover(function () {
             import( /* webpackChunkName: "init" */ './init.js').then(module => {
                 var init = module.default;
@@ -145,13 +151,17 @@ import 'expose-loader?$!jquery'
             });
         })
 
-        $('.det_tag_bx .tt-item').on('click', function () {
+        $('.det_tag_bx .tt-item').on('click', function (e) {
             var _this = $(this)
+            console.log(e)
+            var eventTarget = e.currentTarget
+            console.log(eventTarget)
             import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
                 var delegate = module.default;
                 // 切换标签
                 var pnIndex = _this.index()
-                delegate.init({
+                console.log(pnIndex)
+                delegate.init(eventTarget, {
                     pnIndex: pnIndex
                 })
             });
@@ -159,11 +169,11 @@ import 'expose-loader?$!jquery'
 
         $('#myPlayBtn').on('click', function (e) {
             var eventTarget = e.currentTarget
-            import( /* webpackChunkName: "init" */ './init.js').then(module => {
-                var init = module.default;
-                // //实例化播放器
-                init.detPlayer(root.videoSrc[0])
-            });
+            // import( /* webpackChunkName: "init" */ './init.js').then(module => {
+            //     var init = module.default;
+            //     // //实例化播放器
+            //     init.detPlayer(root.videoSrc[0])
+            // });
             setTimeout(() => {
                 import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
                     var delegate = module.default;
@@ -175,11 +185,7 @@ import 'expose-loader?$!jquery'
 
         $('#myPlayBtn2').on('click', function (e) {
             var eventTarget = e.currentTarget
-            import( /* webpackChunkName: "init" */ './init.js').then(module => {
-                var init = module.default;
-                // //实例化播放器
-                init.detPlayer(root.videoSrc[0])
-            });
+
             setTimeout(() => {
                 import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
                     var delegate = module.default;
