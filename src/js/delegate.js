@@ -11,35 +11,15 @@ Delegate.prototype = {
         if (_this.isFirst) {
             if (eventTarget == $('.pf_btn')[0]) {
                 _this.showStars()
-            } else if (eventTarget == $('#myPlayBtn2')[0]) {
+            } else if (eventTarget == $('#myPlayBtn2')[0] || eventTarget == $('#myPlayBtn')[0]) {
                 console.log(2134)
-                if (root.is_buy_lesson) {
-                    _this.showVideo()
-                } else {
-                    _this.jionStudy()
-                }
+                _this.showVideo()
+            } else if (eventTarget == $('.join_btn')[0]) {
+                _this.jionStudy()
             }
             _this.isFirst = false
         }
         _this.clickEvent()
-
-        // if (_this.isFirst) {
-        //     _this.showFn()
-        //     console.log(obj)
-        //     if (obj) {
-        //         if (obj.pnIndex) {
-        //             _this.switchLesDetTag(obj.pnIndex)
-        //         }
-        //     } else {
-        //         if (root.is_buy_lesson) {
-        //             _this.showVideo()
-        //         } else {
-        //             _this.jionStudy()
-        //         }
-        //     }
-        //     console.log(_this.isFirst)
-        // }
-       
     },
     /***展示登陆二维码 */
     clickEvent: function () {
@@ -87,6 +67,7 @@ Delegate.prototype = {
 
     },
     showStars: function () {
+        var _this = this
         if (root.is_buy_lesson != 1) {
             layer.open({
                 title: '提示',
@@ -101,10 +82,103 @@ Delegate.prototype = {
                     shadeClose: true,
                     content: pingfenHtml //这里content是一个普通的String
                 });
-                root.clickStart()
+                _this.clickStart()
                 layer.title('课程评分', index)
             });
         }
+    },
+    clickStart: function () {
+        var _this = this
+        var fansid = lessonData.fansid
+        var videos_id = lessonData.videos_id
+        var dataObj = {
+            fansid: fansid,
+            videos_id: videos_id,
+            scores: 10,
+            content: "超赞",
+        }
+        console.log(dataObj)
+        _this.subPf(dataObj)
+        $('.stars_btn').on("click", function (e) {
+            var holyWidth = Number($(this).css('width').split('p')[0])
+            var clickWidth = e.offsetX
+            var percent = Math.ceil(clickWidth / holyWidth * 100)
+            var yushu = percent % 10
+
+            if (0 <= percent && percent < 10) {
+                percent = 0
+            } else if (90 < percent && percent <= 100) {
+                percent = 100
+            } else {
+                percent = percent - yushu + 10
+            }
+
+            var pfText = ''
+            // 一般 还行 不错 满意 超赞
+            switch (percent) {
+                case 0:
+                    pfText = "一般"
+                    break;
+                case 10:
+                    pfText = "一般"
+                    break;
+                case 20:
+                    pfText = "还行"
+                    break;
+                case 30:
+                    pfText = "还行"
+                    break;
+                case 40:
+                    pfText = "不错"
+                    break;
+                case 10:
+                    pfText = "不错"
+                    break;
+                case 50:
+                    pfText = "不错"
+                    break;
+                case 60:
+                    pfText = "满意"
+                    break;
+                case 70:
+                    pfText = "满意"
+                    break;
+                case 80:
+                    pfText = "满意"
+                    break;
+                case 90:
+                    pfText = "满意"
+                    break;
+                case 100:
+                    pfText = "超赞"
+                    break;
+
+            }
+            // 讲0 -100转为 0 -10
+            var scores = percent / 10
+            $(".star-tc .text-con").text(pfText)
+            var eleWidth = holyWidth * percent / 100 + 'px'
+            // console.log( holyWidth * percent / 100 + 'px')
+            $(".stars_btn .stars-top .stars").css("width", eleWidth)
+            // 获取评分数据传后台
+            dataObj.scores = scores
+            dataObj.content = pfText
+            console.log(dataObj)
+            _this.subPf(dataObj)
+            return false
+        })
+    },
+
+    subPf: function (dataObj) {
+        // 提交评分
+        $(".pj-btn-b .pj-btn").off()
+        $(".pj-btn-b .pj-btn").on("click", function () {
+            // pfUrl定义在html
+            var sendAjax = root.sendAjax
+            sendAjax.init()
+            return false;
+            // root.modeAjaxPostSec(pfUrl, data)
+        })
     },
     jionStudy: function () {
         var layer = layui.layer;

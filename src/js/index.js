@@ -9,11 +9,11 @@ import '../charge.html'
 import '../css/common.css'
 import '../css/index.css';
 import 'expose-loader?$!jquery'
-// import init from './init.js'
+// import sendAjax from './sendAjax'
 
 // import init from './init.js'
 // 定义变量
-// const root = window.wangjiao;
+// const root = window.mylib;
 
 (function (root) {
 
@@ -110,6 +110,25 @@ import 'expose-loader?$!jquery'
 
     } else if (document.getElementById('detLesWrap')) {
         console.log('课程详情')
+        // 页面初始化
+        spaInit()
+
+        function spaInit() {
+            if (root.is_buy_lesson) {
+                // 隐藏遮罩
+                $('.pre_play_b').hide()
+                // 显示播放按钮
+                $('.main_play_btn').show()
+            } else {
+                $('.pre_play_b').show()
+                $('.main_play_btn').eq(0).hide()
+            }
+        }
+
+        // lazy load
+        import( /* webpackChunkName: "sendAjax" */ './sendAjax.js').then(module => {
+            var sendAjax = module.default;
+        });
         $('.header_list').hover(function () {
             import( /* webpackChunkName: "init" */ './init.js').then(module => {
                 var init = module.default;
@@ -139,7 +158,7 @@ import 'expose-loader?$!jquery'
         })
 
         $('#myPlayBtn').on('click', function (e) {
-            var eventTarget = e.currentTarget 
+            var eventTarget = e.currentTarget
             import( /* webpackChunkName: "init" */ './init.js').then(module => {
                 var init = module.default;
                 // //实例化播放器
@@ -153,9 +172,9 @@ import 'expose-loader?$!jquery'
                 });
             }, 0);
         })
-        
+
         $('#myPlayBtn2').on('click', function (e) {
-            var eventTarget = e.currentTarget 
+            var eventTarget = e.currentTarget
             import( /* webpackChunkName: "init" */ './init.js').then(module => {
                 var init = module.default;
                 // //实例化播放器
@@ -170,16 +189,8 @@ import 'expose-loader?$!jquery'
             }, 0);
         })
 
-        $('.join_btn').on('click', function () {
-            import( /* webpackChunkName: "init" */ './init.js').then(module => {
-                var init = module.default;
-                // //实例化播放器
-                init.detPlayer(root.videoSrc[0])
-            });
-        })
-
-        $('.pf_btn').on('click', function (e) {
-            var eventTarget = e.currentTarget 
+        $('.join_btn').on('click', function (e) {
+            var eventTarget = e.currentTarget
             import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
                 var delegate = module.default;
                 // 打开登陆
@@ -187,11 +198,15 @@ import 'expose-loader?$!jquery'
             });
         })
 
-
-
-
-
+        $('.pf_btn').on('click', function (e) {
+            var eventTarget = e.currentTarget
+            import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
+                var delegate = module.default;
+                // 打开登陆
+                delegate.init(eventTarget)
+            });
+        })
     }
-
     console.log(root);
-}(window.wangjiao || (window.wangjiao = {})));
+
+}(window.mylib || (window.mylib = {})));
