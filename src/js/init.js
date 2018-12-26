@@ -49,7 +49,7 @@ module.exports = {
         if (!root.is_buy_lesson) {
             return false;
         } else {
-            console.log(root);
+            // console.log(root);
             var videoSrc = root.videoSrc[0]
             var timer = setTimeout(() => {
                 root.player = new Aliplayer({
@@ -169,7 +169,7 @@ module.exports = {
                         }
                     ]
                 }, function (player) {
-                    console.log("播放器创建了。");
+                    // console.log("播放器创建了。");
                 });
             }, 250);
         }
@@ -178,15 +178,15 @@ module.exports = {
     // 初始化 课程中心 课程分类 课程列表
     initLesCenter: function (cateId) {
         var root = window.mylib
-        console.log('初始化课程分类')
+        // console.log('初始化课程分类')
         if (cateId == ''){
-            console.log('无选择')
+            // console.log('无选择')
             // 发GET请求 后台 获取所有分类
-            console.log(root.sendAjax)
-            var sourceDelegate = 'centerLes'
-            var url = root.lesCateUrl
+            // console.log(root.sendAjax)
             var cate_id = $('.select_fl:first').find('.fl_tag:first').attr('data-id')
-            console.log(cate_id)
+
+            var url = root.lesCateUrl
+            var sourceDelegate = 'centerLes'
             var data = {
                 cate_id:cate_id
             }

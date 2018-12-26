@@ -12,7 +12,7 @@ Delegate.prototype = {
             if (eventTarget == $('.pf_btn')[0]) {
                 _this.showStars()
             } else if (eventTarget == $('#myPlayBtn2')[0] || eventTarget == $('#myPlayBtn')[0]) {
-                console.log(2134)
+                // console.log(2134)
                 _this.showVideo()
 
             } else if (eventTarget == $('.join_btn')[0]) {
@@ -106,7 +106,7 @@ Delegate.prototype = {
 
     },
     showLogPage: function () {
-        console.log('登陆二维码')
+        // console.log('登陆二维码')
     },
     chargeItemChoice: function (indexId) {
         $('.charge_item_list').find('.select input').removeAttr('checked')
@@ -239,7 +239,6 @@ Delegate.prototype = {
             return false
         })
     },
-
     subPf: function (dataObj) {
         // 提交评分
         $(".pj-btn-b .pj-btn").off()
@@ -248,7 +247,6 @@ Delegate.prototype = {
             var sendAjax = root.sendAjax
             sendAjax.init()
             return false;
-            // root.modeAjaxPostSec(pfUrl, data)
         })
     },
     jionStudy: function () {
@@ -268,7 +266,7 @@ Delegate.prototype = {
     },
     // 关闭播放
     closeVideo: function () {
-        console.log(root)
+        // console.log(root)
         root.player.pause()
         $('#videoWrap').slideUp('250')
     },
@@ -287,7 +285,7 @@ Delegate.prototype = {
     },
     // 课程详情菜单切换
     switchLesDetTag: function (pnIndex) {
-        console.log(pnIndex)
+        // console.log(pnIndex)
         $('.det_tag_bx .tt-item').find('.select').removeClass('select')
         $('.det_tag_bx .tt-item').eq(pnIndex).find('.item-text').addClass('select')
         $('.bot-wrap .bot-pn').hide()
@@ -312,20 +310,27 @@ Delegate.prototype = {
     },
     // 切换 select 
     toggleSelect: function (btnPanel, styleEle) {
-        console.log(btnPanel, styleEle)
+        // console.log(btnPanel, styleEle)
         $(this).parent(btnPanel).find('.select').toggleClass('select')
         $(this).find(styleEle).toggleClass('select')
     },
     showChoicFl: function () {
         var _this = $(this)
+        var root = window.mylib
         var dataId = _this.data('id')
         var flText = _this.children('.fenlei-text').text().replace(/^\s+|\s+$/g, "")
-        console.log(dataId, flText)
+        // console.log(dataId, flText)
+        var url = root.lesCateUrl
+        var sourceDelegate = 'centerLes'
+        var data = {
+            cate_id: dataId
+        }
+        root.sendAjax.getMd(sourceDelegate, url, data)
     }
 }
 
 // 实例化
 var del = new Delegate()
-
+window.mylib.del = del
 // 输出
 module.exports = del

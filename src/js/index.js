@@ -16,20 +16,21 @@ import 'expose-loader?$!jquery'
 // 定义变量
 // const root = window.mylib;
 
+
 (function (root) {
     // 配置
     // 生产环境
     root.ajaxUrl = 'http://www.mamawozaizhe.com/videos/videosweb/'
     root.url = '/public/yz/videos/web/'
     root.lesCateUrl = root.ajaxUrl + 'lessonCate'
-    root.lesListUrl = root.ajaxUrl + 'cate_child'
+    root.lesListUrl = root.ajaxUrl + 'lessonList'
     // 开发环境
-    root.url = './'                                     
+    root.url = './'
     root.lesCateUrl = 'https://www.easy-mock.com/mock/5b9c69299c53ef2876d29227/list/lessonCate'
-    root.lesListUrl = 'https://www.easy-mock.com/mock/5b9c69299c53ef2876d29227/list/lessonList'
+    root.lesListUrl = '../api/lesList.json'
     // 入口
     if (document.getElementById('indexWrp')) {
-        // console.log('首页');
+        console.log('首页');
 
         $('.header_list').hover(function () {
             import( /* webpackChunkName: "init" */ './init.js').then(module => {
@@ -81,9 +82,19 @@ import 'expose-loader?$!jquery'
         })
 
         // lazy load
+        import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
+            var delegate = module.default;
+            // 切换分类
+            delegate.choiceFl()
+        });
+
+        import( /* webpackChunkName: "renderData" */ './renderData.js').then(module => {
+            var renderData = module.default;
+        });
         import( /* webpackChunkName: "sendAjax" */ './sendAjax.js').then(module => {
             var sendAjax = module.default;
         });
+
         // 引入初始化
         import( /* webpackChunkName: "init" */ './init.js').then(module => {
             var init = module.default;
@@ -94,21 +105,6 @@ import 'expose-loader?$!jquery'
             init.initLesCenter(cateId)
         });
 
-        // $('.header_list').hover(function () {
-        //     import( /* webpackChunkName: "init" */ './init.js').then(module => {
-        //         var init = module.default;
-        //         // 首页游标回到 102
-        //         init.headerAniLink(102)
-        //     });
-        // })
-
-        $('.screen-b').hover(() => {
-            import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
-                var delegate = module.default;
-                // 切换分类
-                delegate.choiceFl()
-            });
-        })
     } else if (document.getElementById('tecWrp')) {
         // 实例轮播图1
         var mySwiper = new Swiper('#Swiper1', {
@@ -134,14 +130,16 @@ import 'expose-loader?$!jquery'
 
     } else if (document.getElementById('detLesWrap')) {
         console.log('课程详情');
+
         // lazy load
         import( /* webpackChunkName: "sendAjax" */ './sendAjax.js').then(module => {
             var sendAjax = module.default;
+
             // 页面初始化
             spaInit();
 
             function spaInit() {
-                console.log(root.is_buy_lesson)
+                // console.log(root.is_buy_lesson)
                 if (root.is_buy_lesson == "1") {
                     $('.pre_play_b').hide() // 隐藏遮罩
                     $('#myPlayBtn').show() // 显示播放按钮
@@ -150,7 +148,6 @@ import 'expose-loader?$!jquery'
                     $('#myPlayBtn').hide()
                 }
             }
-
         });
 
         import( /* webpackChunkName: "init" */ './init.js').then(module => {
@@ -178,14 +175,14 @@ import 'expose-loader?$!jquery'
 
         $('.det_tag_bx .tt-item').on('click', function (e) {
             var _this = $(this)
-            console.log(e)
+            // console.log(e)
             var eventTarget = e.currentTarget
-            console.log(eventTarget)
+            // console.log(eventTarget)
             import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
                 var delegate = module.default;
                 // 切换标签
                 var pnIndex = _this.index()
-                console.log(pnIndex)
+                // console.log(pnIndex)
                 delegate.init(eventTarget, {
                     pnIndex: pnIndex
                 })
@@ -263,7 +260,7 @@ import 'expose-loader?$!jquery'
                 var delegate = module.default;
                 // 切换个人中心模块
                 var pnIndex = _this.index()
-                console.log(pnIndex)
+                // console.log(pnIndex)
                 delegate.init(eventTarget, {
                     userCenterIndex: pnIndex
                 })
@@ -273,6 +270,6 @@ import 'expose-loader?$!jquery'
 
 
     }
-    console.log(root);
+    // console.log(root);
 
 }(window.mylib || (window.mylib = {})));

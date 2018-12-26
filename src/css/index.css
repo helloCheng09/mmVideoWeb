@@ -68,6 +68,8 @@
 }
 #lesWrp .fenlei-list-b {
   user-select: none;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
 }
 #lesWrp .fenlei-list {
   display: inline-block;
@@ -101,7 +103,6 @@
 }
 #lesWrp .fenlei-list-b:first-child {
   padding-bottom: 10px;
-  border-bottom: 1px solid #ddd;
 }
 #lesWrp .fenlei-list-b:first-child .fenlei-list {
   overflow: hidden;
