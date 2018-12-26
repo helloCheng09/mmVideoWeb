@@ -17,13 +17,13 @@ module.exports = {
         // publicPath: '/public/yz/videos/web/'
     },
     optimization: {
+
         // minimizer: [
-        //     new OptimizeCSSAssetsPlugin({}),
-        //     new UglifyJsPlugin({
-        //         cache: true,
-        //         parallel: true,
-        //     }),
-        // ],
+        //     new DropConsoleWebpackPlugin({
+        //         drop_log: process.env.NODE_ENV === "production"
+        //     })
+        //   ]
+        // drop_console:true,
         // splitChunks: {
         //     cacheGroups: {
         //         styles: {
@@ -36,8 +36,7 @@ module.exports = {
         // },
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.html$/,
                 use: [{
                         loader: 'file-loader',
@@ -69,7 +68,7 @@ module.exports = {
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        name: './img/[name].[ext]'
+                        name: 'img/[name].[ext]'
                     }
                 }]
             },
@@ -87,8 +86,9 @@ module.exports = {
             // Options similar to the same options in webpackOptions.output
             // both options are optional
             filename: "./css/[name].css",
+            chunkFilename: "./css/[id].css",
             path: path.resolve(__dirname, 'dist')
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
     ]
 }

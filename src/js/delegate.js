@@ -135,7 +135,7 @@ Delegate.prototype = {
     },
     showStars: function () {
         var _this = this
-        if (root.is_buy_lesson != 1) {
+        if (root.is_buy_lesson != "1") {
             layer.open({
                 title: '提示',
                 content: '请先购买课程~'
@@ -157,10 +157,11 @@ Delegate.prototype = {
             });
         }
     },
+
     clickStart: function () {
         var _this = this
-        var fansid = lessonData.fansid
-        var videos_id = lessonData.videos_id
+        var fansid = root.lessonData.fansid
+        var videos_id = root.lessonData.videos_id
         var dataObj = {
             fansid: fansid,
             videos_id: videos_id,
@@ -273,7 +274,7 @@ Delegate.prototype = {
     },
     // 播放视频
     showVideo: function () {
-        if (!root.is_buy_lesson) {
+        if (root.is_buy_lesson != '1') {
             // 未购买 不弹出视频
             layer.open({
                 title: '提示',

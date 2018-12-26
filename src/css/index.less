@@ -462,6 +462,7 @@
                             display: inline-block;
                             vertical-align: inherit;
                             width: 100%;
+                            border-radius: 50%;
                         }
                     }
                     .avatar-img,
@@ -728,7 +729,7 @@
                 color: red;
             }
             .btn-bx {
-                margin-left: 500px;
+                margin-left: 440px;
                 input {
                     padding: 0 20px;
                     line-height: 2;
@@ -824,8 +825,10 @@
         }
     }
 }
+
 /**********系统通知 det_msg.html*****************/
-#msgWrap{
+
+#searchWrap {
     padding-bottom: 20px;
     background-color: #f3f4f8;
     .link-b-bar {
@@ -841,15 +844,15 @@
         margin: 0 auto;
         padding: 0 20px;
     }
-    .msg-pn{
+    .search-pn {
         background-color: #fff;
-        .msg-tt {
+        .search-tt {
             height: 70px;
             line-height: 70px;
             border-bottom: 1px solid #ddd;
             background-color: #fff;
             padding: 0 10px;
-            .tt-txt{
+            .tt-txt {
                 position: relative;
                 display: inline-block;
                 padding: 0 10px;
@@ -867,10 +870,10 @@
                 background-color: gold;
             }
         }
-        .msg-item{
+        .search-item {
             padding: 10px 20px;
         }
-        .msg-icon{
+        .msg-icon {
             display: inline-block;
             width: 30px;
             height: 30px;
@@ -878,15 +881,84 @@
             vertical-align: text-top;
             img {
                 display: block;
-                width:100%;
+                width: 100%;
                 height: 100%;
-
             }
         }
-        .msg-con{
+        .msg-con {
             display: inline-block;
             width: 80%;
-            line-height:1.2;
+            line-height: 1.2;
+            font-size: 18px;
+            vertical-align: text-top;
+            color: #808080;
+        }
+    }
+}
+
+/**********搜索课程 search.html*****************/
+
+#msgWrap {
+    padding-bottom: 20px;
+    background-color: #f3f4f8;
+    .link-b-bar {
+        display: none;
+    }
+    .main-screen-b {
+        overflow: hidden;
+        border-radius: 5px;
+    }
+    .screen-b {
+        overflow: hidden;
+        width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .msg-pn {
+        background-color: #fff;
+        .msg-tt {
+            height: 70px;
+            line-height: 70px;
+            border-bottom: 1px solid #ddd;
+            background-color: #fff;
+            padding: 0 10px;
+            .tt-txt {
+                position: relative;
+                display: inline-block;
+                padding: 0 10px;
+                font-size: 18px;
+                cursor: pointer;
+            }
+            .select:after {
+                content: '';
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 70%;
+                height: 3px;
+                background-color: gold;
+            }
+        }
+        .msg-item {
+            padding: 10px 20px;
+        }
+        .msg-icon {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin-right: 20px;
+            vertical-align: text-top;
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .msg-con {
+            display: inline-block;
+            width: 80%;
+            line-height: 1.2;
             font-size: 18px;
             vertical-align: text-top;
             color: #808080;

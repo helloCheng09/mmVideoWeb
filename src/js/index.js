@@ -11,7 +11,6 @@ import '../search.html'
 import '../css/common.css'
 import '../css/index.css';
 import 'expose-loader?$!jquery'
-// import sendAjax from './sendAjax'
 
 // import init from './init.js'
 // 定义变量
@@ -19,10 +18,18 @@ import 'expose-loader?$!jquery'
 
 (function (root) {
     // 配置
-    root.url = './' //根目录
+    // 生产环境
+    root.ajaxUrl = 'http://www.mamawozaizhe.com/videos/videosweb/'
+    root.url = '/public/yz/videos/web/'
+    root.lesCateUrl = root.ajaxUrl + 'lessonCate'
+    root.lesListUrl = root.ajaxUrl + 'cate_child'
+    // 开发环境
+    root.url = './'                                     
+    root.lesCateUrl = 'https://www.easy-mock.com/mock/5b9c69299c53ef2876d29227/list/lessonCate'
+    root.lesListUrl = 'https://www.easy-mock.com/mock/5b9c69299c53ef2876d29227/list/lessonList'
     // 入口
     if (document.getElementById('indexWrp')) {
-        console.log('首页');
+        // console.log('首页');
 
         $('.header_list').hover(function () {
             import( /* webpackChunkName: "init" */ './init.js').then(module => {
@@ -65,13 +72,35 @@ import 'expose-loader?$!jquery'
         });
     } else if (document.getElementById('lesWrp')) {
         console.log('课程中心');
-        $('.header_list').hover(function () {
-            import( /* webpackChunkName: "init" */ './init.js').then(module => {
-                var init = module.default;
-                // 首页游标回到 102
-                init.headerAniLink(102)
-            });
+        // 实例轮播图1
+        var mySwiper = new Swiper('#Swiper1', {
+            // autoplay:true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
         })
+
+        // lazy load
+        import( /* webpackChunkName: "sendAjax" */ './sendAjax.js').then(module => {
+            var sendAjax = module.default;
+        });
+        // 引入初始化
+        import( /* webpackChunkName: "init" */ './init.js').then(module => {
+            var init = module.default;
+            // 首页游标回到 102
+            init.headerAniLink(102)
+            // 初始化课程中心
+            var cateId = ''
+            init.initLesCenter(cateId)
+        });
+
+        // $('.header_list').hover(function () {
+        //     import( /* webpackChunkName: "init" */ './init.js').then(module => {
+        //         var init = module.default;
+        //         // 首页游标回到 102
+        //         init.headerAniLink(102)
+        //     });
+        // })
 
         $('.screen-b').hover(() => {
             import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
@@ -79,14 +108,6 @@ import 'expose-loader?$!jquery'
                 // 切换分类
                 delegate.choiceFl()
             });
-        })
-
-        // 实例轮播图1
-        var mySwiper = new Swiper('#Swiper1', {
-            // autoplay:true,
-            pagination: {
-                el: '.swiper-pagination',
-            },
         })
     } else if (document.getElementById('tecWrp')) {
         // 实例轮播图1
@@ -112,25 +133,24 @@ import 'expose-loader?$!jquery'
         })
 
     } else if (document.getElementById('detLesWrap')) {
-        console.log('课程详情')
-        // 页面初始化
-        spaInit()
-
-        function spaInit() {
-            if (root.is_buy_lesson) {
-                // 隐藏遮罩
-                $('.pre_play_b').hide()
-                // 显示播放按钮
-                $('.main_play_btn').show()
-            } else {
-                $('.pre_play_b').show()
-                $('.main_play_btn').eq(0).hide()
-            }
-        }
-
+        console.log('课程详情');
         // lazy load
         import( /* webpackChunkName: "sendAjax" */ './sendAjax.js').then(module => {
             var sendAjax = module.default;
+            // 页面初始化
+            spaInit();
+
+            function spaInit() {
+                console.log(root.is_buy_lesson)
+                if (root.is_buy_lesson == "1") {
+                    $('.pre_play_b').hide() // 隐藏遮罩
+                    $('#myPlayBtn').show() // 显示播放按钮
+                } else {
+                    $('.pre_play_b').show()
+                    $('#myPlayBtn').hide()
+                }
+            }
+
         });
 
         import( /* webpackChunkName: "init" */ './init.js').then(module => {

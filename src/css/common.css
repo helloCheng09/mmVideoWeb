@@ -133,11 +133,11 @@
 }
 .header-nav .header-b .msg-icon .msg-num {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 8px;
+  left: 34px;
   display: inline-block;
-  padding: 4px;
-  line-height: 20px;
+  padding: 3px;
+  line-height: 16px;
   background-color: #feca52;
   border-radius: 4px;
 }
@@ -548,7 +548,7 @@
 /*******充值卡片 ***********/
 .charge-list-bx {
   margin-top: 20px;
-  padding: 0 120px;
+  padding: 0 176px;
 }
 .charge-list-bx .card-list {
   display: flex;
@@ -556,7 +556,7 @@
   justify-content: space-between;
 }
 .charge-list-bx .card-list .card-item {
-  width: 33%;
+  width: 49%;
   margin-bottom: 10px;
   text-align: center;
   border-radius: 5px;
@@ -590,4 +590,11 @@
 }
 .charge-list-bx .card-list .select .zs-text {
   color: gold;
+}
+/*******无搜索内容 ***********/
+.none-text {
+  padding-bottom: 20px;
+  font-size: 18px;
+  text-align: center;
+  color: #808080;
 }
