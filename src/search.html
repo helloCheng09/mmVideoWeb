@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
@@ -8,12 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>系统消息</title>
+    <title>搜索课程</title>
     <link rel="stylesheet" href="./css/index.css?t=<?php echo time();?>">
 </head>
 
 <body>
-    <div class="index-wrap" id="msgWrap">
+    <div class="index-wrap" id="searchWrap">
         <header class="header-nav">
             <div class="header-b">
                 <div class="hd-left">
@@ -45,7 +45,7 @@
                                     </div>
                                 </a>
                             </li>
-                            <div class="link-b-bar"></div>
+                            <!-- <div class="link-b-bar"></div> -->
                         </ul>
                     </div>
                 </div>
@@ -100,46 +100,14 @@
         </header>
         <section class="main-screen">
             <div class="screen-b">
-                <div class="msg-pn">
-                    <div class="msg-tt">
-                        <div class="tt-txt">
-                            消息
-                        </div>
-                    </div>
-
-                    <div class="msg-con-bx">
-                        <div class="msg-list-bx">
-                            <ul class="msg-list">
-                                <li class="msg-item">
-                                    <span class="msg-icon">
-                                        <img src="./img/message-notice.png" alt="">
-                                    </span>
-                                    <span class="msg-con">
-                                        <div class="msg-line">
-                                            我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息
-                                        </div>
-                                    </span>
-                                </li>
-                                <li class="msg-item">
-                                    <span class="msg-icon">
-                                        <img src="./img/message-notice.png" alt="">
-                                    </span>
-                                    <span class="msg-con">
-                                        <div class="msg-line">
-                                            我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息
-                                        </div>
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="page-pn">
-                    上一页 12345 下一页
-                </div>
+                
             </div>
         </section>
+
+
+
     </div>
+
     <footer class="pub-footer">
         <div class="footer-b">
             <div class="top">
@@ -221,6 +189,8 @@
         </div>
     </footer>
 </body>
-<script type='text/javascript' src="./js/index.js"></script>
+
+<script type='text/javascript' src="./js/JsDepend/layui/layui.all.js"></script>
+<script type='text/javascript' src="./js/index.js?t=<?php echo time();?>"></script>
 
 </html>
