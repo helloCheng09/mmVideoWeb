@@ -248,6 +248,7 @@
 }
 .main-video-b .video-list-b .video-list {
   overflow: hidden;
+  min-height: 568px;
 }
 .main-video-b .video-list-b .video-list .video-item {
   float: left;
@@ -316,8 +317,8 @@
 }
 .main-video-b .video-list-b .video-list .les-text-one .teacher-ava {
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 27px;
+  height: 27px;
   vertical-align: middle;
 }
 .main-video-b .video-list-b .video-list .les-text-one .teacher-ava img {
@@ -327,6 +328,7 @@
 }
 .main-video-b .video-list-b .video-list .les-text-one .teacher-text {
   display: inline-block;
+  width: 90px;
   vertical-align: middle;
 }
 .main-video-b .video-list-b .video-list .les-text-one .icon-item {
@@ -508,6 +510,7 @@
   border-radius: 4px;
   background-color: #feca52;
   color: #ffff;
+  cursor: pointer;
 }
 .stars-b {
   position: relative;
@@ -609,7 +612,7 @@
   background-color: #3784fa!important;
 }
 .page-slide-wrap #pageSlide .layui-laypage a:hover {
-  color: gold!important;
+  color: #3784fa!important;
 }
 /*******内容加载文字 ***********/
 .loading-bx {

@@ -152,13 +152,13 @@ Delegate.prototype = {
                     shadeClose: true,
                     content: pingfenHtml //这里content是一个普通的String
                 });
-                _this.clickStart()
+                _this.clickStart(index)
                 layer.title('课程评分', index)
             });
         }
     },
 
-    clickStart: function () {
+    clickStart: function (index) {
         var _this = this
         var fansid = root.lessonData.fansid
         var videos_id = root.lessonData.videos_id
@@ -169,7 +169,7 @@ Delegate.prototype = {
             content: "超赞",
         }
         console.log(dataObj)
-        _this.subPf(dataObj)
+        _this.subPf(dataObj, index)
         $('.stars_btn').on("click", function (e) {
             var holyWidth = Number($(this).css('width').split('p')[0])
             var clickWidth = e.offsetX
@@ -235,18 +235,29 @@ Delegate.prototype = {
             dataObj.scores = scores
             dataObj.content = pfText
             console.log(dataObj)
-            _this.subPf(dataObj)
+            _this.subPf(dataObj, index)
             return false
         })
     },
-    subPf: function (dataObj) {
+    /**
+     * 
+     * @param {评价数据} dataObj 
+     * @param {layer 弹窗} index 
+     */
+    subPf: function (dataObj, index) {
+        var root = window.mylib
         // 提交评分
         $(".pj-btn-b .pj-btn").off()
         $(".pj-btn-b .pj-btn").on("click", function () {
             // pfUrl定义在html
-            var sendAjax = root.sendAjax
-            sendAjax.init()
-            return false;
+            console.log(dataObj, root.sendAjax)
+            var sourceDelegate = 'lesPingfen'
+            var url =  root.pingLesUrl
+            var data = dataObj
+            console.log(url, data)
+            root.sendAjax.postMd(sourceDelegate, url, data)
+            // root.sendAjax.getMd(sourceDelegate, url, data)
+            layer.close(index);
         })
     },
     jionStudy: function () {
@@ -261,7 +272,7 @@ Delegate.prototype = {
             yes: function () {
                 // getMd: function (sourceDelegate, url, data) {
                 var sourceDelegate = 'buyLes'
-                var url =  root.buyLes
+                var url =  root.buyLesUrl
                 var data = root.lessonData
                 console.log(url, data)
                 root.sendAjax.postMd(sourceDelegate, url, data)

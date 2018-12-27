@@ -24,13 +24,15 @@ import 'expose-loader?$!jquery'
      * 注释 development
      * cnpm run build
      * ************ */
-    root.ajaxUrl = 'http://www.mamawozaizhe.com/videos/videosweb/'
-    root.url = '/public/yz/videos/web/'
-    root.lesCateUrl = root.ajaxUrl + 'lessonCate'
-    root.lesListUrl = root.ajaxUrl + 'lessonList'
-    root.msgListUrl = root.ajaxUrl + 'msglist.html'
-    root.videoUrl = root.ajaxUrl + 'videos_link.html'
-    root.buyLes = root.ajaxUrl + 'buy_videos.html'
+    root.ajaxUrl = 'http://www.mamawozaizhe.com/videos/videosweb/' // 根目录
+    root.url = '/public/yz/videos/web/' // 资源目录 
+    root.lesCateUrl = root.ajaxUrl + 'lessonCate' //获取课程分类地址 GET
+    root.lesListUrl = root.ajaxUrl + 'lessonList' // 获取分类课程地址 GET
+    root.msgListUrl = root.ajaxUrl + 'msglist.html' //获取消息分页 GET 
+    root.videoUrl = root.ajaxUrl + 'videos_link.html' //获取课程播放地址 GET
+    root.buyLesUrl = root.ajaxUrl + 'buy_videos.html' //购买课程地址 POST
+    root.pingLesUrl = root.ajaxUrl + 'replyAjax.html' //课程评分地址 POST
+    root.myLesUrl = root.ajaxUrl + 'videos_mines.html' //获取课程播放地址 GET
     /*********
      * development
      * cnmp start
@@ -40,7 +42,9 @@ import 'expose-loader?$!jquery'
     root.lesListUrl = '../api/lesList.json'
     root.msgListUrl = '../api/msgList.json'
     root.videoUrl = '../api/videoLink.json'
-    root.buyLes = '../api/buyLes.json'
+    root.buyLesUrl = '../api/buyLes.json'
+    root.pingLesUrl = '../api/respond.json'
+    root.myLesUrl =  '../api/myLes.json'
 
     // 入口
     if (document.getElementById('indexWrp')) {
@@ -254,7 +258,19 @@ import 'expose-loader?$!jquery'
         // 页面初始化
         spaInit()
 
-        function spaInit() {}
+        function spaInit() {
+
+        }
+        import( /* webpackChunkName: "sendAjax" */ './sendAjax').then(module => {
+            var sendAjax = module.default;
+            var sourceDelegate = 'myLesList'
+            var url = root.myLesUrl
+            var data = {
+                page: 1
+            }
+            console.log(url, data)
+            sendAjax.getMd(sourceDelegate, url, data)
+        });
 
         $('.header_list').hover(function () {
             import( /* webpackChunkName: "init" */ './init.js').then(module => {
@@ -286,8 +302,6 @@ import 'expose-loader?$!jquery'
                 })
             });
         })
-
-
 
     } else if (document.getElementById('msgWrap')) {
         console.log('系统消息页面')

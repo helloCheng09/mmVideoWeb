@@ -53,6 +53,7 @@
         },
         // beforeSend
         beforeFn: function (sourceDelegate) {
+
             if (sourceDelegate === 'centerLes') {
                 var loadingText = `
                     <div class="loading-bx">
@@ -61,7 +62,7 @@
                         </div>
                     </div>
                 `
-                $('.insert_les_list').append(loadingText)
+                $('.insert_les_list').empty().append(loadingText)
             }
         },
 
@@ -94,7 +95,7 @@
 
             } else if (sourceDelegate == 'lesList') {
                 console.log(res)
-                root.renderData.renderLesList(res) //渲染分类
+                root.renderData.renderLesList(res) //对应分类课程
             } else if (sourceDelegate == 'myMsg') {
                 if (!root.pageInit) {
                     root.renderData.renderPageCom(res)
@@ -116,7 +117,6 @@
                         videos_id: root.lessonData.videos_id
                     }
                     _this.getMd(sourceDelegate, url, data)
-
                     root.is_buy_lesson = "1";
                     layer.open({
                         title: '提示',
@@ -131,6 +131,49 @@
                         content: '购买失败~~'
                     })
                 }
+            } else if (sourceDelegate == 'lesPingfen') {
+                // 评分课程
+                if (res.data.code == '1') {
+                    var index = layer.confirm('评分提交成功~~', {
+                        title: "提示",
+                        btn: ['确定'],
+                        yes: function () {
+                            // 重新加载页面
+                            location.reload()
+                            layer.close(index);
+                        }
+                    });
+                } else {
+                    layer.open({
+                        title: '提示',
+                        content: '评分提交失败~~'
+                    })
+                }
+            } else if (sourceDelegate == 'myLesList') {
+                // myLesList
+                root.myLesList = {
+                    data: []
+                }
+                // var cacheMyLes = [] //我的课程缓存全局
+                var emptyObj = []
+                $.each(res.data, function (index, item) {
+                    var lesItem = { ...item
+                    }; //单个课程
+                    emptyObj.push(lesItem)
+                })
+                console.log(emptyObj)
+                root.myLesList.data = emptyObj
+                var myListLen = res.data.length
+                var obj = {
+                    total: myListLen,
+                    per_page: 6,
+                    sourceDelegate: 'ueserLes'
+                }
+                import( /* webpackChunkName: "renderData" */ './renderData').then(module => {
+                    var renderData = module.default;
+                    root.renderData.initPageCom(obj)
+                });
+
             }
         },
 
