@@ -1,6 +1,6 @@
 module.exports = {
     // 定义全局
-    root: window.wangjiao,
+    root: window.mylib,
     // 固定导航游标
     headerAniLink: function (leftValue) {
         var oLiArray = Array.prototype.slice.call(document.getElementsByClassName("header_nav_tag"), 0)
@@ -165,14 +165,14 @@ module.exports = {
             // 发GET请求 后台 获取所有分类
             // console.log(root.sendAjax)
             var cate_id = $('.select_fl:first').find('.fl_tag:first').attr('data-id')
-
             var url = root.lesCateUrl
             var sourceDelegate = 'centerLes'
             var data = {
                 cate_id:cate_id
             }
             console.log(data, url)
-            root.sendAjax.getMd(sourceDelegate , url, data)
+           root.sendAjax.getMd(sourceDelegate , url, data)
         }
     }
-}
+  
+};

@@ -113,8 +113,7 @@
         }
     }
     .fenlei-list-b:first-child {
-        padding-bottom: 10px;
-        // border-bottom: 1px solid #ddd;
+        padding-bottom: 10px; // border-bottom: 1px solid #ddd;
         .fenlei-list {
             overflow: hidden;
         }
@@ -131,12 +130,16 @@
             }
         }
     }
+    .fenlei-list-b:last-child {
+        border-bottom: none;
+    }
     .main-screen-b:nth-of-type(1) {
         .screen-b {
             padding-bottom: 20px;
         }
     }
     .main-screen-b:nth-of-type(2) {
+        min-height: 441px;
         background-color: #f3f4f8;
     }
 }
@@ -427,7 +430,7 @@
             }
         }
         .bot-pn {
-            padding: 20px 0 36px;
+            // padding: 20px 0 36px;
             .con-bx {
                 .text-item {
                     p {
@@ -453,7 +456,9 @@
                 }
             }
             .ping-bx {
-                padding: 0 20px;
+                padding-bottom: 20px;
+                margin: 0 20px;
+                border-bottom: 1px solid #ddd;
                 .ping-top {
                     line-height: 60px;
                     .avatar-img {
@@ -482,6 +487,7 @@
                     .avatar-img,
                     .school-name,
                     .com-time {
+                        vertical-align: middle;
                         color: #808080;
                     }
                 }
@@ -828,7 +834,7 @@
     }
 }
 
-/**********系统通知 det_msg.html*****************/
+/**********搜索课程 search.html*****************/
 
 #searchWrap {
     padding-bottom: 20px;
@@ -898,7 +904,7 @@
     }
 }
 
-/**********搜索课程 search.html*****************/
+/**********系统通知 det_msg.html*****************/
 
 #msgWrap {
     padding-bottom: 20px;
@@ -917,6 +923,7 @@
         padding: 0 20px;
     }
     .msg-pn {
+        min-height: 570px;
         background-color: #fff;
         .msg-tt {
             height: 70px;
@@ -950,7 +957,7 @@
             width: 30px;
             height: 30px;
             margin-right: 20px;
-            vertical-align: text-top;
+            vertical-align: middle;
             img {
                 display: block;
                 width: 100%;
@@ -962,7 +969,7 @@
             width: 80%;
             line-height: 1.2;
             font-size: 18px;
-            vertical-align: text-top;
+            vertical-align: middle;
             color: #808080;
         }
     }

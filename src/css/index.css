@@ -117,10 +117,14 @@
 #lesWrp .fenlei-list-b:first-child .fenlei-item .select::after {
   content: none;
 }
+#lesWrp .fenlei-list-b:last-child {
+  border-bottom: none;
+}
 #lesWrp .main-screen-b:nth-of-type(1) .screen-b {
   padding-bottom: 20px;
 }
 #lesWrp .main-screen-b:nth-of-type(2) {
+  min-height: 441px;
   background-color: #f3f4f8;
 }
 /**********名师中心 center_tec.html*****************/
@@ -398,9 +402,6 @@
 #detLesWrap .main-screen-b:nth-of-type(2) .top-tt .item-text {
   font-size: 20px;
 }
-#detLesWrap .main-screen-b:nth-of-type(2) .bot-pn {
-  padding: 20px 0 36px;
-}
 #detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .con-bx .text-item p {
   margin-top: 6px;
   text-indent: 2em;
@@ -422,7 +423,9 @@
   color: #3784fa;
 }
 #detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx {
-  padding: 0 20px;
+  padding-bottom: 20px;
+  margin: 0 20px;
+  border-bottom: 1px solid #ddd;
 }
 #detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-top {
   line-height: 60px;
@@ -452,6 +455,7 @@
 #detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-top .avatar-img,
 #detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-top .school-name,
 #detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-top .com-time {
+  vertical-align: middle;
   color: #808080;
 }
 #detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .ping-bx .ping-det {
@@ -776,7 +780,7 @@
   color: #fff;
   cursor: pointer;
 }
-/**********系统通知 det_msg.html*****************/
+/**********搜索课程 search.html*****************/
 #searchWrap {
   padding-bottom: 20px;
   background-color: #f3f4f8;
@@ -844,7 +848,7 @@
   vertical-align: text-top;
   color: #808080;
 }
-/**********搜索课程 search.html*****************/
+/**********系统通知 det_msg.html*****************/
 #msgWrap {
   padding-bottom: 20px;
   background-color: #f3f4f8;
@@ -863,6 +867,7 @@
   padding: 0 20px;
 }
 #msgWrap .msg-pn {
+  min-height: 570px;
   background-color: #fff;
 }
 #msgWrap .msg-pn .msg-tt {
@@ -897,7 +902,7 @@
   width: 30px;
   height: 30px;
   margin-right: 20px;
-  vertical-align: text-top;
+  vertical-align: middle;
 }
 #msgWrap .msg-pn .msg-icon img {
   display: block;
@@ -909,6 +914,6 @@
   width: 80%;
   line-height: 1.2;
   font-size: 18px;
-  vertical-align: text-top;
+  vertical-align: middle;
   color: #808080;
 }

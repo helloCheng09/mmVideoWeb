@@ -250,13 +250,21 @@ Delegate.prototype = {
         })
     },
     jionStudy: function () {
+        var root = window.mylib
         var layer = layui.layer;
-        var cfmText = '本课程123400流量币，是否确认购买？'
+        var payNum = $('.pay-text span:last-child').text()
+        var cfmText = `本课程${payNum}流量币，是否确认购买？`
         var index = layer.confirm(cfmText, {
             title: "提示",
             btn: ['确定', '取消'] //可以无限个按钮
                 ,
             yes: function () {
+                // getMd: function (sourceDelegate, url, data) {
+                var sourceDelegate = 'buyLes'
+                var url =  root.buyLes
+                var data = root.lessonData
+                console.log(url, data)
+                root.sendAjax.postMd(sourceDelegate, url, data)
                 layer.close(index);
             },
             btn1: function (index, layero) {
@@ -290,7 +298,6 @@ Delegate.prototype = {
         $('.det_tag_bx .tt-item').eq(pnIndex).find('.item-text').addClass('select')
         $('.bot-wrap .bot-pn').hide()
         $('.bot-wrap .bot-pn').eq(pnIndex).slideDown('fast')
-
     },
 
     // 选择分类

@@ -19,15 +19,29 @@ import 'expose-loader?$!jquery'
 
 (function (root) {
     // 配置
-    // 生产环境
+    /*********
+     * production
+     * 注释 development
+     * cnpm run build
+     * ************ */
     root.ajaxUrl = 'http://www.mamawozaizhe.com/videos/videosweb/'
     root.url = '/public/yz/videos/web/'
     root.lesCateUrl = root.ajaxUrl + 'lessonCate'
     root.lesListUrl = root.ajaxUrl + 'lessonList'
-    // 开发环境
+    root.msgListUrl = root.ajaxUrl + 'msglist.html'
+    root.videoUrl = root.ajaxUrl + 'videos_link.html'
+    root.buyLes = root.ajaxUrl + 'buy_videos.html'
+    /*********
+     * development
+     * cnmp start
+     * ************ */
     root.url = './'
     root.lesCateUrl = 'https://www.easy-mock.com/mock/5b9c69299c53ef2876d29227/list/lessonCate'
     root.lesListUrl = '../api/lesList.json'
+    root.msgListUrl = '../api/msgList.json'
+    root.videoUrl = '../api/videoLink.json'
+    root.buyLes = '../api/buyLes.json'
+
     // 入口
     if (document.getElementById('indexWrp')) {
         console.log('首页');
@@ -143,6 +157,12 @@ import 'expose-loader?$!jquery'
                 if (root.is_buy_lesson == "1") {
                     $('.pre_play_b').hide() // 隐藏遮罩
                     $('#myPlayBtn').show() // 显示播放按钮
+                    var sourceDelegate = 'videoSrc'
+                    var url = root.videoUrl
+                    var data = {
+                        videos_id: root.lessonData.videos_id
+                    }
+                    root.sendAjax.getMd(sourceDelegate, url, data)
                 } else {
                     $('.pre_play_b').show()
                     $('#myPlayBtn').hide()
@@ -150,11 +170,11 @@ import 'expose-loader?$!jquery'
             }
         });
 
-        import( /* webpackChunkName: "init" */ './init.js').then(module => {
-            var init = module.default;
-            // //实例化播放器
-            init.detPlayer()
-        });
+        // import( /* webpackChunkName: "init" */ './init.js').then(module => {
+        //     var init = module.default;
+        //     // //实例化播放器
+        //     init.detPlayer()
+        // });
 
         $('.header_list').hover(function () {
             import( /* webpackChunkName: "init" */ './init.js').then(module => {
@@ -266,6 +286,25 @@ import 'expose-loader?$!jquery'
                 })
             });
         })
+
+
+
+    } else if (document.getElementById('msgWrap')) {
+        console.log('系统消息页面')
+        root.pageInit = true
+        import( /* webpackChunkName: "renderData" */ './renderData').then(module => {
+            var renderData = module.default;
+        });
+        import( /* webpackChunkName: "sendAjax" */ './sendAjax').then(module => {
+            var sendAjax = module.default;
+            var sourceDelegate = 'myMsg'
+            var url = root.msgListUrl
+            var data = {
+                page: 1
+            }
+            sendAjax.getMd(sourceDelegate, url, data)
+        });
+
 
 
 

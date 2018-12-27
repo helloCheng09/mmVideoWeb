@@ -9,6 +9,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>系统消息</title>
+    <link rel="stylesheet" href="./js/JsDepend/layui/css/layui.css">
     <link rel="stylesheet" href="./css/index.css?t=<?php echo time();?>">
 </head>
 
@@ -19,7 +20,7 @@
                 <div class="hd-left">
                     <div class="logo-b">
                         <a href="/">
-                            <img src="/public/yz/videos/web/img/logoicon.png" alt="" class="log-img">
+                            <img src="./img/logoicon.png" alt="" class="log-img">
                         </a>
                     </div>
                     <div class="nav-list">
@@ -56,7 +57,7 @@
                                 <input type="text" placeholder="搜索" class="sear-ipt">
                             </div>
                             <div class="search-icon">
-                                <img src="/public/yz/videos/web/img/search.png" alt="" class="search-img">
+                                <img src="./img/search.png" alt="" class="search-img">
                             </div>
                         </div>
                     </div>
@@ -68,7 +69,7 @@
                                 </div>
                             </span>
                             <div class="msg-img">
-                                <img src="/public/yz/videos/web/img/message.png" alt="">
+                                <img src="./img/message.png" alt="">
                             </div>
                         </a>
                     </div>
@@ -91,7 +92,7 @@
                         </div>
                         <div class="btn-b" style="display:none;">
                             <div class="user-avatar">
-                                <img src="/public/yz/videos/web/img/xiugai-toux.png" alt="">
+                                <img src="./img/xiugai-toux.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -109,10 +110,10 @@
 
                     <div class="msg-con-bx">
                         <div class="msg-list-bx">
-                            <ul class="msg-list">
-                                <li class="msg-item">
+                            <ul class="msg-list msg_insert_list">
+                                <!-- <li class="msg-item">
                                     <span class="msg-icon">
-                                        <img src="/public/yz/videos/web/img/message-notice.png" alt="">
+                                        <img src="./img/message-notice.png" alt="">
                                     </span>
                                     <span class="msg-con">
                                         <div class="msg-line">
@@ -122,19 +123,21 @@
                                 </li>
                                 <li class="msg-item">
                                     <span class="msg-icon">
-                                        <img src="/public/yz/videos/web/img/message-notice.png" alt="">
+                                        <img src="./img/message-notice.png" alt="">
                                     </span>
                                     <span class="msg-con">
                                         <div class="msg-line">
                                             我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息我是想消息
                                         </div>
                                     </span>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div id="pageSlide"></div>
+                <div class="page-slide-wrap">
+                    <div id="pageSlide"></div>
+                </div>
             </div>
         </section>
     </div>
@@ -147,7 +150,7 @@
                             <a href="#" class="link-item">
                                 <div class="link-b">
                                     <div class="link-icon">
-                                        <img src="/public/yz/videos/web/img/phone.png" alt="">
+                                        <img src="./img/phone.png" alt="">
                                     </div>
                                     <div class="link-text">
                                         移动版
@@ -198,14 +201,14 @@
                     <div class="link-blog">
                         <a href="#">
                             <div class="blog-img">
-                                <img src="/public/yz/videos/web/img/weibo.png" alt="">
+                                <img src="./img/weibo.png" alt="">
                             </div>
                         </a>
                     </div>
                     <div class="link-blog">
                         <a href="#">
                             <div class="blog-img">
-                                <img src="/public/yz/videos/web/img/wechat.png" alt="">
+                                <img src="./img/wechat.png" alt="">
                             </div>
                         </a>
                     </div>
@@ -219,21 +222,8 @@
         </div>
     </footer>
 </body>
-
 <script type='text/javascript' src="./js/JsDepend/layui/layui.all.js"></script>
 <script src="./js/vendors.js"></script>
 <script type='text/javascript' src="./js/index.js?t=<?php echo time();?>"></script>
-<script>
-    layui.use('laypage', function () {
-        var laypage = layui.laypage;
-
-        //执行一个laypage实例
-        laypage.render({
-            elem: 'pageSlide' //注意，这里的 test1 是 ID，不用加 # 号
-                ,
-            count: 10 //数据总数，从服务端得到
-        });
-    });
-</script>
 
 </html>

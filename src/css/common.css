@@ -598,3 +598,25 @@
   text-align: center;
   color: #808080;
 }
+/*******分页组件 ***********/
+.page-slide-wrap {
+  text-align: center;
+}
+.page-slide-wrap #pageSlide {
+  display: inline-block;
+}
+.page-slide-wrap #pageSlide .layui-laypage-em {
+  background-color: #3784fa!important;
+}
+.page-slide-wrap #pageSlide .layui-laypage a:hover {
+  color: gold!important;
+}
+/*******内容加载文字 ***********/
+.loading-bx {
+  text-align: center;
+}
+.loading-bx .loading-text {
+  text-align: center;
+  font-size: 18px;
+  color: #888;
+}

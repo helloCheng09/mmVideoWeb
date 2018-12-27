@@ -75,19 +75,19 @@
                 let name = item.name
                 let subtime = item.subtime
                 let title = item.title
-                
+
                 let froms = item.froms // 1 试听课程 2 付费课程
                 if (froms == '2') {
                     froms = ''
                 } else {
-                    froms =`
+                    froms = `
                         <div class="video-isFree">
                                 试听课
                         </div>
                     `
                 }
                 let link = root.ajaxUrl + 'videos.html?lesson_id=' + id
-             
+
                 let spacial = item.spacial // 特级教师 1特级 0 普通
                 let excellent = item.excellent // 优秀课件 1优秀 0 普通
                 let spacialImgUrl = root.url + 'img/gaoji.png'
@@ -151,7 +151,73 @@
                     </li>
                 `
             })
-            $('.insert_les_list').empty().append (lesHtml)
+            $('.insert_les_list').empty().append(lesHtml)
+        },
+        // 实例化 分页组件
+        initPageCom: function (res) {
+            console.log(res)
+            var count = res.total
+            var limit = res.per_page
+            layui.use('laypage', function () {
+                var laypage = layui.laypage;
+
+                //执行一个laypage实例
+                laypage.render({
+                    elem: 'pageSlide',
+                    count: count, //数据总数，从服务端得到
+                    limit: limit,
+                    jump: function (obj, first) {
+                        //obj包含了当前分页的所有参数，比如：
+                        console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                        //首次不执行
+                        if (!first) {
+                            //do something
+                            var sourceDelegate = 'myMsg'
+                            var url = root.msgListUrl
+                            var data = {
+                                page: obj.curr
+                            }
+                            root.sendAjax.getMd(sourceDelegate, url, data)
+                        } 
+                    }
+                });
+            });
+        },
+        // 实例化 分页组件
+        renderPageCom: function (res) {
+            var msgHtml = ''
+            var msgListArry = res.data
+            $.each(msgListArry, function(index, item){
+                var id = item.id
+                var type = item.type
+                var get_coin = item.get_coin
+                if(type == '1'){
+                    get_coin = '+ ' + get_coin
+                } else {
+                    get_coin = '- ' + get_coin
+                }
+                var orders_id = item.orders_id
+                var time =  '时  间： ' + item.complete_time
+                var img =   root.url + 'img/message-notice.png'
+                msgHtml += `
+                <li class="msg-item" data-id='${id}'>
+                    <span class="msg-icon">
+                        <img src="${img}" alt="">
+                    </span>
+                    <span class="msg-con">
+                        <div class="msg-line">
+                            <span>订单号：${orders_id}</span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span>流量币：<em><font color="red">${get_coin}</font></em></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span>${time}</span>
+                        </div>
+                    </span>
+                </li> 
+            `
+            })
+            $('.msg_insert_list').empty()
+            $('.msg_insert_list').append(msgHtml)
         }
     }
 
