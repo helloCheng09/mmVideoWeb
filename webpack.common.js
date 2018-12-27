@@ -19,7 +19,6 @@ module.exports = {
     },
     optimization: {
         // runtimeChunk: 'single',
-        // runtimeChunk: 'single',
         splitChunks: {
             cacheGroups: {
                 vendor: {
@@ -92,12 +91,12 @@ module.exports = {
         ]
     },
     plugins: [
-        // new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin(['dist/*.html','dist/js/*.js', 'dist/js/*.js.map','dist/css/*.css', 'dist/css/*.css.map']),
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
             filename: "./css/[name].css",
-            chunkFilename: "./css/[id].css",
+            chunkFilename: "./css/[name].css",
             path: path.resolve(__dirname, 'dist')
         }),
         new webpack.HotModuleReplacementPlugin(),

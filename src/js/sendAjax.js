@@ -61,18 +61,15 @@
         successFn: function (sourceDelegate, res, cateidArr) {
             if (sourceDelegate == 'centerLes') {
                 console.log('课程分类渲染')
-                // console.log(res)
-                var eleText = ".fl_tag[data-id='" + cateidArr.cate_id + "']"
-                // console.log(eleText)
-                var clickCol = $(eleText).parents('.select_fl').index() // 确定哪一行分类被点击
-                // console.log('哪一行', clickCol+1)
-                var catLen = $('.select_fl').length
-                for (var i = clickCol; i < catLen; i++) {
-                    $('.select_fl').eq(i + 1).remove() // 清空被点击分类以下的子分类
-                }
-                root.renderData.renderCate(res) //渲染分类
+                console.log(res)
+                root.renderData.renderCate(res, cateidArr) //渲染分类
                 var cateArr = res.data
-                var cate_child = cateArr[cateArr.length - 1][0] // 获取最后一个分类的第一个 获取数据
+                if  (cateArr.length) {
+                    var cate_child = cateArr[cateArr.length - 1][0]['id'] // 获取最后一个分类的第一个 获取数据
+                } else {
+                    var cate_child = $('.select_fl:last-child').find('.select').parent('.fl_tag').attr('data-id')
+                }
+                
                 let sourceDelegate = 'lesList'
                 let data = {
                     cate_child : cate_child
@@ -84,13 +81,12 @@
             } else if (sourceDelegate = 'lesList') {
                 console.log(res)
                 root.renderData.renderLesList(res) //渲染分类
-
             }
         },
 
         // error
         errorFn: function () {
-            layer.msg('网络链接失败~')
+            layer.msg('网络链接失败~~')
         }
     }
 

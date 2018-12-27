@@ -399,7 +399,7 @@
   font-size: 20px;
 }
 #detLesWrap .main-screen-b:nth-of-type(2) .bot-pn {
-  padding: 20px 0;
+  padding: 20px 0 36px;
 }
 #detLesWrap .main-screen-b:nth-of-type(2) .bot-pn .con-bx .text-item p {
   margin-top: 6px;

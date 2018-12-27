@@ -71,25 +71,6 @@ module.exports = {
                         name: 'MemoryPlayComponent',
                         type: AliPlayerComponent.MemoryPlayComponent,
                     }],
-                    // components: [{
-                    //     name: 'PlaylistComponent',
-                    //     type: AliPlayerComponent.PlaylistComponent,
-                    //     args: [
-                    //         [{
-                    //             name: '阿里云视频云',
-                    //             source: 'http://player.pier39.cn/video/editor.mp4'
-                    //         }, {
-                    //             name: '趣拍演示视频',
-                    //             source: 'http://player.alicdn.com/resource/player/qupai.mp4'
-                    //         }, {
-                    //             name: '云栖大会',
-                    //             source: 'http://player.pier39.cn/video/yunxi.mp4'
-                    //         }, {
-                    //             name: '4K 阿里视频云介绍',
-                    //             source: 'https://player.alicdn.com/video/apsaravideo4k.mp4'
-                    //         }]
-                    //     ]
-                    // }],
                     "skinLayout": [{
                             "name": "bigPlayButton",
                             "align": "blabs",
@@ -190,9 +171,8 @@ module.exports = {
             var data = {
                 cate_id:cate_id
             }
+            console.log(data, url)
             root.sendAjax.getMd(sourceDelegate , url, data)
         }
-
-
     }
 }
