@@ -338,6 +338,8 @@ Delegate.prototype = {
         var dataId = _this.data('id')
         var flText = _this.children('.fenlei-text').text().replace(/^\s+|\s+$/g, "")
         // console.log(dataId, flText)
+        // 获取新的分类是 重新实例化分页组件
+        root.pageInit = true
         var url = root.lesCateUrl
         var sourceDelegate = 'centerLes'
         var data = {

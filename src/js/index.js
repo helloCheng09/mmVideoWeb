@@ -19,13 +19,14 @@ import 'expose-loader?$!jquery'
 
 (function (root) {
     // 配置
-    /*********
+    /**************
      * production
      * 注释 development
      * cnpm run build
      * ************ */
     root.ajaxUrl = 'http://www.mamawozaizhe.com/videos/videosweb/' // 根目录
     root.url = '/public/yz/videos/web/' // 资源目录 
+    root.pageInit = true // 首次加载分页
     root.lesCateUrl = root.ajaxUrl + 'lessonCate' //获取课程分类地址 GET
     root.lesListUrl = root.ajaxUrl + 'lessonList' // 获取分类课程地址 GET
     root.msgListUrl = root.ajaxUrl + 'msglist.html' //获取消息分页 GET 
@@ -33,7 +34,7 @@ import 'expose-loader?$!jquery'
     root.buyLesUrl = root.ajaxUrl + 'buy_videos.html' //购买课程地址 POST
     root.pingLesUrl = root.ajaxUrl + 'replyAjax.html' //课程评分地址 POST
     root.myLesUrl = root.ajaxUrl + 'videos_mines.html' //获取课程播放地址 GET
-    /*********
+    /**************
      * development
      * cnmp start
      * ************ */
@@ -44,7 +45,7 @@ import 'expose-loader?$!jquery'
     // root.videoUrl = '../api/videoLink.json'
     // root.buyLesUrl = '../api/buyLes.json'
     // root.pingLesUrl = '../api/respond.json'
-    // root.myLesUrl =  '../api/myLes.json'
+    // root.myLesUrl = '../api/myLes.json'
 
     // 入口
     if (document.getElementById('indexWrp')) {
@@ -111,16 +112,15 @@ import 'expose-loader?$!jquery'
         });
         import( /* webpackChunkName: "sendAjax" */ './sendAjax.js').then(module => {
             var sendAjax = module.default;
-        });
-
-        // 引入初始化
-        import( /* webpackChunkName: "init" */ './init.js').then(module => {
-            var init = module.default;
-            // 首页游标回到 102
-            init.headerAniLink(102)
-            // 初始化课程中心
-            var cateId = ''
-            init.initLesCenter(cateId)
+            // 引入初始化
+            import( /* webpackChunkName: "init" */ './init.js').then(module => {
+                var init = module.default;
+                // 首页游标回到 102
+                init.headerAniLink(102)
+                // 初始化课程中心
+                var cateId = ''
+                init.initLesCenter(cateId)
+            });
         });
 
     } else if (document.getElementById('tecWrp')) {
@@ -258,9 +258,7 @@ import 'expose-loader?$!jquery'
         // 页面初始化
         spaInit()
 
-        function spaInit() {
-
-        }
+        function spaInit() {}
         import( /* webpackChunkName: "sendAjax" */ './sendAjax').then(module => {
             var sendAjax = module.default;
             var sourceDelegate = 'myLesList'
@@ -305,7 +303,7 @@ import 'expose-loader?$!jquery'
 
     } else if (document.getElementById('msgWrap')) {
         console.log('系统消息页面')
-        root.pageInit = true
+        
         import( /* webpackChunkName: "renderData" */ './renderData').then(module => {
             var renderData = module.default;
         });

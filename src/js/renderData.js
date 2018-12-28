@@ -73,11 +73,11 @@
                 if (item != undefined) {
                     let id = item.id
                     let img = item.img
-                    let name = item.name
+                    let name = item.teacher_name
                     let subtime = item.subtime
-                    if (sourceDelegate == 'ueserLes') {
-                        subtime = "2018-12-23"
-                    }
+                    // if (sourceDelegate == 'ueserLes') {
+                    //     subtime = "2018-12-23"
+                    // }
                     let title = item.title
 
                     let froms = item.froms // 1 试听课程 2 付费课程
@@ -91,14 +91,14 @@
                         `
                     }
                     let link = root.ajaxUrl + 'videos.html?lesson_id=' + id
-                    let spacial = item.spacial // 特级教师 1特级 0 普通
+                    let special = item.special // 特级教师 1特级 0 普通
                     let excellent = item.excellent // 优秀课件 1优秀 0 普通
                     let spacialImgUrl = root.url + 'img/gaoji.png'
                     let normalImgUrl = root.url + 'img/icon18.png'
                     let excelentImgUrl = root.url + 'img/youxiu.png'
                     let defaultAva = root.url + 'img/teacher-toux-default.png'
                     var htmlTj = ''
-                    if (spacial == '1') {
+                    if (special == '1') {
                         htmlTj = `
                         <div class="icon-item" title="特级教师">
                             <img src="${spacialImgUrl}" >
@@ -177,55 +177,99 @@
             console.log(res)
             var count = res.total
             var limit = res.per_page
-
-            if (res.sourceDelegate == 'ueserLes') {
-                // 个人中心 课程分页
-                layui.use('laypage', function () {
-                    var laypage = layui.laypage;
-                    //执行一个laypage实例
-                    laypage.render({
-                        elem: 'pageSlide',
-                        count: count, //数据总数，从服务端得到
-                        limit: limit,
-                        jump: function (obj, first) {
-                            //obj包含了当前分页的所有参数，比如：
-                            // console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
-                            //首次不执行
-                            if (!first) {
-                                //do something
-                                res.curPage = obj.curr
-                                _this.renderPageCom(res)
-                            }
-                        }
-                    });
-                });
-            } else {
-                // 系统消息 分页
-                layui.use('laypage', function () {
-                    var laypage = layui.laypage;
-                    //执行一个laypage实例
-                    laypage.render({
-                        elem: 'pageSlide',
-                        count: count, //数据总数，从服务端得到
-                        limit: limit,
-                        jump: function (obj, first) {
-                            //obj包含了当前分页的所有参数，比如：
-                            // console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
-                            //首次不执行
-                            if (!first) {
-                                //do something
-                                var sourceDelegate = 'myMsg'
-                                var url = root.msgListUrl
-                                var data = {
-                                    page: obj.curr
+            if (count > 0) {
+                if (res.sourceDelegate == 'ueserLes') {
+                    // 个人中心 课程分页
+                    layui.use('laypage', function () {
+                        var laypage = layui.laypage;
+                        //执行一个laypage实例
+                        laypage.render({
+                            elem: 'pageSlide',
+                            count: count, //数据总数，从服务端得到
+                            limit: limit,
+                            jump: function (obj, first) {
+                                //obj包含了当前分页的所有参数，比如：
+                                // console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                                //首次不执行
+                                if (!first) {
+                                    //do something
+                                    res.curPage = obj.curr
+                                    _this.renderPageCom(res)
                                 }
-                                root.sendAjax.getMd(sourceDelegate, url, data)
                             }
-                        }
+                        });
                     });
-                });
-            }
+                } else if (res.sourceDelegate == 'lesList') {
+                    // 课程中心 渲染首页
+                    _this.renderLesList(res)
+                    // 课程中心 分页
+                    layui.use('laypage', function () {
+                        var laypage = layui.laypage;
+                        //执行一个laypage实例
+                        laypage.render({
+                            elem: 'pageSlide',
+                            count: count, //数据总数，从服务端得到
+                            limit: limit,
+                            jump: function (obj, first) {
+                                //obj包含了当前分页的所有参数，比如：
+                                // console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                                //首次不执行
+                                if (!first) {
+                                    //do something
+                                    var url = root.lesListUrl
+                                    console.log(88888, obj.curr)
+                                    var sourceDelegate = 'lesList'
+                                    var cate_id = res.cate_id
+                                    var data = {
+                                        page: obj.curr,
+                                        cate_child: cate_id
+                                    }
+                                    root.sendAjax.getMd(sourceDelegate, url, data)
+                                }
+                            }
+                        });
+                    });
+                } else {
+                    // 系统消息 分页
+                    layui.use('laypage', function () {
+                        var laypage = layui.laypage;
+                        //执行一个laypage实例
+                        laypage.render({
+                            elem: 'pageSlide',
+                            count: count, //数据总数，从服务端得到
+                            limit: limit,
+                            jump: function (obj, first) {
+                                //obj包含了当前分页的所有参数，比如：
+                                // console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                                //首次不执行
+                                if (!first) {
+                                    //do something
+                                    var sourceDelegate = 'myMsg'
+                                    var url = root.msgListUrl
+                                    var data = {
+                                        page: obj.curr
+                                    }
+                                    root.sendAjax.getMd(sourceDelegate, url, data)
+                                }
+                            }
+                        });
+                    });
+                }
+            } else {
+                // 没有课程
+                $('.page-slide-wrap').remove()
+                lesHtml = `
+                        <div class="loading-bx">
+                            <div class="loading-text">
+                                课程上架中，敬请期待...
+                            </div>
+                        </div>
+                    `
+                setTimeout(() => {
+                    $('.insert_les_list').empty().append(lesHtml)
+                }, 500);
 
+            }
         },
         // 渲染分页
         renderPageCom: function (res) {
@@ -244,8 +288,13 @@
                 _this.renderLesList(resObj, sourceDelegate)
                 console.log(_this)
 
+            } else if (res.sourceDelegate == 'lesList') {
+                // 课程中心 渲染非首页
+                _this.renderLesList(res)
+
             } else {
-                // 系统消息 分页
+
+                // 系统消息 渲染非首页
                 var msgHtml = ''
                 var msgListArry = res.data
                 $.each(msgListArry, function (index, item) {
@@ -280,7 +329,6 @@
                 $('.msg_insert_list').empty()
                 $('.msg_insert_list').append(msgHtml)
             }
-
         }
     }
 

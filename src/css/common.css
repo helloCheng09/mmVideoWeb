@@ -248,7 +248,6 @@
 }
 .main-video-b .video-list-b .video-list {
   overflow: hidden;
-  min-height: 568px;
 }
 .main-video-b .video-list-b .video-list .video-item {
   float: left;

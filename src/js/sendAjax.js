@@ -54,7 +54,7 @@
         // beforeSend
         beforeFn: function (sourceDelegate) {
 
-            if (sourceDelegate === 'centerLes') {
+            if (sourceDelegate == 'centerLes' || sourceDelegate == 'lesList') {
                 var loadingText = `
                     <div class="loading-bx">
                         <div class="loading-text">
@@ -94,13 +94,29 @@
                 this.getMd(sourceDelegate, url, data) // 发送后台获取课程列表
 
             } else if (sourceDelegate == 'lesList') {
-                console.log(res)
-                root.renderData.renderLesList(res) //对应分类课程
-            } else if (sourceDelegate == 'myMsg') {
+                console.log(2222, res)
+                // 实例化分页组件
+                // if (res.pages != 1) {
+                //     res.sourceDelegate = 'lesList'
+                //     root.renderData.initPageCom(res)
+                // } 
+                var cate_child = $('.select_fl:last-child').find('.select').parent('.fl_tag').attr('data-id')
+                res.sourceDelegate = 'lesList'
+                res.cate_id = cate_child
                 if (!root.pageInit) {
                     root.renderData.renderPageCom(res)
                 } else {
                     root.renderData.initPageCom(res)
+                    root.pageInit = false
+                }
+                console.log(root.pageInit)
+                // root.renderData.renderLesList(res)
+                // root.renderData.renderLesList(res) //渲染对应分类课程
+            } else if (sourceDelegate == 'myMsg') {
+                if (!root.pageInit) {
+                    root.renderData.renderPageCom(res) // 非首页渲染
+                } else {
+                    root.renderData.initPageCom(res) //首页初始化
                     root.pageInit = false
                 }
             } else if (sourceDelegate == 'videoSrc') {
