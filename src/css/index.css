@@ -859,6 +859,9 @@
   vertical-align: text-top;
   color: #808080;
 }
+#searchWrap .video-link {
+  background-color: #f3f4f8;
+}
 /**********系统通知 det_msg.html*****************/
 #msgWrap {
   padding-bottom: 20px;

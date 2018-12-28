@@ -190,6 +190,8 @@
                     root.renderData.initPageCom(obj)
                 });
 
+            } else if (sourceDelegate == 'searchList') {
+                console.log(res)
             }
         },
 

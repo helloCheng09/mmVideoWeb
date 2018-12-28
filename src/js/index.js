@@ -34,19 +34,22 @@ import 'expose-loader?$!jquery'
     root.buyLesUrl = root.ajaxUrl + 'buy_videos.html' //购买课程地址 POST
     root.pingLesUrl = root.ajaxUrl + 'replyAjax.html' //课程评分地址 POST
     root.myLesUrl = root.ajaxUrl + 'videos_mines.html' //获取课程播放地址 GET
+    root.searchUrl = root.ajaxUrl + 'search_list.html' //搜索内容地址 POST
+    root.searchAdr = root.ajaxUrl + '/search.html' // 跳转到搜索页面路由
     /**************
      * development
      * cnmp start
      * ************ */
-    // root.url = './'
-    // root.lesCateUrl = 'https://www.easy-mock.com/mock/5b9c69299c53ef2876d29227/list/lessonCate'
-    // root.lesListUrl = '../api/lesList.json'
-    // root.msgListUrl = '../api/msgList.json'
-    // root.videoUrl = '../api/videoLink.json'
-    // root.buyLesUrl = '../api/buyLes.json'
-    // root.pingLesUrl = '../api/respond.json'
-    // root.myLesUrl = '../api/myLes.json'
-
+    root.url = './'
+    root.lesCateUrl = 'https://www.easy-mock.com/mock/5b9c69299c53ef2876d29227/list/lessonCate'
+    root.lesListUrl = '../api/lesList.json'
+    root.msgListUrl = '../api/msgList.json'
+    root.videoUrl = '../api/videoLink.json'
+    root.buyLesUrl = '../api/buyLes.json'
+    root.pingLesUrl = '../api/respond.json'
+    root.myLesUrl = '../api/myLes.json'
+    root.searchUrl = '../api/searchList.json'
+    root.searchAdr = './search.html'
     // 入口
     if (document.getElementById('indexWrp')) {
         console.log('首页');
@@ -59,14 +62,14 @@ import 'expose-loader?$!jquery'
             });
         })
 
-        $('.btn_lr').on('click', (e) => {
-            var eventTarget = e.currentTarget
-            import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
-                var delegate = module.default;
-                // 打开登陆
-                delegate.showLogPage(eventTarget)
-            });
-        })
+        // $('.btn_lr').on('click', (e) => {
+        //     var eventTarget = e.currentTarget
+        //     import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
+        //         var delegate = module.default;
+        //         // 打开登陆
+        //         delegate.showLogPage(eventTarget)
+        //     });
+        // })
         // 实例轮播图1
         var mySwiper = new Swiper('#Swiper1', {
             // autoplay:true,
@@ -188,14 +191,14 @@ import 'expose-loader?$!jquery'
             });
         })
 
-        $('.btn_lr').on('click', (e) => {
-            var eventTarget = e.currentTarget
-            import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
-                var delegate = module.default;
-                // 打开登陆
-                delegate.showLogPage(eventTarget)
-            });
-        })
+        // $('.btn_lr').on('click', (e) => {
+        //     var eventTarget = e.currentTarget
+        //     import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
+        //         var delegate = module.default;
+        //         // 打开登陆
+        //         delegate.showLogPage(eventTarget)
+        //     });
+        // })
 
         $('.det_tag_bx .tt-item').on('click', function (e) {
             var _this = $(this)
@@ -278,14 +281,14 @@ import 'expose-loader?$!jquery'
             });
         })
 
-        $('.btn_lr').on('click', (e) => {
-            var eventTarget = e.currentTarget
-            import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
-                var delegate = module.default;
-                // 打开登陆
-                delegate.showLogPage(eventTarget)
-            });
-        })
+        // $('.btn_lr').on('click', (e) => {
+        //     var eventTarget = e.currentTarget
+        //     import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
+        //         var delegate = module.default;
+        //         // 打开登陆
+        //         delegate.showLogPage(eventTarget)
+        //     });
+        // })
 
         $('.uc_com_tag').on('click', function (e) {
             var eventTarget = e.currentTarget
@@ -303,7 +306,7 @@ import 'expose-loader?$!jquery'
 
     } else if (document.getElementById('msgWrap')) {
         console.log('系统消息页面')
-        
+
         import( /* webpackChunkName: "renderData" */ './renderData').then(module => {
             var renderData = module.default;
         });
@@ -316,11 +319,31 @@ import 'expose-loader?$!jquery'
             }
             sendAjax.getMd(sourceDelegate, url, data)
         });
-
-
-
-
     }
-    // console.log(root);
+
+
+    // 全局事件 搜索
+
+    import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
+        var delegate = module.default;
+
+        if (!document.getElementById('searchWrap')) {
+
+            $('.search-icon').on('click', function () {
+                delegate.showSearchPage()
+            })
+
+        } else {
+            import( /* webpackChunkName: "sendAjax" */ './sendAjax').then(module => {
+                var sendAjax = module.default;
+                delegate.searchLes()
+            });
+          
+        }
+
+    });
+
+
+
 
 }(window.mylib || (window.mylib = {})));

@@ -257,7 +257,7 @@
                 }
             } else {
                 // 没有课程
-                $('.page-slide-wrap').remove()
+                $('.layui-laypage').hide()
                 lesHtml = `
                         <div class="loading-bx">
                             <div class="loading-text">

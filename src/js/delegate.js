@@ -25,7 +25,7 @@ Delegate.prototype = {
                     _this.userCenterComponent(obj.userCenterIndex)
                 }
             } else if (eventTarget == $('.btn_lr')[0]) {
-                _this.showLogPage()
+                _this.showSearchPage()
             }
             _this.isFirst = false
         }
@@ -68,7 +68,7 @@ Delegate.prototype = {
         // 展示注册登录二维码弹窗
         $('.btn_lr').off()
         $('.btn_lr').on('click', function () {
-            _this.showLogPage()
+            _this.showSearchPage()
         })
         // 切换header tag
         $('.det_tag_bx .tt-item').off()
@@ -103,10 +103,46 @@ Delegate.prototype = {
             _this.showStars()
             return false
         })
-
+        // 搜索课程
+        $('.search-img').off()
+        $('.search-img').on('click', function () {
+            // _this.showStars()
+            return false
+        })
     },
-    showLogPage: function () {
-        // console.log('登陆二维码')
+
+    searchLes: function () {
+        var root = window.mylib
+        var data = this.getQueryString()
+        var sourceDelegate = 'searchList'
+        var url = root.searchUrl
+        console.log(url, data)
+        // root.sendAjax.postMd(sourceDelegate, url, data)
+        root.sendAjax.getMd(sourceDelegate, url, data)
+    },
+    showSearchPage: function () {
+        var root = window.mylib
+        console.log('搜索~！！！')
+        var keyWords = $('.search-item input').val()
+        root.keyWords = keyWords
+        window.location.href = root.searchAdr + "?keywords=" + root.keyWords + "&page=1"
+    },
+    // 获取地址中的参数Id
+    getQueryString: function () {
+        var keywords = getKeyword('keywords')
+        var page = getKeyword('page')
+        var data = {
+            keywords: keywords,
+            page: page,
+        }
+
+        function getKeyword(keyword) {
+            var reg = new RegExp("(^|&)" + keyword + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return r[2];
+            return '';
+        }
+        return data
     },
     chargeItemChoice: function (indexId) {
         $('.charge_item_list').find('.select input').removeAttr('checked')
@@ -252,7 +288,7 @@ Delegate.prototype = {
             // pfUrl定义在html
             console.log(dataObj, root.sendAjax)
             var sourceDelegate = 'lesPingfen'
-            var url =  root.pingLesUrl
+            var url = root.pingLesUrl
             var data = dataObj
             console.log(url, data)
             root.sendAjax.postMd(sourceDelegate, url, data)
@@ -272,7 +308,7 @@ Delegate.prototype = {
             yes: function () {
                 // getMd: function (sourceDelegate, url, data) {
                 var sourceDelegate = 'buyLes'
-                var url =  root.buyLesUrl
+                var url = root.buyLesUrl
                 var data = root.lessonData
                 console.log(url, data)
                 root.sendAjax.postMd(sourceDelegate, url, data)
