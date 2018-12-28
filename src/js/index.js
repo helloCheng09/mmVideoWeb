@@ -37,14 +37,14 @@ import 'expose-loader?$!jquery'
      * development
      * cnmp start
      * ************ */
-    root.url = './'
-    root.lesCateUrl = 'https://www.easy-mock.com/mock/5b9c69299c53ef2876d29227/list/lessonCate'
-    root.lesListUrl = '../api/lesList.json'
-    root.msgListUrl = '../api/msgList.json'
-    root.videoUrl = '../api/videoLink.json'
-    root.buyLesUrl = '../api/buyLes.json'
-    root.pingLesUrl = '../api/respond.json'
-    root.myLesUrl =  '../api/myLes.json'
+    // root.url = './'
+    // root.lesCateUrl = 'https://www.easy-mock.com/mock/5b9c69299c53ef2876d29227/list/lessonCate'
+    // root.lesListUrl = '../api/lesList.json'
+    // root.msgListUrl = '../api/msgList.json'
+    // root.videoUrl = '../api/videoLink.json'
+    // root.buyLesUrl = '../api/buyLes.json'
+    // root.pingLesUrl = '../api/respond.json'
+    // root.myLesUrl =  '../api/myLes.json'
 
     // 入口
     if (document.getElementById('indexWrp')) {

@@ -12,22 +12,22 @@ module.exports = {
         index: './src/js/index.js',
     },
     output: {
-        // filename: './js/[name].js',
-        filename: './js/[name].[hash].js',
+        filename: './js/[name].js',
+        // filename: './js/[name].[hash].js',
         path: path.resolve(__dirname, 'dist'),
         // publicPath: '/public/yz/videos/web/'
     },
     optimization: {
         // runtimeChunk: 'single',
-        splitChunks: {
-            cacheGroups: {
-                vendor: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: 'vendors',
-                    chunks: 'all'
-                }
-            }
-        }
+        // splitChunks: {
+        //     cacheGroups: {
+        //         vendor: {
+        //             test: /[\\/]node_modules[\\/]/,
+        //             name: 'vendors',
+        //             chunks: 'all'
+        //         }
+        //     }
+        // }
         // minimizer: [
         //     new DropConsoleWebpackPlugin({
         //         drop_log: process.env.NODE_ENV === "production"

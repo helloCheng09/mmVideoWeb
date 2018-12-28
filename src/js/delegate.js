@@ -125,7 +125,7 @@ Delegate.prototype = {
         $('.s_child_tags').find('.select input').removeAttr('checked')
         $('.s_child_tags').find('.select').removeClass('select')
         this.addClass('select')
-        this.find("input[name='child']").attr('checked', 'checked')
+        this.find("input[type='radio']").attr('checked', 'checked')
     },
     userCenterComponent: function (indexId) {
         $('.uc_com_tag').find('.select').removeClass('select')
