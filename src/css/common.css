@@ -333,7 +333,7 @@
 }
 .main-video-b .video-list-b .video-list .les-text-one .teacher-text {
   display: inline-block;
-  width: 90px;
+  max-width: 90px;
   vertical-align: middle;
 }
 .main-video-b .video-list-b .video-list .les-text-one .icon-item {
@@ -349,6 +349,9 @@
   width: 100%;
   height: 100%;
   vertical-align: middle;
+}
+.main-video-b .video-list-b .video-list .les-text-one .lower-icon {
+  margin-top: 2px;
 }
 .main-video-b .video-list-b .video-list .les-text-one .text-item {
   float: left;
@@ -614,10 +617,10 @@
   display: inline-block;
 }
 .page-slide-wrap #pageSlide .layui-laypage-em {
-  background-color: #3784fa!important;
+  background-color: #3784fa !important;
 }
 .page-slide-wrap #pageSlide .layui-laypage a:hover {
-  color: #3784fa!important;
+  color: #3784fa !important;
 }
 /*******内容加载文字 ***********/
 .loading-bx {

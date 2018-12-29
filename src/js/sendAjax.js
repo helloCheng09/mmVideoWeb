@@ -76,8 +76,8 @@
         successFn: function (sourceDelegate, res, cateidArr) {
             var _this = this
             if (sourceDelegate == 'centerLes') {
-                console.log('课程分类渲染')
-                console.log(res)
+                // console.log('课程分类渲染')
+                // console.log(res)
                 root.renderData.renderCate(res, cateidArr) //渲染分类
                 var cateArr = res.data
                 if (cateArr.length) {
@@ -94,7 +94,7 @@
                 this.getMd(sourceDelegate, url, data) // 发送后台获取课程列表
 
             } else if (sourceDelegate == 'lesList') {
-                console.log(2222, res)
+                // console.log(2222, res)
                 // 实例化分页组件
                 // if (res.pages != 1) {
                 //     res.sourceDelegate = 'lesList'
@@ -109,7 +109,7 @@
                     root.renderData.initPageCom(res)
                     root.pageInit = false
                 }
-                console.log(root.pageInit)
+                // console.log(root.pageInit)
                 // root.renderData.renderLesList(res)
                 // root.renderData.renderLesList(res) //渲染对应分类课程
             } else if (sourceDelegate == 'myMsg') {
@@ -166,24 +166,45 @@
                     })
                 }
             } else if (sourceDelegate == 'myLesList') {
+                console.log(res)
                 // myLesList
                 root.myLesList = {
                     data: []
                 }
                 // var cacheMyLes = [] //我的课程缓存全局
-                var emptyObj = []
-                $.each(res.data, function (index, item) {
-                    var lesItem = { ...item
-                    }; //单个课程
-                    emptyObj.push(lesItem)
-                })
-                console.log(emptyObj)
-                root.myLesList.data = emptyObj
+                // $.each(res.data, function (index, item) {
+                var lesItem = { ...res.data
+                };
+                var dataArr = res.data
                 var myListLen = res.data.length
+                var pageNum = Math.ceil(myListLen / 6)
+                console.log(1111, pageNum)
+                // if (sum < myListLen) {
+                //     for (var i = 0; i < myListLen;  i+= 6) {
+                //         emptyObj.push(arr.slice(i, i+6))
+                //     }
+                // }
+
+               var emptyArr = spliteArr(dataArr, 6)
+                function spliteArr (arr, len) {
+                    var sumLen = arr.length
+                    var result = []
+                    for(var i = 0; i < sumLen; i +=len){
+                        result.push(arr.slice(i, i+len))
+                    }
+                    
+                    return result
+                }
+                // emptyObj.push(lesItem)
+                // })
+                // console.log(emptyObj)
+                // root.myLesList.data = emptyObj
+
                 var obj = {
                     total: myListLen,
                     per_page: 6,
-                    sourceDelegate: 'ueserLes'
+                    sourceDelegate: 'ueserLes',
+                    data: emptyArr
                 }
                 import( /* webpackChunkName: "renderData" */ './renderData').then(module => {
                     var renderData = module.default;
@@ -191,7 +212,7 @@
                 });
 
             } else if (sourceDelegate == 'searchList') {
-                console.log(res)
+                // console.log(res)
                 import( /* webpackChunkName: "renderData" */ './renderData').then(module => {
                     var renderData = module.default;
                     res.sourceDelegate = 'searchList'
@@ -212,10 +233,10 @@
                     renderData.renderChargeCode(res)
                 });
             } else if (sourceDelegate == 'chargeSuc') {
-                console.log(res)
+                // console.log(res)
                 // 1 购买成功（刷新） 2还未扫码 3支付失败（刷面）
                 var codeRes = res.data.code
-                if(codeRes == 1) {
+                if (codeRes == 1) {
                     clearInterval(root.chargeTimer)
                     var index = layer.open({
                         title: '提示',
@@ -230,7 +251,7 @@
                             layer.close(index);
                         }
                     })
-                   
+
                 }
                 // switch (codeRes) {
                 //     case 1:

@@ -132,11 +132,9 @@ Delegate.prototype = {
         })
         $('.search-item input').off()
         $('.search-item input').focus(function () {
-            $(document).off()
-            $(document).keyup(function (event) {
+            $('html, body').keyup(function (event) {
                 if (event.keyCode == 13) {
                     _this.clickSearch()
-                    return false
                 }
             });
         })
@@ -158,7 +156,6 @@ Delegate.prototype = {
             root.pageInit = true
             var sourceDelegate = 'searchList'
             var url = root.searchUrl
-            console.log(url, data)
             // root.sendAjax.postMd(sourceDelegate, url, data)
             root.sendAjax.getMd(sourceDelegate, url, data)
             // this.searchCon(root.srcKeyWords)
@@ -176,7 +173,7 @@ Delegate.prototype = {
         } else {
             var sourceDelegate = 'searchList'
             var url = root.searchUrl
-            console.log(url, data)
+            // console.log(url, data)
             // root.sendAjax.postMd(sourceDelegate, url, data)
             root.sendAjax.getMd(sourceDelegate, url, data)
             // this.searchCon(root.srcKeyWords)
@@ -185,8 +182,9 @@ Delegate.prototype = {
     },
     showSearchPage: function () {
         var root = window.mylib
-        console.log('搜索~！！！')
+        // console.log('搜索~！！！')
         var keyWords = $('.search-item input').val()
+        // console.log(keyWords)
         console.log(keyWords)
         if (keyWords != '') {
             root.srcKeyWords = keyWords
@@ -310,7 +308,7 @@ Delegate.prototype = {
             scores: 10,
             content: "超赞",
         }
-        console.log(dataObj)
+        // console.log(dataObj)
         _this.subPf(dataObj, index)
         $('.stars_btn').on("click", function (e) {
             var holyWidth = Number($(this).css('width').split('p')[0])
@@ -376,7 +374,7 @@ Delegate.prototype = {
             // 获取评分数据传后台
             dataObj.scores = scores
             dataObj.content = pfText
-            console.log(dataObj)
+            // console.log(dataObj)
             _this.subPf(dataObj, index)
             return false
         })
@@ -392,11 +390,11 @@ Delegate.prototype = {
         $(".pj-btn-b .pj-btn").off()
         $(".pj-btn-b .pj-btn").on("click", function () {
             // pfUrl定义在html
-            console.log(dataObj, root.sendAjax)
+            // console.log(dataObj, root.sendAjax)
             var sourceDelegate = 'lesPingfen'
             var url = root.pingLesUrl
             var data = dataObj
-            console.log(url, data)
+            // console.log(url, data)
             root.sendAjax.postMd(sourceDelegate, url, data)
             // root.sendAjax.getMd(sourceDelegate, url, data)
             layer.close(index);
@@ -416,7 +414,7 @@ Delegate.prototype = {
                 var sourceDelegate = 'buyLes'
                 var url = root.buyLesUrl
                 var data = root.lessonData
-                console.log(url, data)
+                // console.log(url, data)
                 root.sendAjax.postMd(sourceDelegate, url, data)
                 layer.close(index);
             },
@@ -441,7 +439,7 @@ Delegate.prototype = {
             })
             return false
         } else {
-            $('#videoWrap').slideDown('250')
+            $('#videoWrap').slideDown('500')
         }
     },
     // 课程详情菜单切换

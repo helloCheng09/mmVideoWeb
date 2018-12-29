@@ -170,7 +170,7 @@ module.exports = {
             var data = {
                 cate_id: cate_id
             }
-            console.log(data, url)
+            // console.log(data, url)
             root.sendAjax.getMd(sourceDelegate, url, data)
         }
     },
@@ -179,7 +179,7 @@ module.exports = {
         var root = window.mylib
         setTimeout(() => {
             var curDataId = $('.charge_item_list .select').parent('.charge_item').attr('data-id')
-            console.log(9876554, curDataId)
+            // console.log(9876554, curDataId)
             root.charging = true
             // 发送二维码请求
             var data = {
@@ -188,7 +188,7 @@ module.exports = {
             }
             var url = root.chargeCodeSrc
             var sourceDelegate = 'chargeCode'
-            console.log(url, data)
+            // console.log(url, data)
             root.sendAjax.getMd(sourceDelegate, url, data)
         }, 0);
 

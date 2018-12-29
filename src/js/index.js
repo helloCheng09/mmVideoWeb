@@ -43,7 +43,7 @@ import 'expose-loader?$!jquery'
      * development
      * cnmp start
      * ************ */
-    var NEV =1
+    var NEV = 0
     if (NEV) {
         root.url = './'
         root.lesCateUrl = 'https://www.easy-mock.com/mock/5b9c69299c53ef2876d29227/list/lessonCate'
@@ -61,7 +61,7 @@ import 'expose-loader?$!jquery'
 
     // 入口
     if (document.getElementById('indexWrp')) {
-        console.log('首页');
+        // console.log('首页');
 
         $('.header_list').hover(function () {
             import( /* webpackChunkName: "init" */ './init.js').then(module => {
@@ -82,6 +82,11 @@ import 'expose-loader?$!jquery'
         // 实例轮播图1
         var mySwiper = new Swiper('#Swiper1', {
             // autoplay:true,
+            autoplay: {
+                delay: 3000,
+                stopOnLastSlide: false,
+                disableOnInteraction: true,
+            },
             pagination: {
                 el: '.swiper-pagination',
             },
@@ -92,7 +97,11 @@ import 'expose-loader?$!jquery'
             grabCursor: true,
             centeredSlides: true,
             slidesPerView: 'auto',
-            // autoplay:true,
+            autoplay: {
+                delay: 3000,
+                stopOnLastSlide: false,
+                disableOnInteraction: true,
+            },
             loop: true,
             coverflowEffect: {
                 rotate: 0,
@@ -103,10 +112,15 @@ import 'expose-loader?$!jquery'
             },
         });
     } else if (document.getElementById('lesWrp')) {
-        console.log('课程中心');
+        // console.log('课程中心');
         // 实例轮播图1
         var mySwiper = new Swiper('#Swiper1', {
             // autoplay:true,
+            autoplay: {
+                delay: 3000,
+                stopOnLastSlide: false,
+                disableOnInteraction: true,
+            },
             pagination: {
                 el: '.swiper-pagination',
             },
@@ -139,6 +153,11 @@ import 'expose-loader?$!jquery'
         // 实例轮播图1
         var mySwiper = new Swiper('#Swiper1', {
             // autoplay:true,
+            autoplay: {
+                delay: 3000,
+                stopOnLastSlide: false,
+                disableOnInteraction: true,
+            },
             pagination: {
                 el: '.swiper-pagination',
             },
@@ -159,7 +178,7 @@ import 'expose-loader?$!jquery'
         })
 
     } else if (document.getElementById('detLesWrap')) {
-        console.log('课程详情');
+        // console.log('课程详情');
 
         // lazy load
         import( /* webpackChunkName: "sendAjax" */ './sendAjax.js').then(module => {
@@ -266,7 +285,7 @@ import 'expose-loader?$!jquery'
             });
         })
     } else if (document.getElementById('userWrap')) {
-        console.log('个人中心')
+        // console.log('个人中心')
         // 页面初始化
         spaInit()
 
@@ -279,7 +298,7 @@ import 'expose-loader?$!jquery'
             var data = {
                 page: 1
             }
-            console.log(url, data)
+            // console.log(url, data)
             sendAjax.getMd(sourceDelegate, url, data)
 
         });
@@ -318,7 +337,7 @@ import 'expose-loader?$!jquery'
 
 
     } else if (document.getElementById('msgWrap')) {
-        console.log('系统消息页面')
+        // console.log('系统消息页面')
 
         import( /* webpackChunkName: "renderData" */ './renderData').then(module => {
             var renderData = module.default;
@@ -356,8 +375,6 @@ import 'expose-loader?$!jquery'
                     }
                 });
             })
-
-
         } else {
             import( /* webpackChunkName: "sendAjax" */ './sendAjax').then(module => {
                 var sendAjax = module.default;

@@ -265,8 +265,7 @@
     padding-top: 20px;
     .video-list-b {
         .video-list {
-            overflow: hidden;
-            // min-height: 568px;
+            overflow: hidden; // min-height: 568px;
             .video-item {
                 float: left;
                 position: relative;
@@ -329,7 +328,7 @@
                     height: 30px;
                     line-height: 30px;
                 }
-                .les-des{
+                .les-des {
                     display: inline-block;
                     width: 40%;
                     color: #ddd;
@@ -352,7 +351,7 @@
                 }
                 .teacher-text {
                     display: inline-block;
-                    width: 90px;
+                    max-width: 90px;
                     vertical-align: middle;
                 }
                 .icon-item {
@@ -368,6 +367,9 @@
                         height: 100%;
                         vertical-align: middle;
                     }
+                }
+                .lower-icon {
+                    margin-top: 2px;
                 }
                 .text-item {
                     float: left;
@@ -662,38 +664,42 @@
     color: #808080;
 }
 
-/*******分页组件 ***********/ 
+/*******分页组件 ***********/
+
 .page-slide-wrap {
     text-align: center;
     #pageSlide {
         display: inline-block;
-        .layui-laypage-em{
-            background-color: #3784fa!important;
+        .layui-laypage-em {
+            background-color: #3784fa !important;
         }
-        .layui-laypage a:hover{
-            color: #3784fa!important;
+        .layui-laypage a:hover {
+            color: #3784fa !important;
         }
-    }
-}
-/*******内容加载文字 ***********/ 
-.loading-bx {
-    text-align: center;
-    .loading-text{
-        text-align: center;
-        font-size: 18px;
-        color:#888;
     }
 }
 
-/*******微信支付 ***********/ 
+/*******内容加载文字 ***********/
+
+.loading-bx {
+    text-align: center;
+    .loading-text {
+        text-align: center;
+        font-size: 18px;
+        color: #888;
+    }
+}
+
+/*******微信支付 ***********/
+
 .charge-wechat-bx {
     text-align: center;
-    .code-bx{
-        display:inline-block;
+    .code-bx {
+        display: inline-block;
         margin-top: 15px;
         padding: 5px;
         border: 2px solid rgb(13, 212, 13);
-        .code-img{
+        .code-img {
             width: 180px;
             height: 180px;
             img {
@@ -702,9 +708,9 @@
             }
         }
     }
-    .code-text{
+    .code-text {
         line-height: 2;
-        .text{
+        .text {
             font-size: 20px;
         }
     }

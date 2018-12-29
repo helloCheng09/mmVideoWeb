@@ -69,7 +69,10 @@
         renderLesList: function (res, sourceDelegate) {
             var lesList = res.data
             var lesHtml = ''
-            console.log(788996555)
+            // console.log(788996555)
+            if (res.sourceDelegate == 'ueserLes') {
+                lesList = res.data[0]
+            }
             $.each(lesList, function (index, item) {
                 if (item != undefined) {
                     let id = item.id
@@ -167,7 +170,6 @@
                             </div>
                         `
                 }
-
             }
 
             setTimeout(() => {
@@ -178,11 +180,15 @@
         // 实例化 分页组件
         initPageCom: function (res) {
             var _this = this
-            console.log(res)
+            // console.log(res)
             var count = res.total
             var limit = res.per_page
             if (count > 0) {
                 if (res.sourceDelegate == 'ueserLes') {
+                    console.log(res)
+                    // 我的课程 渲染首页
+                    // res.curPage = 1
+                    _this.renderLesList(res)
                     // 个人中心 课程分页
                     layui.use('laypage', function () {
                         var laypage = layui.laypage;
@@ -237,7 +243,7 @@
                                             page: obj.curr,
                                             keywords: keywords
                                         }
-                                        console.log(url, data)
+                                        // console.log(url, data)
                                         root.sendAjax.getMd(sourceDelegate, url, data)
                                     }
                                 }
@@ -302,7 +308,7 @@
         renderChargeCode: function (res) {
             var root = window.mylib
             if (res.sourceDelegate === 'chargeCode') {
-                console.log(res)
+                // console.log(res)
                 var codeSrc = []
                 codeSrc.push(res.data.qrcode)
                 var orders_id = res.data.orders_id
@@ -310,7 +316,7 @@
                 var img = this.preloadImg(codeSrc, {
                     orders_id: orders_id
                 })[0]
-                console.log(img)
+                // console.log(img)
                 $('.insert_code').append(img)
                 // 监控订扫码情况
                 this.checkChargeStatus(orders_id)
@@ -321,7 +327,7 @@
             var root = window.mylib
             clearInterval(root.chargeTimer)
             root.chargeTimer = setInterval(() => {
-                console.log('监控charge')
+                // console.log('监控charge')
                 // 如果没有在充值模块，清除定时器
                 if (root.charging) {
                     // 监测购买情况
@@ -330,7 +336,7 @@
                     }
                     var url = root.chargeSucUrl
                     var sourceDelegate = 'chargeSuc'
-                    console.log(url, data)
+                    // console.log(url, data)
                     root.sendAjax.getMd(sourceDelegate, url, data)
                 } else {
                     clearInterval(root.chargeTimer)
@@ -355,15 +361,12 @@
                 // 个人中心 课程分页
                 var curPage = res.curPage
                 var resObj = {
-                    data: []
+                    data: res.data[curPage - 1]
                 }
-                console.log(res.total)
-                for (var i = 0; i < 6; i++) {
-                    resObj.data.push(root.myLesList.data[(curPage - 1) * 6 + i])
-                }
+
                 var sourceDelegate = 'ueserLes'
                 _this.renderLesList(resObj, sourceDelegate)
-                console.log(_this)
+                // console.log(_this)
 
             } else if (res.sourceDelegate == 'lesList') {
                 // 课程中心 渲染非首页
