@@ -339,19 +339,54 @@
   margin-bottom: 20px;
 }
 #detLesWrap .main-show-rt .des-info .info-text {
-  height: 70px;
+  max-height: 70px;
   line-height: 1.5;
   color: #808080;
 }
 #detLesWrap .main-show-rt .pay-text {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 #detLesWrap .main-show-rt .pay-text span {
   font-size: 24px;
   color: #d7243c;
 }
+#detLesWrap .main-show-rt .det-bx {
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 2;
+}
+#detLesWrap .main-show-rt .det-bx .num-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #3783fa;
+}
+#detLesWrap .main-show-rt .det-bx .det-item {
+  float: left;
+  margin-right: 15px;
+}
+#detLesWrap .main-show-rt .det-bx .icon-item {
+  float: left;
+  margin-top: 5px;
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+}
+#detLesWrap .main-show-rt .det-bx .icon-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#detLesWrap .main-show-rt .det-bx .text-item {
+  float: right;
+}
+#detLesWrap .main-show-rt .det-bx .school-text {
+  margin-top: 8px;
+  line-height: 1.2;
+  color: #808080;
+}
 #detLesWrap .main-show-rt .btn-bx {
   overflow: hidden;
+  margin-top: 15px;
 }
 #detLesWrap .main-show-rt .btn-bx .btn-item {
   width: 165px;
@@ -547,7 +582,7 @@
   border-color: #3784fa !important;
   background-color: #3784fa !important;
 }
-/**********充值 charge.html*****************/
+/**********个人 center_user.html*****************/
 #userWrap {
   padding-bottom: 20px;
   background-color: #f3f4f8;
@@ -671,19 +706,19 @@
   font-weight: bold;
   color: gold;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .rt-tp,
-#userWrap .cg-rt .rt-con:nth-of-type(4) .rt-tp {
+#userWrap .cg-rt .my-child .rt-tp,
+#userWrap .cg-rt .my-coin .rt-tp {
   padding: 0 10px;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .rt-tp .tp-text,
-#userWrap .cg-rt .rt-con:nth-of-type(4) .rt-tp .tp-text {
+#userWrap .cg-rt .my-child .rt-tp .tp-text,
+#userWrap .cg-rt .my-coin .rt-tp .tp-text {
   position: relative;
   display: inline-block;
   padding: 0 10px;
   cursor: pointer;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .rt-tp .select:after,
-#userWrap .cg-rt .rt-con:nth-of-type(4) .rt-tp .select:after {
+#userWrap .cg-rt .my-child .rt-tp .select:after,
+#userWrap .cg-rt .my-coin .rt-tp .select:after {
   content: '';
   position: absolute;
   bottom: 10px;
@@ -693,25 +728,25 @@
   height: 3px;
   background-color: gold;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .num-show .num-text,
-#userWrap .cg-rt .rt-con:nth-of-type(4) .num-show .num-text {
+#userWrap .cg-rt .my-child .num-show .num-text,
+#userWrap .cg-rt .my-coin .num-show .num-text {
   border-color: #94bfff !important;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .num-show .show-text,
-#userWrap .cg-rt .rt-con:nth-of-type(4) .num-show .show-text {
+#userWrap .cg-rt .my-child .num-show .show-text,
+#userWrap .cg-rt .my-coin .num-show .show-text {
   color: #feca52 !important;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .red-warning,
-#userWrap .cg-rt .rt-con:nth-of-type(4) .red-warning {
+#userWrap .cg-rt .my-child .red-warning,
+#userWrap .cg-rt .my-coin .red-warning {
   padding: 0 20px;
   color: red;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .btn-bx,
-#userWrap .cg-rt .rt-con:nth-of-type(4) .btn-bx {
+#userWrap .cg-rt .my-child .btn-bx,
+#userWrap .cg-rt .my-coin .btn-bx {
   margin-left: 440px;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .btn-bx input,
-#userWrap .cg-rt .rt-con:nth-of-type(4) .btn-bx input {
+#userWrap .cg-rt .my-child .btn-bx input,
+#userWrap .cg-rt .my-coin .btn-bx input {
   padding: 0 20px;
   line-height: 2;
   border: none;
@@ -720,32 +755,32 @@
   color: #fff;
   cursor: pointer;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(1) .main-video-b .video-list-b {
+#userWrap .cg-rt .my-les .main-video-b .video-list-b {
   padding-top: 10px;
   background-color: #fff;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(1) .main-video-b .video-item {
+#userWrap .cg-rt .my-les .main-video-b .video-item {
   width: 33.33% !important;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(1) .main-video-b .video-link {
+#userWrap .cg-rt .my-les .main-video-b .video-link {
   margin-bottom: 10px;
   background-color: #f3f4f8;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .rt-bx {
+#userWrap .cg-rt .my-child .rt-bx {
   margin-top: 20px;
   min-height: 385px;
   background-color: #fff;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .rt-bx .list-child {
+#userWrap .cg-rt .my-child .rt-bx .list-child {
   padding: 50px 80px;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .rt-bx .list-child .child-item {
+#userWrap .cg-rt .my-child .rt-bx .list-child .child-item {
   padding-left: 20px;
   line-height: 40px;
   height: 40px;
   cursor: pointer;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .rt-bx .list-child .select .item-btn::before {
+#userWrap .cg-rt .my-child .rt-bx .list-child .select .item-btn::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -756,10 +791,10 @@
   border-radius: 50%;
   background-color: gold;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .rt-bx .list-child .child-item:hover {
+#userWrap .cg-rt .my-child .rt-bx .list-child .child-item:hover {
   background-color: #e3e6e9;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .rt-bx .list-child .item-btn {
+#userWrap .cg-rt .my-child .rt-bx .list-child .item-btn {
   position: relative;
   display: inline-block;
   width: 20px;
@@ -769,20 +804,20 @@
   border-radius: 50%;
   border: 1px solid gold;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .rt-bx .list-child .name-text {
+#userWrap .cg-rt .my-child .rt-bx .list-child .name-text {
   margin-right: 40px;
   font-size: 18px;
   vertical-align: middle;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .rt-bx .list-child .class-text {
+#userWrap .cg-rt .my-child .rt-bx .list-child .class-text {
   font-size: 18px;
   vertical-align: middle;
   color: #808080;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .rt-bx .btn-bx {
+#userWrap .cg-rt .my-child .rt-bx .btn-bx {
   margin-left: 500px;
 }
-#userWrap .cg-rt .rt-con:nth-of-type(3) .rt-bx .btn-bx input {
+#userWrap .cg-rt .my-child .rt-bx .btn-bx input {
   padding: 0 20px;
   line-height: 2;
   border: none;
@@ -826,6 +861,13 @@
   font-size: 18px;
   cursor: pointer;
 }
+#searchWrap .search-pn .search-tt em {
+  margin: 0 6px;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  color: #3783fa;
+}
 #searchWrap .search-pn .search-tt .select:after {
   content: '';
   position: absolute;
@@ -861,6 +903,9 @@
 }
 #searchWrap .video-link {
   background-color: #f3f4f8;
+}
+#searchWrap .video-list-b {
+  min-height: 548px;
 }
 /**********系统通知 det_msg.html*****************/
 #msgWrap {

@@ -126,12 +126,12 @@
                                             我的聪明豆
                                         </div>
                                     </li>
-                                    <li class="list-item uc_com_tag">
+                                    <li class="list-item uc_com_tag ">
                                         <div class="text">
                                             切换学生
                                         </div>
                                     </li>
-                                    <li class="list-item uc_com_tag">
+                                    <li class="list-item uc_com_tag my_coin_btn">
                                         <div class="text ">
                                             我的流量币
                                         </div>
@@ -149,7 +149,7 @@
                 </div>
                 <div class="cg-rt">
                     <div class="rt-con-list">
-                        <div class="rt-con rt_con" style="display:block;">
+                        <div class="rt-con rt_con  my-les" style="display:block;">
                             <div class="rt-tp">
                                 <div class="tp-text">
                                     全部课程
@@ -247,7 +247,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="rt-con rt_con" style="display:none;">
+                        <div class="rt-con rt_con  my-bean" style="display:none;">
                             <div class="rt-tp">
                                 <div class="tp-text">
                                     我的聪明豆
@@ -285,7 +285,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="rt-con rt_con" style="display:none;">
+                        <div class="rt-con rt_con my-child" style="display:none;">
                             <div class="rt-tp">
                                 <div class="tp-text">
                                     选择学生
@@ -319,7 +319,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="rt-con rt_con" style="display:none;">
+                        <div class="rt-con rt_con my-coin" style="display:none;">
                             <div class="rt-tp charge_tag_list">
                                 <div class="tp-text charge_com">
                                     数量
@@ -358,68 +358,81 @@
                                         *根据聪明豆排名充值送流量币
                                     </div>
                                     <div class="charge-list-bx">
-                                        <form action="" method="" class="fomr-two">
-                                            <ul class="card-list charge_item_list">
-                                                <li class="card-item charge_item" data-id="0">
-                                                    <div class="card-item-b select">
-                                                        <div class="card-det">
-                                                            <dd>1000流量币</dd>
-                                                            <div class="money-num">10元</div>
-                                                        </div>
-                                                        <div class="ts-zengsong">
-                                                            <div class="zs-text">另赠送100流量币</div>
-                                                        </div>
-                                                        <input type="radio" name="chargeItem" checked='checked'>
+                                        <!-- <form action="" method="" class="fomr-two"> -->
+                                        <ul class="card-list charge_item_list">
+                                            <li class="card-item charge_item" data-id="0">
+                                                <div class="card-item-b select">
+                                                    <div class="card-det">
+                                                        <dd>1000流量币</dd>
+                                                        <div class="money-num">10元</div>
                                                     </div>
-                                                </li>
-                                                <li class="card-item charge_item" data-id="1">
-                                                    <div class="card-item-b">
-                                                        <div class="card-det">
-                                                            <dd>2000流量币</dd>
-                                                            <div class="money-num">20元</div>
-                                                        </div>
-                                                        <div class="ts-zengsong">
-                                                            <div class="zs-text">另赠送200流量币</div>
-                                                        </div>
-                                                        <input type="radio" name="chargeItem">
+                                                    <div class="ts-zengsong">
+                                                        <div class="zs-text">另赠送100流量币</div>
                                                     </div>
-                                                </li>
-                                                <li class="card-item charge_item" data-id="2">
-                                                    <div class="card-item-b">
-                                                        <div class="card-det">
-                                                            <dd>5500流量币</dd>
-                                                            <div class="money-num">50元</div>
-                                                        </div>
-                                                        <div class="ts-zengsong">
-                                                            <div class="zs-text">另赠送500流量币</div>
-                                                        </div>
-                                                        <input type="radio" name="chargeItem">
+                                                    <input type="radio" name="chargeItem" checked='checked'>
+                                                </div>
+                                            </li>
+                                            <li class="card-item charge_item" data-id="1">
+                                                <div class="card-item-b">
+                                                    <div class="card-det">
+                                                        <dd>2000流量币</dd>
+                                                        <div class="money-num">20元</div>
                                                     </div>
-                                                </li>
-                                                <li class="card-item charge_item" data-id="3">
-                                                    <div class="card-item-b">
-                                                        <div class="card-det">
-                                                            <dd>11000流量币</dd>
-                                                            <div class="money-num">100元</div>
-                                                        </div>
-                                                        <div class="ts-zengsong">
-                                                            <div class="zs-text">另赠送1000流量币</div>
-                                                        </div>
-                                                        <input type="radio" name="chargeItem">
+                                                    <div class="ts-zengsong">
+                                                        <div class="zs-text">另赠送200流量币</div>
                                                     </div>
-                                                </li>
-                                            </ul>
-                                            <div class="btn-bx">
+                                                    <input type="radio" name="chargeItem">
+                                                </div>
+                                            </li>
+                                            <li class="card-item charge_item" data-id="2">
+                                                <div class="card-item-b">
+                                                    <div class="card-det">
+                                                        <dd>5500流量币</dd>
+                                                        <div class="money-num">50元</div>
+                                                    </div>
+                                                    <div class="ts-zengsong">
+                                                        <div class="zs-text">另赠送500流量币</div>
+                                                    </div>
+                                                    <input type="radio" name="chargeItem">
+                                                </div>
+                                            </li>
+                                            <li class="card-item charge_item" data-id="3">
+                                                <div class="card-item-b">
+                                                    <div class="card-det">
+                                                        <dd>11000流量币</dd>
+                                                        <div class="money-num">100元</div>
+                                                    </div>
+                                                    <div class="ts-zengsong">
+                                                        <div class="zs-text">另赠送1000流量币</div>
+                                                    </div>
+                                                    <input type="radio" name="chargeItem">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <!-- <div class="btn-bx">
                                                 <input type="submit" value="确 认">
+                                            </div> -->
+                                        <!-- </form> -->
+                                    </div>
+                                    <div class="charge-wechat-bx">
+                                        <div class="code-bx">
+                                            <div class="code-img insert_code">
+                                                <img src="http:\/\/qr.liantu.com\/api.php?text=weixin:\/\/wxpay\/bizpayurl?pr=xJflwxk">
                                             </div>
-                                        </form>
+                                        </div>
+                                        <div class="
+                                                    code-text">
+                                                <div class="text">
+                                                    微信支付
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
     </div>
     <footer class="pub-footer">
@@ -503,6 +516,10 @@
         </div>
     </footer>
 </body>
+<script>
+    window.mylib = {}
+    window.mylib.is_discount = '0';
+</script>
 <script type='text/javascript' src="./js/JsDepend/layui/layui.all.js"></script>
 <script src="./js/vendors.js"></script>
 <script type='text/javascript' src="./js/index.js?t=<?php echo time();?>"></script>

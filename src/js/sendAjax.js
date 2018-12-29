@@ -192,6 +192,88 @@
 
             } else if (sourceDelegate == 'searchList') {
                 console.log(res)
+                import( /* webpackChunkName: "renderData" */ './renderData').then(module => {
+                    var renderData = module.default;
+                    res.sourceDelegate = 'searchList'
+                    if (!root.pageInit) {
+                        root.renderData.renderPageCom(res)
+                    } else {
+                        root.renderData.initPageCom(res)
+                        root.pageInit = false
+                    }
+
+                });
+
+            } else if (sourceDelegate == 'chargeCode') {
+                import( /* webpackChunkName: "renderData" */ './renderData').then(module => {
+                    var renderData = module.default;
+                    res.sourceDelegate = 'chargeCode'
+                    $('.insert_code').empty()
+                    renderData.renderChargeCode(res)
+                });
+            } else if (sourceDelegate == 'chargeSuc') {
+                console.log(res)
+                // 1 购买成功（刷新） 2还未扫码 3支付失败（刷面）
+                var codeRes = res.data.code
+                if(codeRes == 1) {
+                    clearInterval(root.chargeTimer)
+                    var index = layer.open({
+                        title: '提示',
+                        content: '购买成功!~', //刷新页面， 重新请求二维码
+                        yes: function () {
+                            var sourceDelegate = 'userChargeSuc'
+                            // 页面跳转
+                            import( /* webpackChunkName: "init" */ './init.js').then(module => {
+                                var init = module.default;
+                                init.jumpTo(sourceDelegate)
+                            });
+                            layer.close(index);
+                        }
+                    })
+                   
+                }
+                // switch (codeRes) {
+                //     case 1:
+                //         var index = layer.open({
+                //             title: '提示',
+                //             content: '充值成功!', //刷新页面， 重新请求二维码
+                //             yes: function () {
+                //                 var sourceDelegate = 'userChargeSuc'
+                //                 // 页面跳转
+                //                 import( /* webpackChunkName: "init" */ './init.js').then(module => {
+                //                     var init = module.default;
+                //                     init.jumpTo(sourceDelegate)
+                //                 });
+                //                 layer.close(index);
+                //             }
+                //         })
+
+                //         clearInterval(root.chargeTimer)
+                //         break;
+                //     case 2:
+                //         // layer.open({
+                //         //     title: '提示',
+                //         //     content: '购买成功'
+                //         // })
+                //         break;
+                //     case 3:
+                //     var index = layer.open({
+                //         title: '提示',
+                //         content: '哎呀~购买失败了~请重试', //刷新页面， 重新请求二维码
+                //         yes: function () {
+                //             var sourceDelegate = 'userChargeFail'
+                //             // 页面跳转
+                //             import( /* webpackChunkName: "init" */ './init.js').then(module => {
+                //                 var init = module.default;
+                //                 init.jumpTo(sourceDelegate)
+                //             });
+                //             layer.close(index);
+                //         }
+                //     })
+
+                //     clearInterval(root.chargeTimer)
+                //         break;
+                // }
             }
         },
 

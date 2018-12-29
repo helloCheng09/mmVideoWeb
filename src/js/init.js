@@ -160,7 +160,7 @@ module.exports = {
     initLesCenter: function (cateId) {
         var root = window.mylib
         // console.log('初始化课程分类')
-        if (cateId == ''){
+        if (cateId == '') {
             // console.log('无选择')
             // 发GET请求 后台 获取所有分类
             // console.log(root.sendAjax)
@@ -168,11 +168,50 @@ module.exports = {
             var url = root.lesCateUrl
             var sourceDelegate = 'centerLes'
             var data = {
-                cate_id:cate_id
+                cate_id: cate_id
             }
             console.log(data, url)
-           root.sendAjax.getMd(sourceDelegate , url, data)
+            root.sendAjax.getMd(sourceDelegate, url, data)
+        }
+    },
+    // 初始化个人中心 二维码
+    initUserChargeCode: function () {
+        var root = window.mylib
+        setTimeout(() => {
+            var curDataId = $('.charge_item_list .select').parent('.charge_item').attr('data-id')
+            console.log(9876554, curDataId)
+            root.charging = true
+            // 发送二维码请求
+            var data = {
+                data_id: curDataId,
+                is_discount: root.is_discount
+            }
+            var url = root.chargeCodeSrc
+            var sourceDelegate = 'chargeCode'
+            console.log(url, data)
+            root.sendAjax.getMd(sourceDelegate, url, data)
+        }, 0);
+
+
+    },
+    // 关闭后跳转 页面/模块
+    jumpTo: function (sourceDelegate) {
+        var root = window.mylib
+        if (sourceDelegate == 'userChargeSuc' || sourceDelegate === 'userChargeFail') {
+            $('.charge_item_list').find('.select input').removeAttr('checked')
+            $('.charge_item_list').find('.select').removeClass('select')
+            $('.charge_item:first-child').children('.card-item-b').addClass('select')
+            $('.charge_item:first-child').find('input').attr('checked', 'checked')
+            $('.llb-toggle .rt_bt:last-child').hide()
+            var timer = setTimeout(() => {
+                $('.llb-toggle .rt_bt:last-child').show()
+            }, 500);
+            this.initUserChargeCode()
+            // var data_id = $('.charge_item').eq(0).data('id')
+            // window.location.reload()
+            //    选中第一个模块
+            // 重新获取一次二维码
         }
     }
-  
+
 };

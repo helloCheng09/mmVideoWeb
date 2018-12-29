@@ -69,6 +69,7 @@
         renderLesList: function (res, sourceDelegate) {
             var lesList = res.data
             var lesHtml = ''
+            console.log(788996555)
             $.each(lesList, function (index, item) {
                 if (item != undefined) {
                     let id = item.id
@@ -78,7 +79,7 @@
                     // if (sourceDelegate == 'ueserLes') {
                     //     subtime = "2018-12-23"
                     // }
-                    let title = item.title
+                    let title = item.name
 
                     let froms = item.froms // 1 试听课程 2 付费课程
                     if (froms == '2') {
@@ -154,18 +155,21 @@
                     `
                 }
             })
-            if (sourceDelegate != 'ueserLes') {
-                // 没有课程
-                if (lesList.length == 0) {
+
+            if (lesList.length == 0) {
+                if (sourceDelegate != 'ueserLes') {
+                    // 分类没有课程
                     lesHtml = `
-                    <div class="loading-bx">
-                        <div class="loading-text">
-                            课程上架中，敬请期待...
-                        </div>
-                    </div>
-                `
+                            <div class="loading-bx">
+                                <div class="loading-text">
+                                    课程上架中，敬请期待...
+                                </div>
+                            </div>
+                        `
                 }
+
             }
+
             setTimeout(() => {
                 $('.insert_les_list').empty().append(lesHtml)
             }, 500);
@@ -199,7 +203,7 @@
                             }
                         });
                     });
-                } else if (res.sourceDelegate == 'lesList') {
+                } else if (res.sourceDelegate == 'lesList' || res.sourceDelegate == 'searchList') {
                     // 课程中心 渲染首页
                     _this.renderLesList(res)
                     // 课程中心 分页
@@ -216,15 +220,26 @@
                                 //首次不执行
                                 if (!first) {
                                     //do something
-                                    var url = root.lesListUrl
-                                    console.log(88888, obj.curr)
-                                    var sourceDelegate = 'lesList'
-                                    var cate_id = res.cate_id
-                                    var data = {
-                                        page: obj.curr,
-                                        cate_child: cate_id
+                                    if (res.sourceDelegate == 'lesList') {
+                                        var url = root.lesListUrl
+                                        var sourceDelegate = 'lesList'
+                                        var cate_id = res.cate_id
+                                        var data = {
+                                            page: obj.curr,
+                                            cate_child: cate_id
+                                        }
+                                        root.sendAjax.getMd(sourceDelegate, url, data)
+                                    } else if (res.sourceDelegate == 'searchList') {
+                                        var url = root.searchUrl
+                                        var sourceDelegate = 'searchList'
+                                        var keywords = root.srcKeyWords
+                                        var data = {
+                                            page: obj.curr,
+                                            keywords: keywords
+                                        }
+                                        console.log(url, data)
+                                        root.sendAjax.getMd(sourceDelegate, url, data)
                                     }
-                                    root.sendAjax.getMd(sourceDelegate, url, data)
                                 }
                             }
                         });
@@ -256,21 +271,83 @@
                     });
                 }
             } else {
-                // 没有课程
-                $('.layui-laypage').hide()
-                lesHtml = `
+                if (res.sourceDelegate == 'searchList') {
+                    // 没搜索到课程
+                    lesHtml = `
+                        <div class="loading-bx">
+                            <div class="loading-text">
+                                未搜索到相关课程...
+                            </div>
+                        </div>
+                    `
+                } else {
+                    // 没有课程
+                    $('.layui-laypage').hide()
+                    lesHtml = `
                         <div class="loading-bx">
                             <div class="loading-text">
                                 课程上架中，敬请期待...
                             </div>
                         </div>
                     `
+                }
+
                 setTimeout(() => {
                     $('.insert_les_list').empty().append(lesHtml)
                 }, 500);
 
             }
         },
+        // 渲染二维码
+        renderChargeCode: function (res) {
+            var root = window.mylib
+            if (res.sourceDelegate === 'chargeCode') {
+                console.log(res)
+                var codeSrc = []
+                codeSrc.push(res.data.qrcode)
+                var orders_id = res.data.orders_id
+                root.orders_id = orders_id
+                var img = this.preloadImg(codeSrc, {
+                    orders_id: orders_id
+                })[0]
+                console.log(img)
+                $('.insert_code').append(img)
+                // 监控订扫码情况
+                this.checkChargeStatus(orders_id)
+            }
+        },
+        // 监控扫码充值流量币情况
+        checkChargeStatus: function (orders_id) {
+            var root = window.mylib
+            clearInterval(root.chargeTimer)
+            root.chargeTimer = setInterval(() => {
+                console.log('监控charge')
+                // 如果没有在充值模块，清除定时器
+                if (root.charging) {
+                    // 监测购买情况
+                    var data = {
+                        orders_id: root.orders_id
+                    }
+                    var url = root.chargeSucUrl
+                    var sourceDelegate = 'chargeSuc'
+                    console.log(url, data)
+                    root.sendAjax.getMd(sourceDelegate, url, data)
+                } else {
+                    clearInterval(root.chargeTimer)
+                }
+            }, 500);
+        },
+        // 预加载
+        preloadImg: function (arr, obj) {
+            var imgWrap = [];
+            for (var i = 0; i < arr.length; i++) {
+                imgWrap[i] = new Image();
+                imgWrap[i].src = arr[i];
+                //    console.log(imgWrap[i]) 
+            }
+            return imgWrap
+        },
+
         // 渲染分页
         renderPageCom: function (res) {
             var _this = this
@@ -292,6 +369,9 @@
                 // 课程中心 渲染非首页
                 _this.renderLesList(res)
 
+            } else if (res.sourceDelegate == 'searchList') {
+                // 搜索课程 渲染非首页
+                _this.renderLesList(res)
             } else {
 
                 // 系统消息 渲染非首页

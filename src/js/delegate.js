@@ -24,9 +24,10 @@ Delegate.prototype = {
                 } else if (obj.userCenterIndex) {
                     _this.userCenterComponent(obj.userCenterIndex)
                 }
-            } else if (eventTarget == $('.btn_lr')[0]) {
-                _this.showSearchPage()
             }
+            // else if (eventTarget == $('.btn_lr')[0]) {
+            //     _this.showSearchPage()
+            // }
             _this.isFirst = false
         }
         _this.clickEvent()
@@ -41,6 +42,20 @@ Delegate.prototype = {
         $('.uc_com_tag').on('click', function () {
             var pnIndex = $(this).index()
             _this.userCenterComponent(pnIndex)
+            // init.initUserChargeCode()
+
+            // import( /* webpackChunkName: "init" */ './init.js').then(module => {
+            //     var init = module.default;
+            //     init.initUserChargeCode()
+            // });
+            return false
+        })
+        // 如果切换到充值流量币，初始化一次二维码
+        $('.my_coin_btn').on('click', function () {
+            import( /* webpackChunkName: "renderData" */ './renderData.js').then(module => {
+                var renderData = module.default;
+                renderData.checkChargeStatus()
+            });
         })
         // 个人中心 切换学生
         $('.centre_child').off()
@@ -66,10 +81,11 @@ Delegate.prototype = {
             _this.chargeItemChoice.apply($(this), _arg)
         })
         // 展示注册登录二维码弹窗
-        $('.btn_lr').off()
-        $('.btn_lr').on('click', function () {
-            _this.showSearchPage()
-        })
+        // $('.btn_lr').off()
+        // $('.btn_lr').on('click', function () {
+        //     _this.showSearchPage()
+        // })
+
         // 切换header tag
         $('.det_tag_bx .tt-item').off()
         $('.det_tag_bx .tt-item').on('click', function () {
@@ -109,31 +125,94 @@ Delegate.prototype = {
             // _this.showStars()
             return false
         })
+        // 搜索页搜索课程
+        $('.search-icon .search-img').off()
+        $('.search-icon .search-img').on('click', function () {
+            _this.clickSearch()
+        })
+        $('.search-item input').off()
+        $('.search-item input').focus(function () {
+            $(document).off()
+            $(document).keyup(function (event) {
+                if (event.keyCode == 13) {
+                    _this.clickSearch()
+                    return false
+                }
+            });
+        })
     },
-
+    clickSearch: function () {
+        var root = window.mylib
+        var keyWords = $('.search-item input').val()
+        root.srcKeyWords = keyWords
+        var data = {
+            keywords: root.srcKeyWords,
+            page: 1,
+        }
+        if (data.keywords == '') {
+            layer.open({
+                title: '提示',
+                content: '请输入搜索内容~'
+            })
+        } else {
+            root.pageInit = true
+            var sourceDelegate = 'searchList'
+            var url = root.searchUrl
+            console.log(url, data)
+            // root.sendAjax.postMd(sourceDelegate, url, data)
+            root.sendAjax.getMd(sourceDelegate, url, data)
+            // this.searchCon(root.srcKeyWords)
+        }
+    },
     searchLes: function () {
         var root = window.mylib
         var data = this.getQueryString()
-        var sourceDelegate = 'searchList'
-        var url = root.searchUrl
-        console.log(url, data)
-        // root.sendAjax.postMd(sourceDelegate, url, data)
-        root.sendAjax.getMd(sourceDelegate, url, data)
+        if (data.keywords == '') {
+            // layer.open({
+            //     title: '提示',
+            //     content: '请输入搜索内容~'
+            // })
+            // $('.video-list-b').css('minHeight', 'auto')
+        } else {
+            var sourceDelegate = 'searchList'
+            var url = root.searchUrl
+            console.log(url, data)
+            // root.sendAjax.postMd(sourceDelegate, url, data)
+            root.sendAjax.getMd(sourceDelegate, url, data)
+            // this.searchCon(root.srcKeyWords)
+        }
+
     },
     showSearchPage: function () {
         var root = window.mylib
         console.log('搜索~！！！')
         var keyWords = $('.search-item input').val()
-        root.keyWords = keyWords
-        window.location.href = root.searchAdr + "?keywords=" + root.keyWords + "&page=1"
+        console.log(keyWords)
+        if (keyWords != '') {
+            root.srcKeyWords = keyWords
+            window.location.href = root.searchAdr + "?keywords=" + root.srcKeyWords
+        } else {
+            window.location.href = root.searchAdr
+        }
+
     },
+    // 搜索内容提示
+    searchCon: function (keywords) {
+        var keywords = (this.decode(keywords))
+        var htmlCon = `
+            搜索<em>"${keywords}"</em>结果
+        `
+        $('.search-tt .tt-txt').empty().append(htmlCon)
+    },
+
     // 获取地址中的参数Id
     getQueryString: function () {
-        var keywords = getKeyword('keywords')
-        var page = getKeyword('page')
+        var root = window.mylib
+        root.srcKeyWords = getKeyword('keywords') // 挂载到当前页面全局
+        // var page = getKeyword('page')
         var data = {
-            keywords: keywords,
-            page: page,
+            keywords: root.srcKeyWords,
+            page: 1,
         }
 
         function getKeyword(keyword) {
@@ -145,10 +224,25 @@ Delegate.prototype = {
         return data
     },
     chargeItemChoice: function (indexId) {
+        var root = window.mylib
         $('.charge_item_list').find('.select input').removeAttr('checked')
         $('.charge_item_list').find('.select').removeClass('select')
-        this.addClass('select')
+        this.children('.card-item-b').addClass('select')
         this.find('input').attr('checked', 'checked')
+        var data_id = $('.charge_item').eq(indexId).data('id')
+
+        import( /* webpackChunkName: "sendAjax" */ './sendAjax.js').then(module => {
+            var sendAjax = module.default;
+            // 发送二维码请求
+            var data = {
+                data_id: data_id,
+                is_discount: root.is_discount
+            }
+            var url = root.chargeCodeSrc
+            var sourceDelegate = 'chargeCode'
+
+            root.sendAjax.getMd(sourceDelegate, url, data)
+        });
     },
     chargeSwith: function (indexId) {
         $('.charge_tag_list').find('.select').removeClass('select')
@@ -164,10 +258,22 @@ Delegate.prototype = {
         this.find("input[type='radio']").attr('checked', 'checked')
     },
     userCenterComponent: function (indexId) {
+        var root = window.mylib
         $('.uc_com_tag').find('.select').removeClass('select')
         $('.uc_com_tag').eq(indexId).find('.text').addClass('select')
         $('.rt_con').hide()
         $('.rt_con').eq(indexId).show()
+        // 如果切换到
+        if (!$('.uc_com_tag').eq(indexId).hasClass('my_coin_btn')) {
+            root.charging = false
+        } else {
+            root.charging = true
+            // 如果切换到充值流量币，初始化一次二维码
+            import( /* webpackChunkName: "init" */ './init.js').then(module => {
+                var init = module.default;
+                init.initUserChargeCode()
+            });
+        }
     },
     showStars: function () {
         var _this = this

@@ -254,6 +254,7 @@
   position: relative;
   padding: 0 10px;
   width: 25%;
+  margin-bottom: 15px;
 }
 .main-video-b .video-list-b .video-list .video-sec .video-link {
   background-color: #fff;
@@ -308,6 +309,11 @@
 .main-video-b .video-list-b .video-list .les-text-one .icon-list {
   height: 30px;
   line-height: 30px;
+}
+.main-video-b .video-list-b .video-list .les-text-one .les-des {
+  display: inline-block;
+  width: 40%;
+  color: #ddd;
 }
 .main-video-b .video-list-b .video-list .les-text-one .teacher-det {
   float: left;
@@ -563,7 +569,7 @@
   text-align: center;
   border-radius: 5px;
   cursor: pointer;
-  border: solid 2px #3783fa;
+  border: solid 1px #3783fa;
 }
 .charge-list-bx .card-list .card-item .card-det dd {
   line-height: 2;
@@ -621,4 +627,28 @@
   text-align: center;
   font-size: 18px;
   color: #888;
+}
+/*******微信支付 ***********/
+.charge-wechat-bx {
+  text-align: center;
+}
+.charge-wechat-bx .code-bx {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 5px;
+  border: 2px solid #0dd40d;
+}
+.charge-wechat-bx .code-bx .code-img {
+  width: 180px;
+  height: 180px;
+}
+.charge-wechat-bx .code-bx .code-img img {
+  display: block;
+  width: 100%;
+}
+.charge-wechat-bx .code-text {
+  line-height: 2;
+}
+.charge-wechat-bx .code-text .text {
+  font-size: 20px;
 }

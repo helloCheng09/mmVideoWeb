@@ -35,21 +35,30 @@ import 'expose-loader?$!jquery'
     root.pingLesUrl = root.ajaxUrl + 'replyAjax.html' //课程评分地址 POST
     root.myLesUrl = root.ajaxUrl + 'videos_mines.html' //获取课程播放地址 GET
     root.searchUrl = root.ajaxUrl + 'search_list.html' //搜索内容地址 POST
-    root.searchAdr = root.ajaxUrl + '/search.html' // 跳转到搜索页面路由
+    root.searchAdr = root.ajaxUrl + 'search.html' // 跳转到搜索页面路由
+    root.chargeCodeSrc = 'http://www.mamawozaizhe.com/mobile/WxpayService/pay.html' //获取充值二维码和单号地址 GET
+    root.chargeSucUrl = root.ajaxUrl + 'is_pay.html' // 跳转到搜索页面路由
+    root.charging = false
     /**************
      * development
      * cnmp start
      * ************ */
-    root.url = './'
-    root.lesCateUrl = 'https://www.easy-mock.com/mock/5b9c69299c53ef2876d29227/list/lessonCate'
-    root.lesListUrl = '../api/lesList.json'
-    root.msgListUrl = '../api/msgList.json'
-    root.videoUrl = '../api/videoLink.json'
-    root.buyLesUrl = '../api/buyLes.json'
-    root.pingLesUrl = '../api/respond.json'
-    root.myLesUrl = '../api/myLes.json'
-    root.searchUrl = '../api/searchList.json'
-    root.searchAdr = './search.html'
+    var NEV =1
+    if (NEV) {
+        root.url = './'
+        root.lesCateUrl = 'https://www.easy-mock.com/mock/5b9c69299c53ef2876d29227/list/lessonCate'
+        root.lesListUrl = '../api/lesList.json'
+        root.msgListUrl = '../api/msgList.json'
+        root.videoUrl = '../api/videoLink.json'
+        root.buyLesUrl = '../api/buyLes.json'
+        root.pingLesUrl = '../api/respond.json'
+        root.myLesUrl = '../api/myLes.json'
+        root.searchUrl = '../api/searchList.json'
+        root.searchAdr = './search.html'
+        root.chargeCodeSrc = '../api/chargeCode.json'
+        root.chargeSucUrl = '../api/chargeSuc.json'
+    }
+
     // 入口
     if (document.getElementById('indexWrp')) {
         console.log('首页');
@@ -264,6 +273,7 @@ import 'expose-loader?$!jquery'
         function spaInit() {}
         import( /* webpackChunkName: "sendAjax" */ './sendAjax').then(module => {
             var sendAjax = module.default;
+            // 我的课程
             var sourceDelegate = 'myLesList'
             var url = root.myLesUrl
             var data = {
@@ -271,6 +281,7 @@ import 'expose-loader?$!jquery'
             }
             console.log(url, data)
             sendAjax.getMd(sourceDelegate, url, data)
+
         });
 
         $('.header_list').hover(function () {
@@ -304,6 +315,8 @@ import 'expose-loader?$!jquery'
             });
         })
 
+
+
     } else if (document.getElementById('msgWrap')) {
         console.log('系统消息页面')
 
@@ -332,13 +345,25 @@ import 'expose-loader?$!jquery'
             $('.search-icon').on('click', function () {
                 delegate.showSearchPage()
             })
+            // // 回车
+            $('.search-item input').off()
+            $('.search-item input').focus(function () {
+                $(document).off()
+                $(document).keyup(function (event) {
+                    if (event.keyCode == 13) {
+                        delegate.showSearchPage()
+                        return false
+                    }
+                });
+            })
+
 
         } else {
             import( /* webpackChunkName: "sendAjax" */ './sendAjax').then(module => {
                 var sendAjax = module.default;
                 delegate.searchLes()
+                delegate.clickEvent()
             });
-          
         }
 
     });
