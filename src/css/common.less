@@ -128,7 +128,7 @@
             position: relative;
             display: inline-block;
             vertical-align: middle;
-            margin-right: 70px;
+            margin-right: 22px;
             cursor: pointer;
             .msg-num {
                 position: absolute;
@@ -264,6 +264,7 @@
 .main-video-b {
     padding-top: 20px;
     .video-list-b {
+        // min-height: 578px;
         .video-list {
             overflow: hidden; // min-height: 568px;
             .video-item {
@@ -438,6 +439,7 @@
     // font-size: 0;
     background-color: #282828;
     .footer-b {
+        position: relative;
         width: 1200px;
         margin: 0 auto;
         background-color: #282828;
@@ -445,12 +447,14 @@
             overflow: hidden;
             height: 130px;
             .top-l {
+                position: relative;
                 float: left;
                 .left-list {
                     line-height: 130px;
                     overflow: hidden;
                 }
                 .list-item {
+                    position: relative;
                     display: inline-block;
                     vertical-align: middle;
                     margin-right: 50px;
@@ -475,6 +479,7 @@
                 float: right;
                 line-height: 130px;
                 .link-blog {
+                    position: relative;
                     float: right;
                     a {
                         display: inline-block;
@@ -496,6 +501,50 @@
             border-top: 1px solid #333;
             .bot-text {
                 color: #8a8a8a;
+            }
+        }
+    } // 移动端二维码展示
+    .show-m-code::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 99999;
+        border-style: solid;
+        border-width: 10px;
+        border-color: #fff transparent transparent transparent;
+    }
+    .m-code-left {
+        left: 37px;
+    }
+    .m-code-right {
+        right: -45px;
+    }
+    .show-m-code {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: -56px;
+        z-index: 99999;
+        display: none;
+        transform: translateX(-50%);
+        .code-img {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            padding: 5px;
+            border-radius: 6px;
+            box-sizing: border-box;
+            box-shadow: 0 0 5px #333;
+            background-color: #fff;
+            .img-show {
+                width: 70px;
+                height: 70px;
+                border-radius: 6px;
+                background-size: cover;
+                background-position: 50%;
+                background-repeat: no-repeat;
             }
         }
     }

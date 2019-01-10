@@ -596,10 +596,20 @@
     </div>
     <footer class="pub-footer">
         <div class="footer-b">
+            <div class="show-m-code m-code-left">
+                <div class="code-img">
+                    <div class="img-show" style="background-image:url(./img/mobilecode.png)"></div>
+                </div>
+            </div>
+            <div class="show-m-code m-code-right">
+                <div class="code-img">
+                    <div class="img-show" style="background-image:url(./img/mobilecode.png)"></div>
+                </div>
+            </div>
             <div class="top">
                 <div class="top-l">
                     <ul class="left-list">
-                        <li class="list-item">
+                        <li class="list-item code_hover">
                             <a href="#" class="link-item">
                                 <div class="link-b">
                                     <div class="link-icon">
@@ -649,16 +659,15 @@
                         </li>
                     </ul>
                 </div>
-
                 <div class="bot-right">
-                    <div class="link-blog">
+                    <!-- <div class="link-blog">
                         <a href="#">
                             <div class="blog-img">
                                 <img src="./img/weibo.png" alt="">
                             </div>
                         </a>
-                    </div>
-                    <div class="link-blog">
+                    </div> -->
+                    <div class="link-blog code_hover">
                         <a href="#">
                             <div class="blog-img">
                                 <img src="./img/wechat.png" alt="">
@@ -675,7 +684,15 @@
         </div>
     </footer>
 </body>
-<!-- <script type='text/javascript' src="./js/JsDepend/layui/layui.all.js"></script> -->
+<script>
+    var root = {}
+    window.mylib = root
+    // root.loginUrl = "<?php echo site_url('videos/videosweb/wxlogin');?>"
+    // root.yuketang = "<?php echo $is_login;?>"
+    root.yuketang = "0"
+    root.loginUrl = "http://www.baidu.com"
+</script>
+<script type='text/javascript' src="./js/JsDepend/layui/layui.all.js"></script>
 <script src="./js/vendors.js"></script>
 <script type='text/javascript' src="./js/index.js?t=<?php echo time();?>"></script>
 

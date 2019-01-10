@@ -65,6 +65,9 @@
   width: 1200px;
   margin: 0 auto;
 }
+#lesWrp .screen-b .video-list-b {
+  min-height: 578px;
+}
 #lesWrp .fenlei-list-b {
   user-select: none;
   border-bottom: 1px solid #ddd;

@@ -100,10 +100,10 @@ module.exports = {
             path: path.resolve(__dirname, 'dist')
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new HtmlWebpackPlugin({
-            // title: 'Output Management'
-            title: 'Caching'
-        }),
+        // new HtmlWebpackPlugin({
+        //     title: 'Output Management'
+        //     // title: 'Caching'
+        // }),
         new webpack.HashedModuleIdsPlugin(),
     ]
 }

@@ -43,6 +43,7 @@ import 'expose-loader?$!jquery'
      * development
      * cnmp start
      * ************ */
+    //  NEV = 1 测试环境   NEV = 0 生产环境 切换
     var NEV = 0
     if (NEV) {
         root.url = './'
@@ -61,8 +62,6 @@ import 'expose-loader?$!jquery'
 
     // 入口
     if (document.getElementById('indexWrp')) {
-        // console.log('首页');
-
         $('.header_list').hover(function () {
             import( /* webpackChunkName: "init" */ './init.js').then(module => {
                 var init = module.default;
@@ -71,14 +70,6 @@ import 'expose-loader?$!jquery'
             });
         })
 
-        // $('.btn_lr').on('click', (e) => {
-        //     var eventTarget = e.currentTarget
-        //     import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
-        //         var delegate = module.default;
-        //         // 打开登陆
-        //         delegate.showLogPage(eventTarget)
-        //     });
-        // })
         // 实例轮播图1
         var mySwiper = new Swiper('#Swiper1', {
             // autoplay:true,
@@ -110,7 +101,32 @@ import 'expose-loader?$!jquery'
                 modifier: 1,
                 slideShadows: true,
             },
-        });
+        })
+        $(".code_hover").eq(0).hover(function () {
+            $('.m-code-left').show()
+        }, function () {
+            $('.m-code-left').hide()
+        })
+        $(".code_hover").eq(1).hover(function () {
+            $('.m-code-right').show()
+        }, function () {
+            $('.m-code-right').hide()
+        })
+        // console.log('首页');
+        if (root.yuketang === "0") {
+            $('html body').on('click', function () {
+                var index = layer.confirm('请先登录后继续浏览~~', {
+                    title: '登录提示',
+                    btn: ['立刻登录'],
+                    yes() {
+                        $('html body').off()
+                        window.location.href = root.loginUrl
+                        return false
+                    }
+                })
+                return false
+            })
+        }
     } else if (document.getElementById('lesWrp')) {
         // console.log('课程中心');
         // 实例轮播图1
@@ -284,6 +300,7 @@ import 'expose-loader?$!jquery'
                 delegate.init(eventTarget)
             });
         })
+
     } else if (document.getElementById('userWrap')) {
         // console.log('个人中心')
         // 页面初始化
@@ -310,15 +327,6 @@ import 'expose-loader?$!jquery'
                 init.headerAniLink(204)
             });
         })
-
-        // $('.btn_lr').on('click', (e) => {
-        //     var eventTarget = e.currentTarget
-        //     import( /* webpackChunkName: "delegate" */ './delegate').then(module => {
-        //         var delegate = module.default;
-        //         // 打开登陆
-        //         delegate.showLogPage(eventTarget)
-        //     });
-        // })
 
         $('.uc_com_tag').on('click', function (e) {
             var eventTarget = e.currentTarget

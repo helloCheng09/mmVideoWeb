@@ -128,7 +128,7 @@
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  margin-right: 70px;
+  margin-right: 22px;
   cursor: pointer;
 }
 .header-nav .header-b .msg-icon .msg-num {
@@ -411,6 +411,7 @@
   background-color: #282828;
 }
 .pub-footer .footer-b {
+  position: relative;
   width: 1200px;
   margin: 0 auto;
   background-color: #282828;
@@ -420,6 +421,7 @@
   height: 130px;
 }
 .pub-footer .footer-b .top .top-l {
+  position: relative;
   float: left;
 }
 .pub-footer .footer-b .top .top-l .left-list {
@@ -427,6 +429,7 @@
   overflow: hidden;
 }
 .pub-footer .footer-b .top .top-l .list-item {
+  position: relative;
   display: inline-block;
   vertical-align: middle;
   margin-right: 50px;
@@ -448,6 +451,7 @@
   line-height: 130px;
 }
 .pub-footer .footer-b .top .bot-right .link-blog {
+  position: relative;
   float: right;
 }
 .pub-footer .footer-b .top .bot-right .link-blog a {
@@ -468,6 +472,50 @@
 }
 .pub-footer .footer-b .bot .bot-text {
   color: #8a8a8a;
+}
+.pub-footer .show-m-code::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #fff transparent transparent transparent;
+}
+.pub-footer .m-code-left {
+  left: 37px;
+}
+.pub-footer .m-code-right {
+  right: -45px;
+}
+.pub-footer .show-m-code {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: -56px;
+  z-index: 99999;
+  display: none;
+  transform: translateX(-50%);
+}
+.pub-footer .show-m-code .code-img {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  padding: 5px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px #333;
+  background-color: #fff;
+}
+.pub-footer .show-m-code .code-img .img-show {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
 }
 /**********视频详情路径*****************/
 .page-link-pn {
