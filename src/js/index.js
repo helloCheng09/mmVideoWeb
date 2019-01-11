@@ -118,6 +118,7 @@ import 'expose-loader?$!jquery'
                 var index = layer.confirm('请先登录后继续浏览~~', {
                     title: '登录提示',
                     btn: ['立刻登录'],
+                    closeBtn :0,
                     yes() {
                         $('html body').off()
                         window.location.href = root.loginUrl

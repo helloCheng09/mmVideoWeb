@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+    <link rel="shortcut icon" href="./img/logoicon.png">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>搜索课程</title>
+    <link rel="stylesheet" href="./js/JsDepend/layui/css/layui.css">
+    <link rel="stylesheet" href="./css/index.css?t=<?php echo time();?>">
+</head>
+
+<body>
+    <div class="index-wrap" id="searchWrap">
+        <header class="header-nav">
+            <div class="header-b">
+                <div class="hd-left">
+                    <div class="logo-b">
+                        <a href="/">
+                            <img src="/public/yz/videos/web/img/logoicon.png" alt="" class="log-img">
+                        </a>
+                    </div>
+                    <div class="nav-list">
+                        <ul class="list-b header_list">
+                            <li class="list-item header_nav_tag">
+                                <a href="/" class="nav-link">
+                                    <div class="text">
+                                        首页
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-item header_nav_tag">
+                                <a href="./center_lesson.html" class="nav-link">
+                                    <div class="text">
+                                        课程
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-item header_nav_tag">
+                                <a href="./center_user.html" class="nav-link">
+                                    <div class="text">
+                                        个人
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- <div class="link-b-bar"></div> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="hd-right">
+                    <div class="search-b">
+                        <div class="search-wrp">
+                            <div class="search-item">
+                                <input type="text" placeholder="搜索" class="sear-ipt">
+                            </div>
+                            <div class="search-icon">
+                                <img src="/public/yz/videos/web/img/search.png" alt="" class="search-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="msg-icon">
+                        <a href="./det_msg.html">
+                            <span class="msg-num">
+                                <div class="num-text">
+                                    66
+                                </div>
+                            </span>
+                            <div class="msg-img">
+                                <img src="/public/yz/videos/web/img/message.png" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="login-reg">
+                        <div class="btn-b">
+                            <div class="btn-text btn_lr">
+                                <a>
+                                    <div class="text">
+                                        注册
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="btn-text btn_lr">
+                                <a>
+                                    <div class="text">
+                                        登陆
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="btn-b" style="display:none;">
+                            <div class="user-avatar">
+                                <img src="/public/yz/videos/web/img/xiugai-toux.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="main-screen">
+            <div class="screen-b">
+                <div class="search-pn">
+                    <div class="search-tt">
+                        <div class="tt-txt">
+                            搜索结果
+                        </div>
+                    </div>
+
+                    <div class="search-con-bx">
+                        <div class="main-video-b">
+                            <div class="video-list-b">
+                                <ul class="video-list insert_les_list">
+                                   
+                                    <!-- <li class="video-item video-sec">
+                                        <div class="video-isFree">
+                                            试听课
+                                        </div>
+                                        <a href="#" class="video-link">
+                                            <div class="item-con">
+                                                <div class="les-img">
+                                                    <div class="img-det" style="background-image:url(./img/banner1.png)"></div>
+                                                </div>
+                                                <div class="item-bot">
+                                                    <dt class="les-title">
+                                                        <div class="text-det one-ellipsis">
+                                                            课程名称课程名称课程名称课程名称课程名称课程名称课程名称
+                                                        </div>
+                                                    </dt>
+                                                    <dd class="les-text-one ">
+                                                        <div class="icon-list">
+                                                            <div class="teacher-det">
+                                                                <div class="teacher-ava">
+                                                                    <img src="/public/yz/videos/web/img/teacher-toux-default.png" alt="特级教师：王丽">
+                                                                </div>
+                                                                <div class="teacher-text">
+                                                                    亚里士多德
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="icon-item" title="特级教师">
+                                                                <img src="/public/yz/videos/web/img/gaoji.png" alt="特级教师">
+                                                            </div>
+                                                            <div class="icon-item" title="优秀课件">
+                                                                <img src="/public/yz/videos/web/img/youxiu.png">
+                                                            </div>
+                                                            <div class="video-time">
+                                                                <div class="time-text">11-29 </div>
+                                                            </div>
+                                                        </div>
+                                                    </dd>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li> -->
+                                </ul>
+                                <!-- <div class="none-text">暂无您搜索的内容...</div> -->
+                            </div>
+                            <div class="page-slide-wrap">
+                                <div id="pageSlide"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="pub-footer">
+        <div class="footer-b">
+            <div class="top">
+                <div class="top-l">
+                    <ul class="left-list">
+                        <li class="list-item">
+                            <a href="#" class="link-item">
+                                <div class="link-b">
+                                    <div class="link-icon">
+                                        <img src="/public/yz/videos/web/img/phone.png" alt="">
+                                    </div>
+                                    <div class="link-text">
+                                        移动版
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-item">
+                            <a href="#" class="link-item">
+                                <div class="link-b">
+                                    <div class="link-text">
+                                        关于我们
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-item">
+                            <a href="#" class="link-item">
+                                <div class="link-b">
+                                    <div class="link-text">
+                                        加入我们
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-item">
+                            <a href="#" class="link-item">
+                                <div class="link-b">
+                                    <div class="link-text">
+                                        企业服务
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-item">
+                            <a href="#" class="link-item">
+                                <div class="link-b">
+                                    <div class="link-text">
+                                        联系我们
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bot-right">
+                    <div class="link-blog">
+                        <a href="#">
+                            <div class="blog-img">
+                                <img src="/public/yz/videos/web/img/weibo.png" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="link-blog">
+                        <a href="#">
+                            <div class="blog-img">
+                                <img src="/public/yz/videos/web/img/wechat.png" alt="">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="bot">
+                <div class="bot-text">
+                    妈妈我在这 云课堂 ©2018-2019
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script type='text/javascript' src="./js/JsDepend/layui/layui.all.js"></script>
+<script type='text/javascript' src="./js/index.js?t=<?php echo time();?>"></script>
+
+</html>

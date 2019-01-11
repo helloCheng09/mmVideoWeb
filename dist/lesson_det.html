@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+    <link rel="shortcut icon" href="./img/logoicon.png">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="//g.alicdn.com/de/prismplayer/2.7.4/skins/default/aliplayer-min.css" />
+    <script type="text/javascript" charset="utf-8" src="//g.alicdn.com/de/prismplayer/2.7.4/aliplayer-min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="https://player.alicdn.com/aliplayer/presentation/js/aliplayercomponents.min.js"></script>
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <title>课程详情</title>
+    <link rel="stylesheet" href="./css/index.css?t=<?php echo time();?>">
+</head>
+
+<body>
+
+    <div class="index-wrap" id='detLesWrap'>
+        <header class="header-nav">
+            <div class="header-b">
+                <div class="hd-left">
+                    <div class="logo-b">
+                        <a href="/">
+                            <img src="/public/yz/videos/web/img/logoicon.png" alt="" class="log-img">
+                        </a>
+                    </div>
+                    <div class="nav-list">
+                        <ul class="list-b header_list">
+                            <li class="list-item header_nav_tag">
+                                <a href="/" class="nav-link">
+                                    <div class="text">
+                                        首页
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-item header_nav_tag">
+                                <a href="./center_lesson.html" class="nav-link">
+                                    <div class="text">
+                                        课程
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-item header_nav_tag">
+                                <a href="./center_user.html" class="nav-link">
+                                    <div class="text">
+                                        个人
+                                    </div>
+                                </a>
+                            </li>
+                            <div class="link-b-bar"></div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hd-right">
+                    <div class="search-b">
+                        <div class="search-wrp">
+                            <div class="search-item">
+                                <input type="text" placeholder="搜索" class="sear-ipt">
+                            </div>
+                            <div class="search-icon">
+                                <img src="/public/yz/videos/web/img/search.png" alt="" class="search-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="msg-icon">
+                        <a href="#">
+                            <span class="msg-num">
+                                <div class="num-text">
+                                    66
+                                </div>
+                            </span>
+                            <div class="msg-img">
+                                <img src="/public/yz/videos/web/img/message.png" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="login-reg">
+                        <div class="btn-b">
+                            <div class="btn-text btn_lr">
+                                <a>
+                                    <div class="text">
+                                        注册
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="btn-text btn_lr">
+                                <a>
+                                    <div class="text">
+                                        登陆
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="btn-b" style="display:none;">
+                            <div class="user-avatar">
+                                <img src="/public/yz/videos/web/img/xiugai-toux.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="page-link-pn">
+            <div class="page-link">
+                <div class="link-text">
+                    <span>首页</span>><span>推荐课程</span>><span>工程管理</span>>
+                    <span>详情</span>
+                </div>
+            </div>
+        </div>
+
+        <section class="main-screen">
+            <div class="main-screen-b">
+                <div class="screen-b">
+                    <div class="main-show-lf">
+                        <div class="prevent-play pre_play_b">
+                            <div class="btn-bx">
+                                <div class="ts-b">
+                                    <div class="ts-text">
+                                        立刻加入学习观看！~
+                                    </div>
+                                </div>
+                                <div class="btn-b">
+                                    <div class="join-btn join_btn">
+                                        <div>加入学习</div>
+                                    </div>
+                                    <div class="charge-btn">
+                                        <a href="./center_user.html?method=charge" class="charge_link">充流量币</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-bx" style="background-image:url(./img/homepagenews3.png)">
+                            <!-- 视频占位 -->
+                        </div>
+                        <div class="play-btn main_play_btn" id="myPlayBtn">
+                            <img src="/public/yz/videos/web/img/bigplay.png" alt="">
+                        </div>
+                    </div>
+                    <div class="main-show-rt">
+                        <div class="show-bx">
+                            <h3>工程管理</h3>
+                            <div class="des-info">
+                                <div class="info-text three-ellipsis">
+                                    四阶段渐进式课程体系，零基础学习，提升工程管理技能与
+                                </div>
+                            </div>
+                            <div class="pay-num">
+                                <div class="pay-text">
+                                    <span>流量币：</span>
+                                    <span>8888</span>
+                                </div>
+                            </div>
+                            <div class="det-bx">
+                                <div class="learning-num det-item">
+                                    <div class="num-text">
+                                        1000人在学习
+                                    </div>
+                                </div>
+                                <div class="teacher-des det-item">
+                                    <div class="icon-item" title="优秀教师">
+                                        <img src="/public/yz/videos/web/img/icon18.png">
+                                    </div>
+                                    <!-- <div class="icon-item" title="特级教师">
+                                        <img src="/public/yz/videos/web/img/gaoji.png">
+                                    </div> -->
+                                    <div class="text-item">
+                                        诸葛亮
+                                    </div>
+                                </div>
+                                <div class="school-des det-item">
+                                    <div class="school-text">
+                                        <span>
+                                            学校:
+                                        </span>
+                                        <span>
+                                            优赞科技学校
+                                        </span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-bx">
+                                <div class="btn-item see main_play_btn" id="">
+                                    <div class="btn-text" id="myPlayBtn2">立即观看</div>
+                                </div>
+                                <div class="btn-item ping pf_btn">
+                                    <div class="btn-text ">评分</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-screen-b">
+                <div class="screen-b">
+                    <div class="top-tt">
+                        <div class="tt-list-bx">
+                            <ul class="tt-list det_tag_bx">
+                                <li class="tt-item">
+                                    <div class="item-text ">
+                                        介 绍
+                                    </div>
+                                </li>
+                                <li class="tt-item">
+                                    <div class="item-text select">
+                                        目 录
+                                    </div>
+                                </li>
+                                <li class="tt-item">
+                                    <div class="item-text">
+                                        评 分
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bot-wrap">
+                        <div class="bot-pn" style="display:none">
+                            <div class="con-bx">
+                                <div class="text-item">
+                                    <p>
+                                        《大学英语》以话题为内容，以口语技能为牵引，从纵深两个维度上提高学员对英语口语的实际应用能力。本视频课程共20单元，分20课时讲授，内容广泛涵盖了出国学习和生活中所涉及的主要话题。课程引入雅思考试对口语能力的界定标准和培养方法，在基本日常对话、独立长段输出、多人讨论辩论三个层次上逐步进阶性培养英语口语能力，既为今后有留学计划的学员做应试准备，又全面提高学员日常英语口语输出能力。
+                                    </p>
+                                    <p>
+                                        《大学英语》以话题为内容，以口语技能为牵引，从纵深两个维度上提高学员对英语口语的实际应用能力。本视频课程共20单元，分20课时讲授，内容广泛涵盖了出国学习和生活中所涉及的主要话题。课程引入雅思考试对口语能力的界定标准和培养方法，在基本日常对话、独立长段输出、多人讨论辩论三个层次上逐步进阶性培养英语口语能力，既为今后有留学计划的学员做应试准备，又全面提高学员日常英语口语输出能力。
+                                    </p>
+                                    <p>
+                                        《大学英语》以话题为内容，以口语技能为牵引，从纵深两个维度上提高学员对英语口语的实际应用能力。本视频课程共20单元，分20课时讲授，内容广泛涵盖了出国学习和生活中所涉及的主要话题。课程引入雅思考试对口语能力的界定标准和培养方法，在基本日常对话、独立长段输出、多人讨论辩论三个层次上逐步进阶性培养英语口语能力，既为今后有留学计划的学员做应试准备，又全面提高学员日常英语口语输出能力。
+                                    </p>
+                                    <p>
+                                        《大学英语》以话题为内容，以口语技能为牵引，从纵深两个维度上提高学员对英语口语的实际应用能力。本视频课程共20单元，分20课时讲授，内容广泛涵盖了出国学习和生活中所涉及的主要话题。课程引入雅思考试对口语能力的界定标准和培养方法，在基本日常对话、独立长段输出、多人讨论辩论三个层次上逐步进阶性培养英语口语能力，既为今后有留学计划的学员做应试准备，又全面提高学员日常英语口语输出能力。
+                                    </p>
+                                    <p>
+                                        《大学英语》以话题为内容，以口语技能为牵引，从纵深两个维度上提高学员对英语口语的实际应用能力。本视频课程共20单元，分20课时讲授，内容广泛涵盖了出国学习和生活中所涉及的主要话题。课程引入雅思考试对口语能力的界定标准和培养方法，在基本日常对话、独立长段输出、多人讨论辩论三个层次上逐步进阶性培养英语口语能力，既为今后有留学计划的学员做应试准备，又全面提高学员日常英语口语输出能力。
+                                    </p>
+                                    <p>
+                                        《大学英语》以话题为内容，以口语技能为牵引，从纵深两个维度上提高学员对英语口语的实际应用能力。本视频课程共20单元，分20课时讲授，内容广泛涵盖了出国学习和生活中所涉及的主要话题。课程引入雅思考试对口语能力的界定标准和培养方法，在基本日常对话、独立长段输出、多人讨论辩论三个层次上逐步进阶性培养英语口语能力，既为今后有留学计划的学员做应试准备，又全面提高学员日常英语口语输出能力。
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bot-pn">
+                            <div class="lesson-list-bx">
+                                <ul class="lesson-list">
+                                    <li class="lesson-item">
+                                        <div class="text select">
+                                            课时111111111111(试听课)
+                                        </div>
+                                    </li>
+                                    <li class="lesson-item">
+                                        <div class="text">
+                                            课时111111111111(试听课)
+                                        </div>
+                                    </li>
+                                    <li class="lesson-item">
+                                        <div class="text">
+                                            课时111111111111(试听课)
+                                        </div>
+                                    </li>
+                                    <li class="lesson-item">
+                                        <div class="text">
+                                            课时111111111111(试听课)
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bot-pn" style="display:none">
+                            <div class="ping-bx">
+                                <div class="ping-top">
+                                    <div class="avatar-img">
+                                        <img src="/public/yz/videos/web/img/teacher-toux-default.png" alt="">
+                                    </div>
+                                    <div class="user-name">
+                                        <div class="text">
+                                            王路
+                                        </div>
+                                    </div>
+                                    <div class="school-name">
+                                        <div class="text">
+                                            东北路小学
+                                        </div>
+                                    </div>
+                                    <div class="com-time">
+                                        <div class="text">
+                                            2018-12-21 22:00
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ping-bot">
+                                    <div class="ping-det">
+                                        <div class="star-p">
+                                            <div class="stars-b">
+                                                <div class="stars-top" style="width:110px;">
+                                                    <div class="stars" style="background-image:url(./img/starsShi.png)"></div>
+                                                </div>
+                                                <div class="stars-bot">
+                                                    <div class="stars" style="background-image:url(./img/starsKong.png)"></div>
+                                                </div>
+                                            </div>
+                                            <div class="stars-text">
+                                                <div class="text-con">超赞</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ping-bx">
+                                <div class="ping-top">
+                                    <div class="avatar-img">
+                                        <img src="/public/yz/videos/web/img/teacher-toux-default.png" alt="">
+                                    </div>
+                                    <div class="user-name">
+                                        <div class="text">
+                                            王路
+                                        </div>
+                                    </div>
+                                    <div class="school-name">
+                                        <div class="text">
+                                            东北路小学
+                                        </div>
+                                    </div>
+                                    <div class="com-time">
+                                        <div class="text">
+                                            2018-12-21 22:00
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ping-bot">
+                                    <div class="ping-det">
+                                        <div class="star-p">
+                                            <div class="stars-b">
+                                                <div class="stars-top" style="width:110px;">
+                                                    <div class="stars" style="background-image:url(./img/starsShi.png)"></div>
+                                                </div>
+                                                <div class="stars-bot">
+                                                    <div class="stars" style="background-image:url(./img/starsKong.png)"></div>
+                                                </div>
+                                            </div>
+                                            <div class="stars-text">
+                                                <div class="text-con">超赞</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ping-bx">
+                                <div class="ping-top">
+                                    <div class="avatar-img">
+                                        <img src="/public/yz/videos/web/img/teacher-toux-default.png" alt="">
+                                    </div>
+                                    <div class="user-name">
+                                        <div class="text">
+                                            王路
+                                        </div>
+                                    </div>
+                                    <div class="school-name">
+                                        <div class="text">
+                                            东北路小学
+                                        </div>
+                                    </div>
+                                    <div class="com-time">
+                                        <div class="text">
+                                            2018-12-21 22:00
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ping-bot">
+                                    <div class="ping-det">
+                                        <div class="star-p">
+                                            <div class="stars-b">
+                                                <div class="stars-top" style="width:110px;">
+                                                    <div class="stars" style="background-image:url(./img/starsShi.png)"></div>
+                                                </div>
+                                                <div class="stars-bot">
+                                                    <div class="stars" style="background-image:url(./img/starsKong.png)"></div>
+                                                </div>
+                                            </div>
+                                            <div class="stars-text">
+                                                <div class="text-con">超赞</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ping-bx">
+                                <div class="ping-top">
+                                    <div class="avatar-img">
+                                        <img src="/public/yz/videos/web/img/teacher-toux-default.png" alt="">
+                                    </div>
+                                    <div class="user-name">
+                                        <div class="text">
+                                            王路
+                                        </div>
+                                    </div>
+                                    <div class="school-name">
+                                        <div class="text">
+                                            东北路小学
+                                        </div>
+                                    </div>
+                                    <div class="com-time">
+                                        <div class="text">
+                                            2018-12-21 22:00
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ping-bot">
+                                    <div class="ping-det">
+                                        <div class="star-p">
+                                            <div class="stars-b">
+                                                <div class="stars-top" style="width:110px;">
+                                                    <div class="stars" style="background-image:url(./img/starsShi.png)"></div>
+                                                </div>
+                                                <div class="stars-bot">
+                                                    <div class="stars" style="background-image:url(./img/starsKong.png)"></div>
+                                                </div>
+                                            </div>
+                                            <div class="stars-text">
+                                                <div class="text-con">超赞</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ping-bx">
+                                <div class="ping-top">
+                                    <div class="avatar-img">
+                                        <img src="/public/yz/videos/web/img/teacher-toux-default.png" alt="">
+                                    </div>
+                                    <div class="user-name">
+                                        <div class="text">
+                                            王路
+                                        </div>
+                                    </div>
+                                    <div class="school-name">
+                                        <div class="text">
+                                            东北路小学
+                                        </div>
+                                    </div>
+                                    <div class="com-time">
+                                        <div class="text">
+                                            2018-12-21 22:00
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ping-bot">
+                                    <div class="ping-det">
+                                        <div class="star-p">
+                                            <div class="stars-b">
+                                                <div class="stars-top" style="width:110px;">
+                                                    <div class="stars" style="background-image:url(./img/starsShi.png)"></div>
+                                                </div>
+                                                <div class="stars-bot">
+                                                    <div class="stars" style="background-image:url(./img/starsKong.png)"></div>
+                                                </div>
+                                            </div>
+                                            <div class="stars-text">
+                                                <div class="text-con">超赞</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ping-bx">
+                                <div class="ping-top">
+                                    <div class="avatar-img">
+                                        <img src="/public/yz/videos/web/img/teacher-toux-default.png" alt="">
+                                    </div>
+                                    <div class="user-name">
+                                        <div class="text">
+                                            王路
+                                        </div>
+                                    </div>
+                                    <div class="school-name">
+                                        <div class="text">
+                                            东北路小学
+                                        </div>
+                                    </div>
+                                    <div class="com-time">
+                                        <div class="text">
+                                            2018-12-21 22:00
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ping-bot">
+                                    <div class="ping-det">
+                                        <div class="star-p">
+                                            <div class="stars-b">
+                                                <div class="stars-top" style="width:110px;">
+                                                    <div class="stars" style="background-image:url(./img/starsShi.png)"></div>
+                                                </div>
+                                                <div class="stars-bot">
+                                                    <div class="stars" style="background-image:url(./img/starsKong.png)"></div>
+                                                </div>
+                                            </div>
+                                            <div class="stars-text">
+                                                <div class="text-con">超赞</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ping-bx">
+                                <div class="ping-top">
+                                    <div class="avatar-img">
+                                        <img src="/public/yz/videos/web/img/teacher-toux-default.png" alt="">
+                                    </div>
+                                    <div class="user-name">
+                                        <div class="text">
+                                            王路
+                                        </div>
+                                    </div>
+                                    <div class="school-name">
+                                        <div class="text">
+                                            东北路小学
+                                        </div>
+                                    </div>
+                                    <div class="com-time">
+                                        <div class="text">
+                                            2018-12-21 22:00
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ping-bot">
+                                    <div class="ping-det">
+                                        <div class="star-p">
+                                            <div class="stars-b">
+                                                <div class="stars-top" style="width:110px;">
+                                                    <div class="stars" style="background-image:url(./img/starsShi.png)"></div>
+                                                </div>
+                                                <div class="stars-bot">
+                                                    <div class="stars" style="background-image:url(./img/starsKong.png)"></div>
+                                                </div>
+                                            </div>
+                                            <div class="stars-text">
+                                                <div class="text-con">超赞</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ping-bx">
+                                <div class="ping-top">
+                                    <div class="avatar-img">
+                                        <img src="/public/yz/videos/web/img/teacher-toux-default.png" alt="">
+                                    </div>
+                                    <div class="user-name">
+                                        <div class="text">
+                                            王路
+                                        </div>
+                                    </div>
+                                    <div class="school-name">
+                                        <div class="text">
+                                            东北路小学
+                                        </div>
+                                    </div>
+                                    <div class="com-time">
+                                        <div class="text">
+                                            2018-12-21 22:00
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ping-bot">
+                                    <div class="ping-det">
+                                        <div class="star-p">
+                                            <div class="stars-b">
+                                                <div class="stars-top" style="width:110px;">
+                                                    <div class="stars" style="background-image:url(./img/starsShi.png)"></div>
+                                                </div>
+                                                <div class="stars-bot">
+                                                    <div class="stars" style="background-image:url(./img/starsKong.png)"></div>
+                                                </div>
+                                            </div>
+                                            <div class="stars-text">
+                                                <div class="text-con">超赞</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="video-show-bx" id="videoWrap" style="display:none;">
+        <div class="close-btn" id="exitBtn">
+            <div class="text">退出</div>
+        </div>
+        <div class="palyer-wrap">
+            <div class="prism-player" id="player-con"></div>
+        </div>
+    </div>
+    <footer class="pub-footer">
+        <div class="footer-b">
+            <div class="top">
+                <div class="top-l">
+                    <ul class="left-list">
+                        <li class="list-item">
+                            <a href="#" class="link-item">
+                                <div class="link-b">
+                                    <div class="link-icon">
+                                        <img src="/public/yz/videos/web/img/phone.png" alt="">
+                                    </div>
+                                    <div class="link-text">
+                                        移动版
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-item">
+                            <a href="#" class="link-item">
+                                <div class="link-b">
+                                    <div class="link-text">
+                                        关于我们
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-item">
+                            <a href="#" class="link-item">
+                                <div class="link-b">
+                                    <div class="link-text">
+                                        加入我们
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-item">
+                            <a href="#" class="link-item">
+                                <div class="link-b">
+                                    <div class="link-text">
+                                        企业服务
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-item">
+                            <a href="#" class="link-item">
+                                <div class="link-b">
+                                    <div class="link-text">
+                                        联系我们
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bot-right">
+                    <div class="link-blog">
+                        <a href="#">
+                            <div class="blog-img">
+                                <img src="/public/yz/videos/web/img/weibo.png" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="link-blog">
+                        <a href="#">
+                            <div class="blog-img">
+                                <img src="/public/yz/videos/web/img/wechat.png" alt="">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="bot">
+                <div class="bot-text">
+                    妈妈我在这 云课堂 ©2018-2019
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+<script>
+    window.mylib = {}
+    window.mylib.videoSrc = []
+    var root = window.mylib
+    // 充值页面
+    var chargeSrc = 'http://www.mamawozaizhe.com/videos/videos/charge.html'
+    var lessonGet = 'http://www.mamawozaizhe.com/videos/videos/videos_join.html'
+    root.lessonData = {
+        fansid: "40868881",
+        froms: "2",
+        lesson_id: "2",
+        traffic_coin: "100",
+        videos_id: "2"
+    }
+    // 视频封面
+    root.coverSrc =
+        'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542865269846&di=fe5d04330cf7321367c32b89d0bff476&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Ffd039245d688d43f4ed85fdf761ed21b0ef43bae.jpg';
+
+    // 用户是否购买课程 
+    root.is_buy_lesson = "1";
+    //实例化播放器
+    // root.videoSrc[0] = 'http://w2.mamawozaizhe.com:9001/video/158/1545059112.m3u8'
+</script>
+<!-- js -->
+<script type='text/javascript' src="./js/JsDepend/layui/layui.all.js"></script>
+<script src="./js/vendors.js"></script>
+<script type='text/javascript' src="./js/index.js?t=<?php echo time();?>"></script>
