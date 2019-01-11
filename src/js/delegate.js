@@ -425,7 +425,6 @@ Delegate.prototype = {
     },
     // 关闭播放
     closeVideo: function () {
-        // console.log(root)
         root.player.pause()
         $('#videoWrap').slideUp('250')
     },
@@ -440,6 +439,7 @@ Delegate.prototype = {
             return false
         } else {
             $('#videoWrap').slideDown('500')
+            root.player.play()
         }
     },
     // 课程详情菜单切换
